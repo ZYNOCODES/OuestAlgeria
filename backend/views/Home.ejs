@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    />
+    <title>Ouest-Algerien</title>
+    <link rel="stylesheet" href="/styleHome.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  </head>
+  <body>
+    <header>
+      <div class="image-background">
+        <img src="/images/ouest-algerien.jpg" alt=""/>
+      </div>
+      <nav>
+        <a class="logo" href="#">LOGO</a>
+        <ul>
+          <li class="home-list"><a href="/">home</a></li>
+          <li><a href="/About" id="liste">about us</a></li>
+          <li><a href="/Contact" id="liste">contact us</a></li>
+        </ul>
+      </nav>
+      <div class="header-container">
+        <h4>Architecture IX XX Siécle</h4>
+        <h3>Architecture</h3>
+        <h3>ferroviaire en Algérie</h3>
+        <h4>"Valorisation Touristique Du Patrimoine Ferroviaire"</h4>
+        <form method="POST" action="/Valorisation">
+          <button type="submit" class="histoire-btn">Explore Now</button>
+        </form>
+      </div>
+      <div class="social-media">
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+      </div>
+    </header>
+    <section class="liste-du-patrimoine">
+      <div class="bare-navigation">
+        <form class = "card" method="POST" action="/Gares">
+          <img class = "card-img" src="https://images.unsplash.com/photo-1656618020911-1c7a937175fd?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NTc1MzQyNTE&ixlib=rb-1.2.1&q=80" alt="">
+          <div class="card-content">
+            <h2 class = "card-content-title">
+              Gares  Ferroviaire
+            </h2>
+            <p class = "card-content-subtitle">Terminus, Station, Halte</p>
+            <input type="submit" class="card-button" value="Find out more"/>
+          </div>
+        </form>
+        <form class = "card" method="POST" action="/Lignes">
+          <img class = "card-img" src="https://images.unsplash.com/photo-1656618020911-1c7a937175fd?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NTc1MzQyNTE&ixlib=rb-1.2.1&q=80" alt="">
+          <div class="card-content">
+            <h2 class = "card-content-title">
+              Lignes Ferroviaire
+            </h2>
+            <p class = "card-content-subtitle">Ouest Algérien</p>
+            <input type="submit" class="card-button" value="Find out more"/>
+          </div>
+        </form>
+        <form class = "card" method="POST" action="/Ouvrages">
+          <img class = "card-img" src="https://images.unsplash.com/photo-1656618020911-1c7a937175fd?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NTc1MzQyNTE&ixlib=rb-1.2.1&q=80" alt="">
+          <div class="card-content">
+            <h2 class = "card-content-title">
+              Ouvrages d'art Ferroviaire
+            </h2>
+            <p class = "card-content-subtitle">Viaducs, Tunnels, Ponts. </p>
+            <input type="submit" class="card-button" value="Find out more"/>
+          </div>
+        </form>
+      </div>
+      <div class="histoire">
+        <h1 class="histoire-main-title">HISTOIRE</h1>
+        <main class="histoire-page-content">
+          <div class="histoire-card">
+            <div class="histoire-content">
+              <h2 class="histoire-title">Chemin de fer Algérien </h2>
+              <p class="histoire-copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
+              <button class="histoire-btn">Explore Now</button>
+            </div>
+          </div>
+        </main>
+      </div>
+      <div class="comments">
+        <main class="l-card">
+          <section class="l-card__text">
+            <p>
+              This is a comment card appearing above a dotted background, and that's really cool!
+            </p>
+          </section>
+          <section class="l-card__user">
+            <div class="l-card__userImage">
+              <img src="https://avatars.githubusercontent.com/u/20525486?v=4" alt="Naruto">
+            </div>
+            <div class="l-card__userInfo">
+              <span>Naruto Uzumaki</span>
+              <span>Seventh Hokage</span>
+            </div>
+          </section>
+        </main>
+        <main class="l-card">
+          <section class="l-card__text">
+            <p>
+              This is a comment card appearing above a dotted background, and that's really cool!
+            </p>
+          </section>
+          <section class="l-card__user">
+            <div class="l-card__userImage">
+              <img src="https://avatars.githubusercontent.com/u/20525486?v=4" alt="Naruto">
+            </div>
+            <div class="l-card__userInfo">
+              <span>Naruto Uzumaki</span>
+              <span>Seventh Hokage</span>
+            </div>
+          </section>
+        </main>
+        <main class="l-card">
+          <section class="l-card__text">
+            <p>
+              This is a comment card appearing above a dotted background, and that's really cool!
+            </p>
+          </section>
+          <section class="l-card__user">
+            <div class="l-card__userImage">
+              <img src="https://avatars.githubusercontent.com/u/20525486?v=4" alt="Naruto">
+            </div>
+            <div class="l-card__userInfo">
+              <span>Naruto Uzumaki</span>
+              <span>Seventh Hokage</span>
+            </div>
+          </section>
+        </main>
+      </div>
+    </section>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/wicg-inert@latest/dist/inert.min.js"></script>
+    <script src="/mainHome.js"></script>
+    <script src="/GareMain.js"></script>
+    <script src="/StationMain.js"></script>
+    <script src="/PontMain.js"></script>
+    <script src="/HalteMain.js"></script>
+  </body>
+</html>

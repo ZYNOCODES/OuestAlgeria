@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    />
+    <title>Ouest-Algerien</title>
+    <link rel="stylesheet" href="/styleLignes.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  </head>
+  <body>
+    <header>
+        <main class="navba">
+            <div class="backBTN">
+                <a href="javascript:history.back();">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </a>
+            </div>
+            <h3>Lignes Ferroviaires « Oran-Frontière du Maroc »</h3>
+        </main>
+        <div></div>
+    </header>
+    <div class="liste-pat">
+            <div class="liste-du-patrimoine-container">
+                <div class="left-liste-du-patrimoine">
+                    <div class="left-liste-du-patrimoine-first">
+                        <div class="left-header">
+                            <div class="wilaya">
+                                <h2>ORAN</h2>
+                            </div>
+                            <div class="wilaya">
+                                <h2>SIDI-BEL-ABBES</h2>
+                            </div>
+                            <div class="wilaya">
+                                <h2>Tlemcen</h2>
+                            </div>
+                        </div>
+                        <div id="LigneMap" class="leaflet-map"></div>
+                    </div>
+                    <div class="right-liste-du-patrimoine">
+                        <div class="right-header">
+                            <h2 class="right-header-title">Catégorie du bien</h2>
+                            <h2 class="categories-title">Ligne Ferroviaire:</h2>
+                            <div class="categories">
+                                <div class="categorie first">
+                                <div class="circle-categorie"></div>
+                                <h3>Wilaya</h3>
+                                </div>
+                                <div class="categorie second">
+                                <div class="circle-categorie"></div>
+                                <h3>Commune</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right-header">
+                            <div class="types">
+                                <div class="types-first">
+                                    <h3>Compagnies Ferroviaires :</h3>
+                                    <h4>Compagnie PLM Paris-Lyon-Méditerranéen</h4>
+                                    <h4>Compagnie OA Ouest Algérien</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right-header">
+                            <div class="Programme">
+                                <div class="Programme-first">
+                                <h3>Programme 1 :</h3>
+                                <h4>1857</h4>
+                                </div>
+                                <div class="Programme-first">
+                                <h3>Programme 2 :</h3>
+                                <h4>1879</h4>
+                                </div>
+                                <div class="Programme-first">
+                                <h3>Programme 3 :</h3>
+                                <h4>1907</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="left-footer-right-liste">
+                    <div class="left-footer">
+                        <h2>Lignes ferroviaires « Oran-Frontière du Maroc » :</h2>
+                        <div class="left-footer-container">
+                            <h4>1. Oran à Sainte-Barbe-du-Tlélat</h4>
+                            <h6>Oran à Sainte-Barbe-du-Tlélat ( PLM 01.11.1868 )</h6>
+                        </div>
+                        <div class="left-footer-container">
+                            <h4>2. Sainte-Barbe-du-Tlélat- Frontière du Maroc 208 km</h4>
+                            <h5>Sainte-Barbe-du-Tlélat à Tlemcen 139 Km (1877/1883)</h5>
+                            <h6>Sainte-Barbe-du-Tlélat à Tabia :</h6>
+                            <p>Sainte-Barbe-du-Tlélat à Sidi-Bel-Abbes 51 Km (Ste Seignette et Cie 03.05.1877)</p>
+                            <p>Sidi-bel-Abbes à Tabia 23 Km (Cie Ouest Algérien O. A 08.06.1883)</p>
+                            <h6>Tabia à Tlemcen 64 Km (1887/1890) :</h6>
+                            <p>Tabia à Ain-Tellout Cie Ouest Algérien ( O. A08.08.1887)</p>
+                            <p>Ain-Tellout à Lamoricière ( Cie Ouest Algérien O. A1888 )</p>
+                            <p>Lamoricière à Ain-Fezza ( Cie Ouest Algérien O. A1889 )</p>
+                            <p>Ain-Fezza à Tlemcen ( Cie Ouest Algérien O. A1890 )</p>
+
+                            <h5>Tlemcen à la frontière Marocaine 70 Km (1907/1910)</h5>
+                            <p>Tlemcen à Turenne 30 km ( Cie Ouest Algérien O. A1907 )</p>
+                            <p>Turenne à Lalla Maghnia  ( Cie Ouest Algérien O. A1910 )</p>
+                            <p>Lalla Maghnia à Zoudj-El Beghal (10 km)  ( Cie Ouest Algérien O. A1910 )</p>
+                        </div>
+                    </div>
+                    <div class="right-header">
+                        <div class="Programme">
+                            <div class="Programme-first">
+                            <h3>Caractéristique ligne Sainte-Barbe-du-Tlélat- Frontière du Maroc :</h3>
+                            <h4>Longueur totale 208 km</h4>
+                            <h4>Rayon minimum : 200 m.</h4>
+                            <h4>Déclivité maximum : 20 m/m par mètre</h4>
+                            <h4>Armement de la voie : Rails de 39 à 46 kg</h4>
+                            <h4>Poids maximum des essieux admis à circuler : 20 T.</h4>
+                            <h4>Vitesse maximum autorisées :  Autorails et fourgons automoteurs : 120 km/h Vapeur et Diésel 120 km/h</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/wicg-inert@latest/dist/inert.min.js"></script>
+    <script src="/mainHome.js"></script>
+    <script src="/LigneMain.js"></script>
+  </body>
+</html>

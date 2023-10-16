@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    />
+    <title>Ouest-Algerien</title>
+    <link rel="stylesheet" href="/styleValorisation.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  </head>
+  <body>
+    <header>
+        <main class="navba">
+            <div class="backBTN">
+                <a href="javascript:history.back();">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </a>
+            </div>
+            <div class="navbar-title">
+                <h3>Valorisation Touristique Du Patrimoine Ferroviaire</h3>
+                <h3>l'Itinéraire culturel</h3>
+            </div>
+        </main>
+      <div class="Top-bar">
+        <div class="Top-bar-content">
+            <h4>Description</h4>
+        </div>
+        <div class="Top-bar-content">
+            <h4>Carte</h4>
+        </div>
+        <div class="Top-bar-content">
+            <h4>Galerie</h4>
+        </div>
+      </div>
+    </header>
+    <div class="liste-pat">
+            <div class="liste-du-patrimoine-container">
+                <div class="left-liste-du-patrimoine">
+                    <div class="left-liste-du-patrimoine-first">
+                        <div id="map" class="leaflet-map"></div>
+                    </div>
+                    <div class="right-liste-du-patrimoine">
+                        <div class="right-header">
+                            <h2 class="right-header-title">Catégorie du bien</h2>
+                            <h2 class="categories-title">Gares:</h2>
+                            <div class="categories">
+                                <div class="categorie first">
+                                <div class="circle-categorie"></div>
+                                <h3>Terminus</h3>
+                                </div>
+                                <div class="categorie second">
+                                <div class="circle-categorie"></div>
+                                <h3>Station</h3>
+                                </div>
+                                <div class="categorie third">
+                                <div class="circle-categorie"></div>
+                                <h3>Halte</h3>
+                                </div>
+                            </div>
+                            <h2 class="categories-title">Ouvrage d'Art :</h2>
+                            <div class="categories">
+                                <div class="categorie first">
+                                <div class="circle-categorie"></div>
+                                <h3>Viaduc</h3>
+                                </div>
+                                <div class="categorie second">
+                                <div class="circle-categorie"></div>
+                                <h3>Tunnel</h3>
+                                </div>
+                                <div class="categorie third">
+                                <div class="circle-categorie"></div>
+                                <h3>Pont</h3>
+                                </div>
+                            </div>
+                            <h2 class="categories-title">Parc naturel Site Historique :</h2>
+                        </div>
+                        <div class="right-header">
+                            <div class="types">
+                                <div class="types-first">
+                                    <h3>Algerie</h3>
+                                    <h4>Ouest Algérien</h4>
+                                    <h4>Commune de Sidi-Bel-Abbes et Tlemcen</h4>
+                                    <h4>Longeur: 156 km</h4>
+                                    <h4>Critère (ii) (iv)</h4>
+                                    <h4>Etat de conservation: moyen</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right-header">
+                            <h2 class="right-header-title">Total des Ouvrages :</h2>
+                            <h2 class="right-header-subtitle">04 Gares</h2>
+                            <h2 class="right-header-subtitle">16 Stations</h2>
+                            <h2 class="right-header-subtitle">19 Ponts</h2>
+                            <h2 class="right-header-subtitle">04 Tunnels</h2>
+                            <h2 class="right-header-subtitle">12 Viaducs</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="left-footer">
+                    <div class="left-footer">
+                        <h2>Chemin De Fer " Sidi-Bel-Abbes À Akid Abbes "</h2>
+                        <div class="left-footer-container">
+                            <p>
+                                La Ligne De Chemin De Fer « Sidi-Bel-Abbes-Akid-Abbes » Permet De Traverser 156 Km De Longueur À Travers Le Passage Entre Les Grandes Gares De Sidi-Bel-Abbès, De Tlemcen Et De Maghnia Ainsi Que Des Ponts Monumentaux Tels Que Les Ponts D’el-Ourit De 86M D’ouverture, Le Viaduc Sur L'oued Ain Tellout De 115M.30 D'ouverture À 8 Arches De 10M, Et Le Viaduc Sur L'oued Tralimet De 182M.20 En 4 Travées.
+                                Elle Rassemble 2 Sections Ferroviaires La Première De Sidi-Bel-Abbès À Tlemcen Avec Une Longueur De 87 Km Totalise 2 Gares, 10 Stations, 5 Tunnels,5 Viaducs Et 15Ponts. La Deuxième Section De Tlemcen À Maghnia Avec Une Longueur De 69 Km Comporte 2 Gares, 6 Stations, 9
+                                Tunnels, 7 Viaducs Et 4 Ponts.  Elle Incarne Des Réalisations Architecturales Et De Génie Civil En Harmonie Avec Les Paysages Qu’elles Traversent.
+
+                            </p>
+                        </div>
+                        <div class="left-footer-container">
+                            <h2>Valeur Universelle Exceptionnelle</h2>
+                            <p>
+                                Le Chemin De Fer Témoigne De L'ingéniosité Déployée Pour Implanter Le Réseau Ferroviaire Durant La Période Coloniale Française En Algérie. Il Révèle Un Important Échange D'influences Entre Les Compagnies Ferroviaires Françaises, Qui Ont Apporté Des Solutions Ingénieuses Aux Défis Physiques De La Construction Ferroviaire Et Ont Anticipé Le Développement De L'architecture Des Gares Et Des Ouvrages D'art Ferroviaires, Permettant La Création D’un Paysage Ferroviaire Exceptionnel.
+                            </p>
+                            <h4>Critère (Ii) :</h4>
+                            <p>
+                                Le Chemin De Fer Témoigne De L'ingéniosité Déployée Pour Implanter Le Réseau Ferroviaire Durant La Période Coloniale Française En Algérie. Il Révèle Un Important Échange D'influences Entre Les Compagnies Ferroviaires Françaises, Qui Ont Apporté Des Solutions Ingénieuses Aux Défis Physiques De La Construction Ferroviaire Et Ont Anticipé Le Développement De L'architecture Des Gares Et Des Ouvrages D'art Ferroviaires, Permettant La Création D’un Paysage Ferroviaire Exceptionnel.
+                            </p>
+                            <h4>Critère (Iv) :</h4>
+                            <p>
+                                L’essor Du Chemin De Fer En Algérie A Exercé Une Influence Significative Sur Le Développement Social Et Économique Des Régions Desservies. L'exemple De La Ligne De Chemin De Fer Dépendant De Sidi-Bel-Abbès À La Frontière Marocaine Illustre De Manière Remarquable L'essor Ferroviaire Dans Les Zones Montagneuses, Permettant Ainsi D'accéder Aux Régions Offrant Des Paysages Naturels D'une Grande Beauté Et Progressant Ainsi Un Nouveau Type De Paysage. Cette Ligne Ferroviaire Représente Un Ensemble Architectural Et Technologique Exceptionnel.
+                            </p>
+                            <h4>Intégrité :</h4>
+                            <p>
+                                La Ligne De Chemin De Fer, Y Compris Ses Gares Et Ses Ouvrages D'art, Est Aujourd'hui Très Proche De Son État Initial Et Son Intégrité Fonctionnelle Est Maintenue. Toutefois, La Principale Menace Qui Pèse Sur Cette Ligne Est L'abandon, Qui Pourrait Entraîner La Détérioration Des Différentes Installations Ferroviaires.
+                            </p>
+                            <h4>Authenticité :</h4>
+                            <p>
+                                La Ligne De Chemin De Fer Ainsi Que Ses Gares Et Ouvrages D'art Ont Conservé Leur Conception D'origine, Ce Qui Leur Confère Une Authenticité Remarquable.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/wicg-inert@latest/dist/inert.min.js"></script>
+    <script src="/mainHome.js"></script>
+    <script src="/Adminmain.js"></script>
+  </body>
+</html>

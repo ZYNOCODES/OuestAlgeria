@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    />
+    <title>Ouest-Algerien</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/styleAffichageV2.css">
+</head>
+<body>
+    <div class="container">
+        <div class="top-bar">
+            <i class="fa-solid fa-chevron-left"></i>
+            <span><%=place.Type %></span>
+        </div>
+        <div class="line1">
+            <h4><%=place.Nom %></h4>
+            <div class="Bar"></div>
+        </div>
+        <div class="line2">
+            <div class="line2-col1">
+                <span>Description</span>
+                <p>
+                    Cet étrange paysage lunaire de grand intérêt géologique abrite l’un des plus importants ensembles d’art rupestre préhistorique du monde. Plus de 15 000 dessins et gravures permettent d’y suivre, depuis 6000 av. J.-C. jusqu’aux premiers siècles de notre ère, les changements du climat, les migrations de la faune et l’évolution de la vie humaine aux confins du Sahara. Le panorama de formations géologiques présente un intérêt exceptionnel avec ses « forêts de rochers » de grès érodé.
+                </p>
+            </div>
+            <div class="line2-col2">
+                <div class="line2-col2-line1">
+                    <img src="https://lesplusbeauxdrapeauxdumonde.files.wordpress.com/2016/11/algeria-1219746_1280.jpg?w=692&amp;h=390">
+                    <span>Algerie</span>
+                </div>
+                <span>Ancien_Nom: <p><%=place.Ancien_Nom %></p></span>
+                <span>CodeWilay : <p><%=place.CodeWilay %></p></span>
+                <span>CodeCommu : <p><%=place.CodeCommu %></p></span>
+                <span>PositionKm: <p><%=place.PositionKm %></p></span>
+                <span>LigneFerro: <p><%=place.LigneFerro %></p></span>
+                <span>StyleArchi: <p><%=place.StyleArchi %></p></span>
+            </div>
+        </div>
+        <div class="line3">
+            <div class="line3-line1">
+                <div class="Bar"></div>
+                <div class="image-container"></div>
+                <div class="Bar"></div>
+                <div class="line3-line1-description-container">
+                    <span>Valeur universelle exceptionnelle</span>
+                    <p>
+                        Le Tassili n'Ajjer est un immense plateau situé au Sud-est de l'Algérie aux confins de la Libye, du Niger et du Mali, couvrant une superficie de 72 000 km². La densité exceptionnelle des peintures et des gravures, et l'existence de nombreux vestiges préhistoriques sont des témoignages exceptionnels de la Préhistoire. Depuis 10 000 ans avant notre ère jusqu'aux premiers siècles, les populations qui se sont succédées ont laissé de nombreuses traces archéologiques, habitats, tumuli et enclos, qui ont livré un abondant matériel lithique et céramique. Toutefois c'est l'art rupestre (gravures et peintures) qui a fait la renommée mondiale du Tassili à partir de 1933, date de sa découverte. 15 000 gravures ont été répertoriées jusqu'à nos jours.
+                        Le bien est également d'un grand intérêt géologique et esthétique : le panorama des formations géologiques avec ses « forêts de rochers » de grès érodé offre l'image d'un étrange paysage lunaire.
+                        Critère (i) : L'ensemble remarquable de peintures et de gravures rupestres de diverses périodes confère une renommée mondiale au bien. Les représentations de la période des têtes rondes renvoient à d'éventuelles pratiques magico-religieuse vieilles de quelques 10 000 ans, alors que les représentations de la période des bovidés, marquant la vie quotidienne et sociale, présentent un réalisme esthétique naturaliste comptant parmi les plus célèbres de l'art pariétal préhistorique. Les dernières images montrent des représentations de la domestication des chevaux et des chameaux.
+                        Critère (iii) : Les images de l'art rupestre couvrent une période d'environ 10 000 ans et le patrimoine culturel du Tassili témoigne de traditions culturelles vivantes et disparues qui informent sur la succession et l'évolution des civilisations et des cultures préhistoriques très anciennes. Avec les restes archéologiques, ils témoignent de manière particulièrement vivante des changements climatiques, des changements de la faune et de la flore et plus particulièrement des possibilités offertes à l'élevage et à la vie pastorale liés à des sites défensifs inexpugnables à certaines périodes de la préhistoire.
+                        Critère (vii) : Avec des grés érodés qui constituent des « forêts de rochers », le bien est d'un intérêt esthétique remarquable. Les grès ont gardé intactes les traces et les empreintes des grands évènements géologiques et climatiques. L'eau d'abord et le vent ensuite, par les effets de la corrosion, ont contribué à la mise en place d'une morphologie particulière, celle d'un plateau découpé par les eaux et adouci par le vent.
+                        Critère (viii) : La conformation géologique du Tassili n'Ajjer présente des unités cristallines précambriennes et des successions sédimentaires gréseuses de grand intérêt paléogéographique et paléo écologique.
+                        Les hommes ont vécu dans cet espace en développant des comportements physiologiques et culturels adaptés à la rigueur du climat ; leurs témoignages remontent à plusieurs centaines de milliers d'années. L'art rupestre, justement tassilien, est l'expression la plus éloquente de relations entre l'homme et son environnement, où plus de 15 000 dessins et gravures témoignant des changements du climat, des migrations de la faune et de l'évolution de la vie humaine aux confins du Sahara. Cet art montre des espèces dépendantes de l'eau, telles l'hippopotame et des espèces éteintes dans la région depuis plusieurs milliers d'années. Cette combinaison d'éléments géologiques, écologiques et culturels constitue un exemple éminemment représentatif du témoignage de la vie.
+                        Intégrité
+                        Le bien contient l'ensemble des sites d'art rupestre et des paysages clés représentant sa beauté naturelle et tous les sites de la diversité biologique et écologique qui constituent les attributs de la valeur universelle exceptionnelle. Les limites et la taille (72 000 km²) du bien sont suffisantes pour maintenir le processus géologique et garantir l'intégrité de l'héritage culturel du site.
+                    </p>
+                </div>
+            </div>
+            <div class="line3-line2">
+                <div id="StationMap" class="leaflet-map"></div>
+                <div class="line3-line2-div">
+                    <h6>Documents :</h6>
+                    <span>01- document 1</span>
+                    <span>02- document 2</span>
+                    <span>03- document 3</span>
+                </div>
+                <div class="line3-line2-div">
+                    <h6>Lien :</h6>
+                    <span>01- lien 1</span>
+                    <span>02- lien 2</span>
+                    <span>03- lien 3</span>
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+    <footer>
+        <div class="footer-items">
+            <div class="footer-items footer-container">
+                <div class="footer-item LOGO">
+                    <h2>LOGO</h2>
+                    <p>
+                        Mobot is an online education platform that delivers video courses,
+                        programs and resources.
+                    </p>
+                    <div class="footer-social-media">
+                        <div class="social-media-item facebook">
+                            <a href="#">
+                            <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                        </div>
+                        <div class="social-media-item twitter">
+                            <a href="#">
+                            <i class="fa-brands fa-twitter"></i>
+                            </a>
+                        </div>
+                        <div class="social-media-item youtube">
+                            <a href="#">
+                            <i class="fa-brands fa-youtube"></i>
+                            </a>
+                        </div>
+                        <div class="social-media-item dribbble">
+                            <a href="#">
+                            <i class="fa-brands fa-dribbble"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-item quicklinks">
+                    <h3>quicklinks</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Documents</a></li>
+                        <li><a href="#">Gallery</a></li>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Contact us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-item contact">
+                    <h3>Contact Us</h3>
+                    <p>
+                    (+55) 254. 254. 254 <br>Info@lsemajafrica.com Helios Tower 75 Tam
+                    Trinh Algeria,Algeries
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-mobot">
+        <h3>All Right Reserved | MOBOT</h3>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/wicg-inert@latest/dist/inert.min.js"></script>
+    <script src="/Adminmain.js"></script>
+    <script src="/mainHome.js"></script>
+    <script src="/GareMain.js"></script>
+    <script src="/StationMain.js"></script>
+    <script src="/PontMain.js"></script>
+    <script src="/HalteMain.js"></script>
+</body>

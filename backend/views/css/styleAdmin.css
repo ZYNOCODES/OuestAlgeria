@@ -1,0 +1,419 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+:root {
+  --whitecolor: #fff;
+  --secondcolor: #ee7122;
+  --bgcolor: #500707;
+  --bg2color: #0186ad;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.map-container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+nav {
+  z-index: 2;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  background-color: rgba(30, 30, 30, 0.5);
+}
+
+.add-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 62px;
+  cursor: pointer;
+}
+
+.add-btn h2 {
+  font-size: 30px;
+  line-height: 45px;
+  font-weight: 600;
+  color: rgba(30, 30, 30, 0.8);
+}
+
+.sign{
+  width: 86px;
+  height: 38px;
+  border-radius: 20px;
+  background-color: rgba(208, 2, 27, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 40px;
+  cursor: pointer;
+}
+
+.sign:hover{
+  background-color: rgba(208, 2, 27, 1);
+  transition: 1s all ease;
+}
+
+.sign a {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 18px;
+  color: #fff;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+#map {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+#decorative-map {
+  position: absolute;
+  top: 150px;
+}
+
+.new-article-class {
+  width: 535px;
+  padding-bottom: 45px;
+  height: calc(100vh - 100px);
+  position: absolute;
+  top: 100px;
+  left: 0;
+  background-color: #fff;
+  border-radius: 0px 40px 40px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+  overflow: scroll;
+  overflow-x: hidden;
+  display: none;
+}
+
+
+.new-article-active .new-article-class {
+  display: flex;
+}
+
+.new-article-class::-webkit-scrollbar {
+  width: 0px;
+}
+
+.close-class {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  background-color: rgba(96, 96, 96, 1);
+  position: absolute;
+  top: 26px;
+  left: 480px;
+  cursor: pointer;
+  border-radius: 50%;
+  opacity: 0.6;
+}
+
+.close-class:hover {
+  opacity: 1;
+  transition: all 1s ease;
+}
+
+.close-class i {
+  color: #fff;
+  font-size: 16px;
+}
+
+.new-article-class h2 {
+  font-size: 40px;
+  color: rgba(96, 96, 96, 1);
+  line-height: 63.4px;
+  font-weight: 400;
+  text-transform: capitalize;
+  margin-top: 45px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+  margin-top: 71px;
+  width: 411px;
+}
+
+form input,
+form textarea {
+  outline: none;
+  border: none;
+  width: 411px;
+  height: 60px;
+  border-radius: 20px;
+  padding-left: 23px;
+  font-size: 12px;
+  background-color: rgba(238, 243, 244, 1);
+}
+
+form textarea {
+  padding-top: 19px;
+}
+
+.link-tasili,
+.add-document-class {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+form a,
+.add-document-class span,
+.add-photo-class span {
+  font-weight: 400;
+  text-decoration: none;
+  font-size: 10px;
+  line-height: 15px;
+  color: rgba(153, 153, 153, 1);
+  margin-left: 22px;
+  cursor: pointer;
+}
+
+.add-photo-class {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  width: 450px;
+}
+
+.photos-class {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  width: 359px;
+  height: 49px;
+  background: linear-gradient(180deg, #eef3f4 25%, rgba(238, 243, 244, 0) 100%);
+  border-radius: 20px;
+}
+
+#details {
+  height: 611px;
+}
+
+.photo-item {
+  width: 44px;
+  height: 48px;
+  border-radius: 5px;
+  background: linear-gradient(
+    180deg,
+    #d9d9d9 0%,
+    rgba(217, 217, 217, 0) 57.29%
+  );
+}
+
+.add-donnee-button {
+  width: 86px;
+  height: 38px;
+  margin-top: 20px;
+  border-radius: 20px;
+  background-color: rgba(30, 30, 30, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-donnee-button input{
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  border-radius: 20px;
+  height: 38px;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 18px;
+  color: #fff;
+  text-decoration: none;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.add-donnee-button:hover {
+  background-color: rgba(30, 30, 30, 1);
+  transition: 1s all ease;
+}
+.LocationDisplay{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  color: #500707;
+}
+.LocationDisplay input{
+  width: 150px;
+  align-self: center;
+  align-content: center;
+  text-align: center;
+  color: #500707;
+}
+h5
+{
+  margin:0px;
+  font-size:1.4em;
+  font-weight:700;
+}
+
+p
+{
+  font-size:12px;
+}
+
+.center
+{
+  height:100%;
+  width:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* End Non-Essential  */
+
+.property-card
+{
+  height:20em;
+  width:100%;
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-orient:vertical;
+  -webkit-box-direction:normal;
+  -ms-flex-direction:column;
+  flex-direction:column;
+  position:relative;
+  -webkit-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -o-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  border-radius:16px;
+  overflow:hidden;
+}
+/* ^-- The margin bottom is necessary for the drop shadow otherwise it gets clipped in certain cases. */
+
+/* Top Half of card, image. */
+
+.property-image
+{
+  height:8em;
+  width:100%;
+  padding:1em 2em;
+  position:Absolute;
+  top:0px;
+  -webkit-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -o-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  background-image:url('https://cdn.photographylife.com/wp-content/uploads/2017/01/What-is-landscape-photography.jpg');
+  background-size:cover;
+  background-repeat:no-repeat;
+}
+.property-image input{
+  width: 10em;
+  height: 3em;
+  align-self: center;
+  align-content: center;
+  text-align: center;
+  color: #500707;
+  text-decoration: none;
+  font-size: 1.4em;
+  margin-top: 2em;
+}
+/* Bottom Card Section */
+
+.property-description
+{
+  background-color: #FAFAFC;
+  height:14em;
+  width:100%;
+  position:absolute;
+  bottom:0em;
+  -webkit-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -o-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  padding: 0.5em 1em;
+  text-align:center;
+}
+
+/* Social Icons */
+
+.property-social-icons
+{
+  width:1em;
+  height:1em;
+  background-color:black;
+  position:absolute;
+  bottom:1em;
+  left:1em;
+  -webkit-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -o-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+/* Property Cards Hover States */
+
+.property-card:hover .property-description
+{
+  height:0em;
+  padding:0px 1em;
+}
+.property-card:hover .property-image
+{
+  height:20em;
+}
+
+.property-card:hover .property-social-icons
+{
+  background-color:white;
+}
+
+.property-card:hover .property-social-icons:hover
+{
+  background-color:blue;
+  cursor:pointer;
+}
+
+.property-image-title
+{
+text-align:center;
+position:Relative;
+top:30%;
+opacity:0;
+transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s;
+color:black;
+font-size:1.2em;
+}
+
+.property-card:hover .property-image-title
+{
+opacity:1;
+}
+
+

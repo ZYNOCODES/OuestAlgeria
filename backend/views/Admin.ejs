@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/styleAdmin.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    />
+    <title>Ouest Algerien</title>
+  </head>
+  <body>
+    <section class="map-container">
+      <nav>
+        <h2>LOGO</h2>
+        <div class="add-btn" id="add-btn">
+          <h2>+</h2>
+        </div>
+        <div class="sign">
+          <a href="/user/logout">log out</a>
+        </div>
+      </nav>
+      <div id="map"></div>
+      <div id="decorative-map" inert></div>
+      <div class="new-article-class">
+        <div class="close-class" id="close-class">
+          <i class="fa-solid fa-x"></i>
+        </div>
+        <h2>new article</h2>
+        <form action="">
+          <input type="text" name="title" id="title" placeholder="Title" />
+          <textarea
+            name="description"
+            id="description"
+            placeholder="Description"
+          ></textarea>
+          <input
+            type="text"
+            name="location"
+            id="location"
+            placeholder="Location"
+          />
+          <input type="text" name="link" id="link" placeholder="Link" />
+          <div class="link-tasili">
+            <a href="https://www.facebook.com/ONPCTA/"
+              >•
+              <u
+                >Page Facebook de l'Office national du parc culturel du tassili
+                n'ajjer</u
+              >
+            </a>
+            <a href="https://www.protectedplanet.net/4999"
+              >• <u>Protectedplanet.net</u>
+            </a>
+          </div>
+          <input type="file" placeholder="Document" />
+          <div class="add-document-class">
+            <span>• Document1.pdf</span>
+            <span>• Document2.pdf</span>
+          </div>
+          <input type="file" />
+          <div class="add-photo-class">
+            <div class="photos-class">
+              <div class="photo-item"></div>
+              <div class="photo-item"></div>
+              <div class="photo-item"></div>
+              <div class="photo-item"></div>
+              <div class="photo-item"></div>
+              <div class="photo-item"></div>
+            </div>
+            <span>3 photo</span>
+          </div>
+          <textarea name="details" id="details" placeholder="Details"></textarea>
+          <div class="add-donnee-button">
+            <input type="submit" value="add" id="add-donnee">
+          </div>
+        </form>
+        
+      </div>
+    </section>
+
+    
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/wicg-inert@latest/dist/inert.min.js"></script>
+    <script src="/Adminmain.js"></script>
+    
+  </body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/styleDocuments.css" />
+    <title>Ouest-Algerien</title>
+  </head>
+  <body>
+    <section class="documents">
+      <nav>
+        <a class="logo" href="#">LOGO</a>
+        <ul>
+          <li><a href="/">home</a></li>
+          <li class="home-list"><a href="/Documents" id="liste">documents</a></li>
+          <li><a href="#" id="liste">about us</a></li>
+          <li><a href="/Contact" id="liste">contact us</a></li>
+        </ul>
+      </nav>
+      <div class="documents-container">
+        <div class="documents-left">
+          <% if (place) { %>
+              <div class="document-item">
+                <div class="image">
+                    <img src="../../images/ouest-algerien.jpg" alt="" />
+                </div>
+                <div class="item-description">
+                  <h4><%=place.Nom %></h4>
+                  <h3><%=place.Type %></h3>
+                  <span>1mo ago</span>
+                </div>
+              </div>
+          <% } %>
+        </div>
+
+        <div class="documents-right">
+          <div class="search-class">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="search" placeholder="Search" />
+          </div>
+          <div class="documents-right-container">
+            <button>Filter</button>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <div class="footer-items">
+          <div class="footer-item LOGO">
+            <h2>LOGO</h2>
+            <p>
+              Mobot is an online education platform that delivers video courses,
+              programs and resources.
+            </p>
+            <div class="footer-social-media">
+              <div class="social-media-item facebook">
+                <a href="#">
+                  <i class="fa-brands fa-facebook-f"></i>
+                </a>
+              </div>
+              <div class="social-media-item twitter">
+                <a href="#">
+                  <i class="fa-brands fa-twitter"></i>
+                </a>
+              </div>
+              <div class="social-media-item youtube">
+                <a href="#">
+                  <i class="fa-brands fa-youtube"></i>
+                </a>
+              </div>
+              <div class="social-media-item dribbble">
+                <a href="#">
+                  <i class="fa-brands fa-dribbble"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="footer-item quicklinks">
+            <h3>quicklinks</h3>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Documents</a></li>
+              <li><a href="#">Gallery</a></li>
+              <li><a href="#">About us</a></li>
+              <li><a href="#">Contact us</a></li>
+            </ul>
+          </div>
+          <div class="footer-item contact">
+            <h3>Contact Us</h3>
+            <p>
+              (+55) 254. 254. 254 <br />Info@lsemajafrica.com Helios Tower 75 Tam
+              Trinh Algeria,Algeries
+            </p>
+          </div>
+          <div class="footer-item terms">
+            <p>Terms and Conditions Faq</p>
+          </div>
+        </div>
+        <div class="footer-mobot">
+          <h3>All Right Reserved | MOBOT</h3>
+        </div>
+      </footer>
+    </section>
+  </body>
+</html>
