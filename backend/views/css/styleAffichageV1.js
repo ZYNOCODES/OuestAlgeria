@@ -7,26 +7,21 @@ var AllContainer = document.getElementById("Container");
 
 
 ListeBare.addEventListener('click', () => {
-    console.log('hello');
     AllContainer.classList.toggle("ListeBareToggle");
 });
 
 EdificeBare.addEventListener('click', () => {
-    console.log('hello');
     AllContainer.classList.toggle("EdificeBareToggle");
 });
 
 ActeurBare.addEventListener('click', () => {
-    console.log('hello');
     AllContainer.classList.toggle("ActeurBareToggle");
 });
 
 GalerieBare.addEventListener('click', () => {
-    console.log('hello');
     AllContainer.classList.toggle("GalerieBareToggle");
 });
 
 DocumentationBare.addEventListener('click', () => {
-    console.log('hello');
     AllContainer.classList.toggle("DocumentationBareToggle");
 });
