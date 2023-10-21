@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    />
+    <title>Ouest-Algerien</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  </head>
+<body>
+    <section class="GareFerroviaires">
+        <nav>
+            <div class="back-btn">
+                <a href="#">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </a>
+            </div>
+            <h3>Gares Ferroviaires</h3>
+        </nav>
+
+        <div class="Container" id="Container">
+            <div class="Bar" id="ListeBar">
+                <span>
+                    Liste
+                </span>
+            </div>
+            <div class="listeBars">
+                <div class="Bar" id="EdificeBare">
+                    <span>
+                        Edifice
+                    </span>
+                </div>
+                <div class="edifice-container">
+                    <h2>Chemin De Fer " Sidi-Bel-Abbes À Akid Abbes "</h2>
+                    <p>
+                        La Ligne De Chemin De Fer « Sidi-Bel-Abbes-Akid-Abbes » Permet De Traverser 156 Km De Longueur À Travers Le Passage Entre Les Grandes Gares De Sidi-Bel-Abbès, De Tlemcen Et De Maghnia Ainsi Que Des Ponts Monumentaux Tels Que Les Ponts D’el-Ourit De 86M D’ouverture, Le Viaduc Sur L'oued Ain Tellout De 115M.30 D'ouverture À 8 Arches De 10M, Et Le Viaduc Sur L'oued Tralimet De 182M.20 En 4 Travées.
+                        Elle Rassemble 2 Sections Ferroviaires La Première De Sidi-Bel-Abbès À Tlemcen Avec Une Longueur De 87 Km Totalise 2 Gares, 10 Stations, 5 Tunnels,5 Viaducs Et 15Ponts. La Deuxième Section De Tlemcen À Maghnia Avec Une Longueur De 69 Km Comporte 2 Gares, 6 Stations, 9
+                        Tunnels, 7 Viaducs Et 4 Ponts.  Elle Incarne Des Réalisations Architecturales Et De Génie Civil En Harmonie Avec Les Paysages Qu’elles Traversent.
+    
+                    </p>
+                </div>
+                <div class="edificeBares">
+                    <div class="Bar" id="ActeurBare">
+                        <span>
+                            Acteurs
+                        </span>
+                    </div>
+                    <div class="acteur-container">
+                        <h2>Chemin De Fer " Sidi-Bel-Abbes À Akid Abbes "</h2>
+                        <p>
+                            La Ligne De Chemin De Fer « Sidi-Bel-Abbes-Akid-Abbes » Permet De Traverser 156 Km De Longueur À Travers Le Passage Entre Les Grandes Gares De Sidi-Bel-Abbès, De Tlemcen Et De Maghnia Ainsi Que Des Ponts Monumentaux Tels Que Les Ponts D’el-Ourit De 86M D’ouverture, Le Viaduc Sur L'oued Ain Tellout De 115M.30 D'ouverture À 8 Arches De 10M, Et Le Viaduc Sur L'oued Tralimet De 182M.20 En 4 Travées.
+                            Elle Rassemble 2 Sections Ferroviaires La Première De Sidi-Bel-Abbès À Tlemcen Avec Une Longueur De 87 Km Totalise 2 Gares, 10 Stations, 5 Tunnels,5 Viaducs Et 15Ponts. La Deuxième Section De Tlemcen À Maghnia Avec Une Longueur De 69 Km Comporte 2 Gares, 6 Stations, 9
+                            Tunnels, 7 Viaducs Et 4 Ponts.  Elle Incarne Des Réalisations Architecturales Et De Génie Civil En Harmonie Avec Les Paysages Qu’elles Traversent.
+        
+                        </p>
+                    </div>
+
+                    <div class="acteurBares">
+                        <div class="Bar" id="GalerieBare">
+                            <span>
+                                Galerie
+                            </span>
+                        </div>
+                        <div class="galerie-container">
+                            <h2>Chemin De Fer " Sidi-Bel-Abbes À Akid Abbes "</h2>
+                            <p>
+                                La Ligne De Chemin De Fer « Sidi-Bel-Abbes-Akid-Abbes » Permet De Traverser 156 Km De Longueur À Travers Le Passage Entre Les Grandes Gares De Sidi-Bel-Abbès, De Tlemcen Et De Maghnia Ainsi Que Des Ponts Monumentaux Tels Que Les Ponts D’el-Ourit De 86M D’ouverture, Le Viaduc Sur L'oued Ain Tellout De 115M.30 D'ouverture À 8 Arches De 10M, Et Le Viaduc Sur L'oued Tralimet De 182M.20 En 4 Travées.
+                                Elle Rassemble 2 Sections Ferroviaires La Première De Sidi-Bel-Abbès À Tlemcen Avec Une Longueur De 87 Km Totalise 2 Gares, 10 Stations, 5 Tunnels,5 Viaducs Et 15Ponts. La Deuxième Section De Tlemcen À Maghnia Avec Une Longueur De 69 Km Comporte 2 Gares, 6 Stations, 9
+                                Tunnels, 7 Viaducs Et 4 Ponts.  Elle Incarne Des Réalisations Architecturales Et De Génie Civil En Harmonie Avec Les Paysages Qu’elles Traversent.
+            
+                            </p>
+                        </div>
+
+                        <div class="galerieBares">
+                            <div class="Bar" id="DocumentationBare">
+                                <span>
+                                    Documentation
+                                </span>
+                            </div>
+                            <div class="documentation-container">
+                                <h2>Chemin De Fer " Sidi-Bel-Abbes À Akid Abbes "</h2>
+                                <p>
+                                    La Ligne De Chemin De Fer « Sidi-Bel-Abbes-Akid-Abbes » Permet De Traverser 156 Km De Longueur À Travers Le Passage Entre Les Grandes Gares De Sidi-Bel-Abbès, De Tlemcen Et De Maghnia Ainsi Que Des Ponts Monumentaux Tels Que Les Ponts D’el-Ourit De 86M D’ouverture, Le Viaduc Sur L'oued Ain Tellout De 115M.30 D'ouverture À 8 Arches De 10M, Et Le Viaduc Sur L'oued Tralimet De 182M.20 En 4 Travées.
+                                    Elle Rassemble 2 Sections Ferroviaires La Première De Sidi-Bel-Abbès À Tlemcen Avec Une Longueur De 87 Km Totalise 2 Gares, 10 Stations, 5 Tunnels,5 Viaducs Et 15Ponts. La Deuxième Section De Tlemcen À Maghnia Avec Une Longueur De 69 Km Comporte 2 Gares, 6 Stations, 9
+                                    Tunnels, 7 Viaducs Et 4 Ponts.  Elle Incarne Des Réalisations Architecturales Et De Génie Civil En Harmonie Avec Les Paysages Qu’elles Traversent.
+                
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="liste-container">
+                <div class="left-liste-du-patrimoine-first">
+                    <div id="map" class="leaflet-map"></div>
+                </div>
+                <div class="right-liste-du-patrimoine">
+                    <div class="right-header">
+                        <div class="line2-col2-line1">
+                            <img src="https://lesplusbeauxdrapeauxdumonde.files.wordpress.com/2016/11/algeria-1219746_1280.jpg?w=692&amp;h=390">
+                            <span>Algerie</span>
+                        </div>
+                        <span>Ancien_Nom: <p>oran</p></span>
+                        <span>CodeWilay : <p>31</p></span>
+                        <span>CodeCommu : <p>31</p></span>
+                        <span>PositionKm: <p>245353653km</p></span>
+                        <span>LigneFerro: <p>5378633</p></span>
+                        <span>StyleArchi: <p>37883783</p></span>
+                        <span>Ancien_Nom: <p>oran</p></span>
+                        <span>CodeWilay : <p>31</p></span>
+                        <span>CodeCommu : <p>31</p></span>
+                        <span>PositionKm: <p>245353653km</p></span>
+                        <span>LigneFerro: <p>5378633</p></span>
+                        <span>StyleArchi: <p>37883783</p></span>
+                    </div>
+                </div>
+            </div>
+
+            
+
+
+        </div>
+    </section>
+
+    <script src="./css/main.js"></script>
+</body>
+</html>
