@@ -55,6 +55,16 @@ document.addEventListener("DOMContentLoaded", function () {
         iconSize: [25, 41],
         iconAnchor:   [12, 41],
     });
+    var ViaducIcon = L.icon({
+      iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-yellow.png',
+      iconSize: [25, 41],
+      iconAnchor:   [12, 41],
+    });
+    var TunnelIcon = L.icon({
+      iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-black.png',
+      iconSize: [25, 41],
+      iconAnchor:   [12, 41],
+    });
     // Places Data
     const PontsData = [
         {
@@ -849,6 +859,9 @@ document.addEventListener("DOMContentLoaded", function () {
             "PhotoIdent": "D:\\TAROTCOD 2020\\R�daction\\Th�se\\Th�se inchallah\\1e V th�se\\3e Partie Architecture des gare f O.FM\\Maping\\Cartographie O.A\\logiciel\\QGIS G�or�ferencement\\Qgis OA\\PhotosGares Oran-F.du.Marco\\Pont El Ourit.jpg",
             "Categorie": "Viaduc"
     }]
+    const ViaducsData = PontsData.filter(data => data.Categorie === "Viaduc");
+    const UpdatedPontsData = PontsData.filter(data => data.Categorie !== "Viaduc");
+
     // function to add markers to the map
     function addMarkersToMap(data, Icon) {
         data.forEach((JSONData) => {
@@ -880,7 +893,8 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
     function Markers(){
-        addMarkersToMap(PontsData, PontIcon)
+        addMarkersToMap(UpdatedPontsData, PontIcon),
+        addMarkersToMap(ViaducsData, ViaducIcon)
     }
     Markers();
 });

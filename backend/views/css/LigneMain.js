@@ -44,8 +44,52 @@ document.addEventListener("DOMContentLoaded", function () {
         [34.787887688424256,-1.80241009315232],
         [34.68234233656023,-1.92172169537964],
     ];
-    var polyline = L.polyline(lineCoordinates, { color: 'blue', weight: 10 });
-    polyline.addTo(LigneMap);    
+    var nouvelleLigneCoordinates = [
+        [35.54617, -0.45092],
+        [35.5176, -0.3942],
+        [35.465, -0.3854],
+        [35.4367, -0.4098],
+        [35.36235, -0.50765],
+        [35.3123, -0.5545],
+        [35.2789, -0.5850],
+        [35.217, -0.6563],
+        [35.1208, -0.7235],
+        [35.0852, -0.7588],
+        [35.0598, -0.7922],
+        [35.0107, -0.8867],
+        [34.9937, -0.9426],
+        [34.9937, -0.9426],
+        [34.9763, -0.9816],
+        [34.9731, -1.0476],
+        [35.0061, -1.1616],
+        [35.0061, -1.1966],
+        [34.9451, -1.1966],
+        [34.8878, -1.2677],
+        [34.8828, -1.3025], // INTERSECTION GARE DE TLEMCEN
+        [34.8713, -1.3823],
+        [34.9, -1.38],
+        [34.858, -1.468],
+        [34.82705, -1.51568],
+        [34.81467, -1.530813],
+        [34.7984, -1.57626],
+        [34.79335, -1.58606],
+        [34.7723, -1.6209], // INTERSECTION
+        [34.7707, -1.6424], // INTERSECTION
+        [34.7727, -1.6489], // INTERSECTION
+        [34.7802, -1.6625], // INTERSECTION
+        [34.7865, -1.6726],
+        [34.8018, -1.698],
+        [34.8347, -1.7128],
+        [34.84292, -1.72818],
+        [34.8198, -1.763],
+        [34.79943, -1.79242],
+        [34.7891, -1.80262],
+        [34.78502, -1.80768]
+    ];
+    var polyline = L.polyline(lineCoordinates, { color: 'blue', weight: 5 });
+    var Newpolyline = L.polyline(nouvelleLigneCoordinates, { color: 'red', weight: 5 });
+    polyline.addTo(LigneMap); 
+    Newpolyline.addTo(LigneMap);   
     //colors
     const PrimaryColor = 'red'
     const FillColor = '#f03'

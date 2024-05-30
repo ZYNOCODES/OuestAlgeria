@@ -229,15 +229,31 @@ header {
   border-radius: 50%;
 }
 
+.circle-categorie-ovrage {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+
 .categorie:first-child .circle-categorie {
   background-color: red;
 }
 .categorie:nth-child(2) .circle-categorie {
-  background-color: yellow;
+  background-color: rgb(255, 0, 255);
 }
 .categorie:last-child .circle-categorie {
-  background-color: green;
+  background-color: rgb(21, 211, 21);
 }
+.categorie:first-child .circle-categorie-ovrage {
+  background-color: yellow;
+}
+.categorie:nth-child(2) .circle-categorie-ovrage {
+  background-color: black;
+}
+.categorie:last-child .circle-categorie-ovrage {
+  background-color: rgb(0, 180, 203);
+}
+
 .types{
   margin-inline-start: 5px;
   display: flex;

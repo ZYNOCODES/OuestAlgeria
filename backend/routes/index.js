@@ -29,7 +29,7 @@ router.get("/", async (req, res) => {
     }
 });
 
-router.get("/user/Admin",ensureAuthenticated, (req, res) => {
+router.get("/Carte", (req, res) => {
     return res.render('Admin');
 });
 

@@ -68,6 +68,21 @@ var PontIcon = L.icon({
     iconSize: [25, 41],
     iconAnchor:   [12, 41],
 });
+var PontIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',
+  iconSize: [25, 41],
+  iconAnchor:   [12, 41],
+});
+var ViaducIcon = L.icon({
+iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-yellow.png',
+iconSize: [25, 41],
+iconAnchor:   [12, 41],
+});
+var TunnelIcon = L.icon({
+iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-black.png',
+iconSize: [25, 41],
+iconAnchor:   [12, 41],
+});
 // Places Data
 const PontsData = [
     {
@@ -1521,6 +1536,8 @@ const haltesData = [
         "Nom": "Sidi-Medjahed"
       }
 ]
+const ViaducsData = PontsData.filter(data => data.Categorie === "Viaduc");
+const UpdatedPontsData = PontsData.filter(data => data.Categorie !== "Viaduc");
 // function to add markers to the map
 function addMarkersToMap(data, Icon) {
     data.forEach((JSONData) => {
@@ -1552,7 +1569,8 @@ function addMarkersToMap(data, Icon) {
     });
 }
 function Markers(){
-    addMarkersToMap(PontsData, PontIcon)
+    addMarkersToMap(UpdatedPontsData, PontIcon)
+    addMarkersToMap(ViaducsData, ViaducIcon)
     addMarkersToMap(GarsData, GarsIcon)
     addMarkersToMap(StationsData, StationIcon)
     addMarkersToMap(haltesData, HalteIcon)

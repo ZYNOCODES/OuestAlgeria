@@ -207,10 +207,10 @@ header div{
   background-color: red;
 }
 .categorie:nth-child(2) .circle-categorie {
-  background-color: yellow;
+  background-color: rgb(255, 0, 255);
 }
 .categorie:last-child .circle-categorie {
-  background-color: green;
+  background-color: rgb(21, 211, 21);
 }
 .types{
   margin-inline-start: 5px;
