@@ -43,16 +43,60 @@ document.addEventListener("DOMContentLoaded", function () {
         [34.787887688424256,-1.80241009315232],
         [34.68234233656023,-1.92172169537964],
     ];
-    var polyline = L.polyline(lineCoordinates, { color: 'blue', weight: 10 });
-    polyline.addTo(StationMap);    
+    var polyline = L.polyline(lineCoordinates, { color: 'blue', weight: 5 });
+    polyline.addTo(StationMap);  
+    var nouvelleLigneCoordinates = [
+      [35.54617, -0.45092],
+      [35.5176, -0.3942],
+      [35.465, -0.3854],
+      [35.4367, -0.4098],
+      [35.36235, -0.50765],
+      [35.3123, -0.5545],
+      [35.2789, -0.5850],
+      [35.217, -0.6563],
+      [35.1208, -0.7235],
+      [35.0852, -0.7588],
+      [35.0598, -0.7922],
+      [35.0107, -0.8867],
+      [34.9937, -0.9426],
+      [34.9937, -0.9426],
+      [34.9763, -0.9816],
+      [34.9731, -1.0476],
+      [35.0061, -1.1616],
+      [35.0061, -1.1966],
+      [34.9451, -1.1966],
+      [34.8878, -1.2677],
+      [34.8828, -1.3025], // INTERSECTION GARE DE TLEMCEN
+      [34.8713, -1.3823],
+      [34.9, -1.38],
+      [34.858, -1.468],
+      [34.82705, -1.51568],
+      [34.81467, -1.530813],
+      [34.7984, -1.57626],
+      [34.79335, -1.58606],
+      [34.7723, -1.6209], // INTERSECTION
+      [34.7707, -1.6424], // INTERSECTION
+      [34.7727, -1.6489], // INTERSECTION
+      [34.7802, -1.6625], // INTERSECTION
+      [34.7865, -1.6726],
+      [34.8018, -1.698],
+      [34.8347, -1.7128],
+      [34.84292, -1.72818],
+      [34.8198, -1.763],
+      [34.79943, -1.79242],
+      [34.7891, -1.80262],
+      [34.78502, -1.80768]
+    ];
+    var Newpolyline = L.polyline(nouvelleLigneCoordinates, { color: 'red', weight: 5 });
+    Newpolyline.addTo(StationMap);   
     //colors
-    const PrimaryColor = 'red'
-    const FillColor = '#f03'
+    const PrimaryColor = 'gold'
+    const FillColor = 'rgba(255, 230, 0, 0.765)'
     //icons
     var StationIcon = L.icon({
         iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-violet.png',
-        iconSize: [25, 41],
-        iconAnchor:   [12, 41],
+        iconSize: [15, 25],
+        iconAnchor:   [7, 24],
     });
     // Places Data
     const StationsData = [
@@ -509,14 +553,16 @@ document.addEventListener("DOMContentLoaded", function () {
             // Add popup message
             const id = JSONData._id.$oid;
             const template = `
-                <div style="text-align:center" class="LocationDisplay">
-                    <form method="POST" action="/places/${id}">
-                        <h1>${JSONData.Nom}</h1>
-                        <h2>Location:</h2>
-                        <h3>${lat + ', ' + lon}</h3>
-                        <input type="submit" value="voir"/>
-                    </form>
-                </div>
+            <div style="text-align:center">
+              <form class="map-LocationDisplayer" method="POST" action="/places/${id}">
+                  <h1>${JSONData.Nom}</h1>
+                  <div class="Location">
+                    <h2>Location:</h2>
+                    <h3>${lat + ', ' + lon}</h3>
+                  </div>
+                  <input class="voir-map-btn" type="submit" value="voir"/>
+              </form>
+            </div>
             `;
             Place.bindPopup(template);
         });

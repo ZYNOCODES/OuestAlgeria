@@ -5,6 +5,10 @@
   --secondcolor: #ee7122;
   --bgcolor: #500707;
   --bg2color: #0186ad;
+  --titlecolor: #393d48;
+  --bgItemcolor: #eef3f4;
+  --darkcolor: #000;
+  --bgbutton: #33a4e7;
 }
 
 * {
@@ -260,22 +264,6 @@ form a,
   background-color: rgba(30, 30, 30, 1);
   transition: 1s all ease;
 }
-.LocationDisplay{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  color: #500707;
-}
-.LocationDisplay input{
-  width: 150px;
-  align-self: center;
-  align-content: center;
-  text-align: center;
-  color: #500707;
-}
 h5
 {
   margin:0px;
@@ -417,3 +405,31 @@ opacity:1;
 }
 
 
+.map-LocationDisplayer{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background-color: #fff;
+  border-radius: 20px;
+
+}
+.Location h3{
+  font-size: clamp(8px, 12px, 14px);
+  color: rgb(131, 131, 131);
+}
+.voir-map-btn{
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  background-color: var(--bgbutton);
+  color: white;
+  padding: 10px 30px;
+  font-size: clamp(8px, 12px, 14px);
+  font-weight: 400;
+  border-radius: 10px;
+}

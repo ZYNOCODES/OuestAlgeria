@@ -49,10 +49,9 @@ router.get("/Gares", async (req, res) => {
     try {
         const result = await Place.find({});
         if (result) {
-            const Gare = result.filter(place => place.Type === "Gare Terminus");
-            const Station = result.filter(place => place.Type === "Station Intermediaire");
-            const Halte = result.filter(place => place.Type === "Halte");
-            return res.render('Gares', { Gare, Station, Halte});
+            const validTypes = ["Gare Terminus", "Station Intermediaire", "Halte"];
+            const Gare = result.filter(place => validTypes.includes(place.Type));
+            return res.render('Gares', {Gare});
         } else {
             return res.status(404).json({ error: 'Places not found' });
         }
@@ -91,6 +90,8 @@ router.get("/:id", async (req, res) => {
     try {
         const result = await Place.findOne({ _id: id });
         if (result) {
+            console.log(result.data);
+            console.log(result.data.amelioration_installations_ancien_BV);
             return res.render('AffichageV1', { place: result });
         } else {
             return res.status(404).json({ error: 'Place not found' });

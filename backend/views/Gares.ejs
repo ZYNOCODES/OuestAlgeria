@@ -99,23 +99,13 @@
                 <div class="left-footer">
                     <h2>Gares ferroviaire :</h2>
                     <div class="left-footer-container">
-                        <% if ((Gare && Gare.length > 0)
-                            || (Station && Station.length > 0) 
-                            || (Halte && Halte.length > 0)) { %>
+                        <% if ((Gare && Gare.length > 0)) { %>
                             <% Gare.forEach(function(Gare) { %>
-                                <h4>
-                                <div class="line"></div><%= Gare.Nom %>
-                                </h4>
-                            <% }); %>
-                            <% Station.forEach(function(Station) { %>
-                                <h4>
-                                <div class="line"></div><%= Station.Nom %>
-                                </h4>
-                            <% }); %>
-                            <% Halte.forEach(function(Halte) { %>
-                                <h4>
-                                <div class="line"></div><%= Halte.Nom %>
-                                </h4>
+                                <a href='/<%= Gare._id %>' style="text-decoration: none;">
+                                    <h4>
+                                        <%= Gare.Nom %>
+                                    </h4>
+                                </a>
                             <% }); %>
                         <% } else { %>
                         <h4>No Ponts found.</h4>

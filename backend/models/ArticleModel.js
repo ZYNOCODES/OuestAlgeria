@@ -141,6 +141,84 @@ const placesSchema = new mongoose.Schema({
         require: false,
         nullable: true,
     },
+    data:{
+        edifice: {
+            type: String,
+            require: false,
+            nullable: true,
+        },
+        acteurs: {
+            ancienneGare: {
+                compagnie: {
+                    type: String,
+                    require: false,
+                    nullable: true,
+                },
+                hall_et_modification_etage_BV:{
+                    type: String,
+                    require: false,
+                    nullable: true,
+                }
+            },
+            nouvelleGare: {
+                compagnie: {
+                    type: String,
+                    require: false,
+                    nullable: true,
+                },
+            },
+            architecte: {
+                type: String,
+                require: false,
+                nullable: true,
+            },
+        },
+        mise_en_service_ancienne_gare: {
+            type: String,
+            require: false,
+            nullable: true,
+        },
+        demolition_ancien_BV: {
+            type: String,
+            require: false,
+            nullable: true,
+        },
+        mise_en_service_nouveau_BV: {
+            type: String,
+            require: false,
+            nullable: true,
+        },
+        proposition_ancien_BV: {
+            type: String,
+            require: false,
+            nullable: true,
+        },
+        projet_ancien_BV: {
+            type: String,
+            require: false,
+            nullable: true,
+        },
+        amelioration_installations_ancien_BV: {
+            type: String,
+            require: false,
+            nullable: true,
+        },
+        projet_modernisation_BV: {
+            type: String,
+            require: false,
+            nullable: true,
+        },
+    },
+    galerie: [{
+        type: String,
+        require: false,
+        nullable: true,
+    }],
+    documentations: [{
+        type: String,
+        require: false,
+        nullable: true,
+    }],
 });
 
 const places = mongoose.model('places', placesSchema);
