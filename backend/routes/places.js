@@ -1,7 +1,8 @@
 const express = require('express');
 const {
     GetAllPlaces,
-    PlaceById
+    PlaceById,
+    UpdateByID
 } = require('../controllers/PlacesController');
 const router = express.Router();
 
@@ -9,5 +10,7 @@ const router = express.Router();
 router.post('/:id', PlaceById);
 //get place by id
 router.get('/All/all', GetAllPlaces);
+//update place by id
+router.patch('/update', UpdateByID);
 
 module.exports = router;

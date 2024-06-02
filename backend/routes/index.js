@@ -82,6 +82,9 @@ router.get("/Ouvrages", async (req, res) => {
         return res.status(500).json({ error: err.message });
     }
 });
+router.get("/Galerie", async (req, res) => {
+    return res.render('Galerie');
+});
 router.get("/Valorisation", async (req, res) => {
     return res.render('Valorisation');
 });
@@ -90,8 +93,6 @@ router.get("/:id", async (req, res) => {
     try {
         const result = await Place.findOne({ _id: id });
         if (result) {
-            console.log(result.data);
-            console.log(result.data.amelioration_installations_ancien_BV);
             return res.render('AffichageV1', { place: result });
         } else {
             return res.status(404).json({ error: 'Place not found' });
@@ -108,5 +109,6 @@ router.post("/:type", async (req, res) => {
         res.json({ message: err });
     }
 });
+
 
 module.exports = router;

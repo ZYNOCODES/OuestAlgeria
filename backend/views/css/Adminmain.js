@@ -43,7 +43,7 @@ var lineCoordinates = [
     [34.787887688424256,-1.80241009315232],
     [34.68234233656023,-1.92172169537964],
 ];
-var polyline = L.polyline(lineCoordinates, { color: 'blue', weight: 5 }).addTo(map);
+var polyline = L.polyline(lineCoordinates, { color: 'black', weight: 5 }).addTo(map);
 var nouvelleLigneCoordinates = [
   [35.54617, -0.45092],
   [35.5176, -0.3942],

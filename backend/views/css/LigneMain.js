@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
         [34.7891, -1.80262],
         [34.78502, -1.80768]
     ];
-    var polyline = L.polyline(lineCoordinates, { color: 'blue', weight: 5 });
+    var polyline = L.polyline(lineCoordinates, { color: 'black', weight: 5 });
     var Newpolyline = L.polyline(nouvelleLigneCoordinates, { color: 'red', weight: 5 });
     polyline.addTo(LigneMap); 
     Newpolyline.addTo(LigneMap);   

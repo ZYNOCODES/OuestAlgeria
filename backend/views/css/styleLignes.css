@@ -203,13 +203,13 @@ header div{
 }
 
 .categorie:first-child .circle-categorie {
-  background-color: red;
+  background-color: black;
 }
 .categorie:nth-child(2) .circle-categorie {
-  background-color: yellow;
+  background-color: red;
 }
 .categorie:last-child .circle-categorie {
-  background-color: green;
+  background-color: red;
 }
 .types{
   margin-inline-start: 5px;

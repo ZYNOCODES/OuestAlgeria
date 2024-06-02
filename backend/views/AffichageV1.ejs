@@ -114,13 +114,20 @@
                                     <i class="fa-solid fa-chevron-down"></i>
                                 </div>
                                 <div class="galerie-container">
-                                    <h2>Chemin De Fer " Sidi-Bel-Abbes À Akid Abbes "</h2>
-                                    <p>
-                                        La Ligne De Chemin De Fer « Sidi-Bel-Abbes-Akid-Abbes » Permet De Traverser 156 Km De Longueur À Travers Le Passage Entre Les Grandes Gares De Sidi-Bel-Abbès, De Tlemcen Et De Maghnia Ainsi Que Des Ponts Monumentaux Tels Que Les Ponts D’el-Ourit De 86M D’ouverture, Le Viaduc Sur L'oued Ain Tellout De 115M.30 D'ouverture À 8 Arches De 10M, Et Le Viaduc Sur L'oued Tralimet De 182M.20 En 4 Travées.
-                                        Elle Rassemble 2 Sections Ferroviaires La Première De Sidi-Bel-Abbès À Tlemcen Avec Une Longueur De 87 Km Totalise 2 Gares, 10 Stations, 5 Tunnels,5 Viaducs Et 15Ponts. La Deuxième Section De Tlemcen À Maghnia Avec Une Longueur De 69 Km Comporte 2 Gares, 6 Stations, 9
-                                        Tunnels, 7 Viaducs Et 4 Ponts.  Elle Incarne Des Réalisations Architecturales Et De Génie Civil En Harmonie Avec Les Paysages Qu’elles Traversent.
-                    
-                                    </p>
+                                    <% if (place.galerie.length > 0){ %>
+                                        <div class="container">
+                                            <div class="gallery">
+                                                <% for (let i = 0; i < place.galerie.length; i++){ %>
+                                                    <div class="gallery-item">
+                                                        <img src="/images/<%= place.galerie[i] %>" alt="<%= place.galerie[i] %>" />
+                                                        <h3><%= place.galerie[i] %></h3>
+                                                    </div>
+                                                <% } %>
+                                            </div>
+                                        </div>
+                                    <% } else { %>
+                                        no image is available
+                                    <% } %>
                                 </div>
                                 <div class="galerieBares">
                                     <div class="Bar" id="DocumentationBare">
