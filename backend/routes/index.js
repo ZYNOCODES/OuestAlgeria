@@ -82,6 +82,41 @@ router.get("/Ouvrages", async (req, res) => {
         return res.status(500).json({ error: err.message });
     }
 });
+router.get("/Viaduc", async (req, res) => {
+    try {
+        const result = await Place.find({});
+        if (result) {
+            const viaduc = result.filter(place => 
+                (place.Type === "Viaduc en maconnerie")||
+                (place.Type === "maconnerie")||
+                (place.Type === "Viaduc metallique")
+            );
+            return res.render('Viaduc', { Viaduc : viaduc});
+        } else {
+            return res.status(404).json({ error: 'Places not found' });
+        }
+    } catch (err) {
+        return res.status(500).json({ error: err.message });
+    }
+});
+router.get("/Pont", async (req, res) => {
+    try {
+        const result = await Place.find({});
+        if (result) {
+            const ponts = result.filter(place => 
+                (place.Type === "Pont")||
+                (place.Type === "Pont Metallique")||
+                (place.Type === "Pont metallique")||
+                (place.Type === "Pont Metallique en Arc")
+            );
+            return res.render('Pont', { Pont : ponts});
+        } else {
+            return res.status(404).json({ error: 'ponts not found' });
+        }
+    } catch (err) {
+        return res.status(500).json({ error: err.message });
+    }
+});
 router.get("/Galerie", async (req, res) => {
     return res.render('Galerie');
 });

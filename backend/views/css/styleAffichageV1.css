@@ -1,29 +1,30 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 
 :root {
-  --whitecolor: #fff;
-  --titlecolor: #393d48;
-  --bgItemcolor: #eef3f4;
-  --darkcolor: #000;
-  --bgbutton: #33a4e7;
+    --whitecolor: #fff;
+    --titlecolor: #393d48;
+    --bgItemcolor: #eef3f4;
+    --darkcolor: #000;
+    --bgbutton: #33a4e7;
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
 
-.GareFerroviaires{
+.GareFerroviaires {
     width: 100%;
     height: fit-content;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    margin-bottom: 20vh;
 }
 
-nav{
+nav {
     width: 100%;
     height: 80px;
     display: flex;
@@ -33,11 +34,11 @@ nav{
     position: relative;
 }
 
-nav h3{
+nav h3 {
     font-size: 30px;
 }
 
-.back-btn{
+.back-btn {
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -50,89 +51,121 @@ nav h3{
     cursor: pointer;
 }
 
-.back-btn i{
+.back-btn i {
     color: white;
 }
 
-.Container{
+.gare-container{
     width: 100%;
-    height: fit-content;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 40px;
+    justify-content: center;
+    padding: 0 5%;
     margin-top: 10vh;
-    position: relative;
+    gap: 40px;
 }
 
-.listeBars,
-.edificeBares,
-.acteurBares,
-.galerieBares{
-    z-index: 99;
+.gare-item{
     width: 100%;
-    display: flex;
+    height: fit-content;
     flex-direction: column;
-    gap: 40px;
     align-items: center;
-    position: relative;
 }
-.Bar{
+
+.bare{
     display: flex;
-    flex-direction: row;
+    align-items: center;
     justify-content: space-between;
-    width: 90%;
+    width: 100%;
     height: 50px;
     border-radius: 50px;
-    display: flex;
-    align-items: center;
-    padding-inline-start: 50px;
-    padding-inline-end: 50px;
+    padding: 0 50px;
     cursor: pointer;
-    z-index: 9999;
     background-color: var(--bgItemcolor);
 }
 
-.Bar span{ 
+.bare span{
     font-size: 18px;
     font-weight: 800;
     cursor: pointer;
 }
 
-.liste-container{
-    width: 90%;
-    display: grid;
-    grid-template-columns: 2fr auto;
-    gap: 20px;
-    position: absolute;
-    top: 70px;
-    opacity: 0;
-}
-
-.left-liste-du-patrimoine-first{
-    flex: 1;
+.item-container{
     display: flex;
-    height: 100%;
-    flex-direction: column;
+    flex-direction: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
+    width: 100%;
+    gap: 20px;
+    margin-top: 30px;
+    display: none;
 }
 
-.right-liste-du-patrimoine {
+.container-item{
+    display: flex;
+    flex-direction: column;
     width: 100%;
+    justify-content: center;
+    align-items: start;
+    height: fit-content;
+    min-height: 40vh;
+    background-color: var(--bgItemcolor);
+    border-radius: 20px;
+    padding: 30px;
+}
+
+.listeContainer-toggle,
+.edificeContainer-toggle,
+.acteurContainer-toggle,
+.galerieContainer-toggle,
+.documentationContainer-toggle {
+    display: flex;
+}
+.list-container{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-    gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 20px;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+}
+.map-container{
+    width: 100%;
+    height: 525px;
+    border-radius: 20px;
+    background-color: var(--bgItemcolor);
+    justify-self: center;
+    align-items: start;
 }
 
-.right-header {
-    width: 100%;
+
+
+.info-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 70%;
     height: auto;
     background-color: var(--bgItemcolor);
     border-radius: 20px;
     padding: 25px;
-  }
+    justify-self: end;
+    align-items: start;
+}
 
-  .right-header span{
+.line2-col2-line1 {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.line2-col2-line1 img {
+    width: 35px;
+    margin-inline-end: 10px;
+}
+
+.info-container span {
     display: flex;
     flex-direction: row;
     gap: 10px;
@@ -140,68 +173,11 @@ nav h3{
     font-size: 15px;
     color: var(--darkcolor);
 }
-.right-header p{
+
+.info-container p {
     font-weight: 500;
     font-size: 15px;
     color: var(--darkcolor);
-}
-.line2-col2-line1{
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-}
-.line2-col2-line1 img{
-    width: 35px;
-    margin-inline-end: 10px;
-}
-
-.leaflet-map {
-    width: 100%;
-    height: 525px;
-    padding: 0px;
-    z-index: 1;
-    border-radius: 20px;
-    background-color: var(--bgItemcolor);
-}
-
-.edifice-container,
-.acteur-container,
-.galerie-container,
-.documentation-container{
-    display: flex;
-    flex-direction: column;
-    width: 90%;
-    background-color: var(--bgItemcolor);
-    padding: 30px;
-    gap: 20px;
-    border-radius: 20px;
-    position: absolute;
-    top: 80px;
-    opacity: 0;
-}
-
-
-
-.ListeBareToggle .liste-container,
-.EdificeBareToggle .edifice-container,
-.ActeurBareToggle .acteur-container,
-.GalerieBareToggle .galerie-container,
-.DocumentationBareToggle .documentation-container{
-    transition: all 1s ease;
-    opacity: 1;
-}
-
-.ListeBareToggle .listeBars{
-    transform: translateY(34rem);
-    transition: all 1s ease;
-}
-
-
-.EdificeBareToggle .edificeBares,
-.ActeurBareToggle .acteurBares,
-.GalerieBareToggle .galerieBares{
-    transform: translateY(18rem);
-    transition: all 1s ease;
 }
 .container{
     display: flex;

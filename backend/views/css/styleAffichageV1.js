@@ -1,27 +1,38 @@
-var ListeBare = document.getElementById("ListeBar");
-var EdificeBare = document.getElementById("EdificeBare");
-var ActeurBare = document.getElementById("ActeurBare");
-var GalerieBare = document.getElementById("GalerieBare");
-var DocumentationBare = document.getElementById("DocumentationBare");
-var AllContainer = document.getElementById("Container");
+var listeContainer = document.getElementById("liste-container");
+var edificeContainer = document.getElementById("edifice-container");
+var acteurContainer = document.getElementById("acteur-container");
+var galerieContainer = document.getElementById("galerie-container");
+var documentationContainer = document.getElementById("documentation-container");
+
+var listeBare = document.getElementById("listeBare");
+var edificeBare = document.getElementById("edificeBare");
+var acteurBare = document.getElementById("acteurBare");
+var galerieBare = document.getElementById("galerieBare");
+var documentationBare = document.getElementById("documentationBare");
 
 
-ListeBare.addEventListener('click', () => {
-    AllContainer.classList.toggle("ListeBareToggle");
+listeBare.addEventListener("click", () => {
+  listeContainer.classList.toggle("listeContainer-toggle");
+  console.log("liste bare clicked");
 });
 
-EdificeBare.addEventListener('click', () => {
-    AllContainer.classList.toggle("EdificeBareToggle");
+edificeBare.addEventListener("click", () => {
+  edificeContainer.classList.toggle("edificeContainer-toggle");
+  console.log("liste bare clicked");
 });
 
-ActeurBare.addEventListener('click', () => {
-    AllContainer.classList.toggle("ActeurBareToggle");
+acteurBare.addEventListener("click", () => {
+  acteurContainer.classList.toggle("acteurContainer-toggle");
+  console.log("liste bare clicked");
 });
 
-GalerieBare.addEventListener('click', () => {
-    AllContainer.classList.toggle("GalerieBareToggle");
+galerieBare.addEventListener("click", () => {
+  galerieContainer.classList.toggle("galerieContainer-toggle");
+  console.log("liste bare clicked");
 });
 
-DocumentationBare.addEventListener('click', () => {
-    AllContainer.classList.toggle("DocumentationBareToggle");
+documentationBare.addEventListener("click", () => {
+  documentationContainer.classList.toggle("documentationContainer-toggle");
+  console.log("liste bare clicked");
 });
+

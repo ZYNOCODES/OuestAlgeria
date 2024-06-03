@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    />
+    <title>Ouest-Algerien</title>
+    <link rel="stylesheet" href="/styleViaduc.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  </head>
+  <body>
+    <header>
+        <main class="navba">
+            <div class="backBTN">
+                <a href="javascript:history.back();">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </a>
+            </div>
+            <h3>Ouvrages d'art ferroviaires « Oran-Frontière du Maroc »</h3>
+        </main>
+        <div></div>
+    </header>
+    <div class="liste-pat">
+            <div class="liste-du-patrimoine-container">
+                <div class="left-liste-du-patrimoine">
+                    <div class="left-liste-du-patrimoine-first">
+                        <div class="left-header">
+                            <div class="wilaya">
+                                <h2>12</h2>
+                                <span>Viaducs</span>
+                            </div>
+                        </div>
+                        <div id="PontMap" class="leaflet-map"></div>
+                    </div>
+                    <div class="right-liste-du-patrimoine">
+                        <div class="right-header">
+                            <h2 class="right-header-title">Catégorie du bien</h2>
+                            <h2 class="categories-title">Ouvrages d'art:</h2>
+                            <div class="categories">
+                                <div class="categorie first">
+                                    <div class="circle-categorie"></div>
+                                    <h3>Viaduc</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right-header">
+                            <h2 class="right-header-title">Total des Ouvrages :</h2>
+                            <h2 class="right-header-subtitle">48 Ouvrages</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="left-footer">
+                    <h2>Viaduc :</h2>
+                    <div class="left-footer-container">
+                        <% if (Viaduc && Viaduc.length > 0) { %>
+                            <% Viaduc.forEach(function(place) { %>
+                              <h4>
+                                <div class="line"></div><%= place.Nom %>
+                              </h4>
+                            <% }); %>
+                        <% } else { %>
+                        <h4>No Viaduc found.</h4>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/wicg-inert@latest/dist/inert.min.js"></script>
+    <script src="/mainHome.js"></script>
+    <script src="/ViaducMain.js"></script>
+  </body>
+</html>
