@@ -71,46 +71,120 @@
                     <i class="fa-solid fa-chevron-down"></i>
                 </div>
                 <div class="item-container" id="edifice-container">
-                    <div class="container-item">
-                        <p>
-                            <% if (place.data.edifice != ''){ %>
-                                <%=place.data.edifice%>
-                            <% }else {%>
-                                no data is available
-                            <% }%>
-                        </p>
-                        <% if (((place.data.demolition_ancien_BV != undefined && place.data.demolition_ancien_BV) != ''
-                                && (place.data.mise_en_service_ancienne_gare != undefined && place.data.mise_en_service_ancienne_gare) != ''
-                                && (place.data.mise_en_service_nouveau_BV != undefined && place.data.mise_en_service_nouveau_BV) != '')){ %>
-                            <h4>Dates précises :</h4>
-                            <p>
-                                <%=place.data.mise_en_service_ancienne_gare%>
-                            </p>
-                            <p>
-                                <%=place.data.demolition_ancien_BV%>
-                            </p>
-                            <p>
-                                <%=place.data.mise_en_service_nouveau_BV%>
-                            </p>
-                        <% }else if((place.data.proposition_ancien_BV != undefined && place.data.proposition_ancien_BV != '')
-                                    && (place.data.projet_ancien_BV != undefined && place.data.projet_ancien_BV != '')
-                                    && (place.data.amelioration_installations_ancien_BV != undefined && place.data.amelioration_installations_ancien_BV != '') 
-                                    && (place.data.projet_modernisation_BV != undefined && place.data.projet_modernisation_BV) ){%>
-                            <h4>Dates précises :</h4>
-                            <p>
-                                <%=place.data.proposition_ancien_BV%>
-                            </p>
-                            <p>
-                                <%=place.data.projet_ancien_BV%>
-                            </p>
-                            <p>
-                                <%=place.data.amelioration_installations_ancien_BV%>
-                            </p>
-                            <p>
-                                <%=place.data.projet_modernisation_BV%>
-                            </p>
-                        <% }%>
-                    </div>
+                    <% if ((place?.designation && (place?.designation.img || place?.designation?.description?.length > 0))
+                     || (place?.localisation && (place?.localisation?.length > 0)) || (place?.description && (place?.description.img || place?.description?.description?.length > 0))
+                      || (place?.historique && (place?.historique?.img || place?.historique?.description?.length > 0))
+                       || (place?.conservation && (place?.conservation?.justification || place?.conservation?.integrite || place?.conservation?.authenticite))) { %>
+                        <% if (place?.designation && (place?.designation.img || place?.designation?.description?.length > 0)) { %>
+                            <div class="container-item">
+                                <h4 class="container-item-title">Désignation et fonction</h4>
+                                <div class="container-item-content">
+                                    <% if (place?.designation?.img) { %>
+                                        <img src="/images/<%= place?.designation.img %>" alt="img" />
+                                    <% }%>
+                                    <% if (place?.designation?.description && place?.designation?.description?.length > 0) { %>
+                                        <div class="container-item-content-description">
+                                            <% place?.designation?.description?.map((desc) => { %>
+                                                <p><%= desc %></p>
+                                            <% }); %>
+                                        </div>
+                                    <% } %>
+                                </div>
+                            </div>
+                        <% } %>
+                        <% if (place?.localisation && (place?.localisation?.length > 0)) { %>
+                            <div class="container-item">
+                                <h4 class="container-item-title">Localisation</h4>
+                                <div class="container-item-content">
+                                    <div class="container-item-content-description">
+                                        <% place?.localisation?.map((desc) => { %>
+                                            <p><%= desc %></p>
+                                        <% }); %>
+                                        <h3>Coordonnées géographiques :</h3>
+                                        <p>Latitude : <%= place?.LattitudeY %></p>
+                                        <p>Longitude : <%= place?.LongitudeX %></p>
+                                    </div>
+                                </div>
+                            </div>
+                        <% } %>
+                        <% if (place?.description && (place?.description.img || place?.description?.description?.length > 0)) { %>
+                            <div class="container-item">
+                                <h4 class="container-item-title">Description</h4>
+                                <div class="container-item-content">
+                                    <div class="container-item-content-description">
+                                        <% place?.description?.description?.map((desc) => { %>
+                                            <p><%= desc %></p>
+                                        <% }); %>
+                                        <% if (place?.description?.img) { %>
+                                            <img src="/images/<%= place?.designation.img %>" alt="img" />
+                                        <% }%>
+                                        <% if (place?.description?.materiaux && (place?.description?.materiaux?.technique1?.length > 0 || place?.description?.materiaux?.technique2.length > 0 || place?.description?.materiaux?.structures.length > 0)) { %>
+                                            <h1>Matériaux :</h1>
+                                            <% if (place?.description?.materiaux?.technique1?.length > 0) { %>
+                                                <p><strong>Matériaux et techniques du gros-œuvre :</strong></p>
+                                                <% place?.description?.materiaux?.technique1?.map((desc) => { %>
+                                                    <p><%= desc %></p>
+                                                <% }); %>
+                                            <% } %>
+                                            <% if (place?.description?.materiaux?.technique2?.length > 0) { %>
+                                                <p><strong>Matériaux et techniques du gros-œuvre :</strong></p>
+                                                <% place?.description?.materiaux?.technique2?.map((desc) => { %>
+                                                    <p><%= desc %></p>
+                                                <% }); %>
+                                            <% } %>
+                                            <% if (place?.description?.materiaux?.structures?.length > 0) { %>
+                                                <p><strong>Type de structures principales :</strong></p>
+                                                <% place?.description?.materiaux?.structures?.map((desc) => { %>
+                                                    <p><%= desc %></p>
+                                                <% }); %>
+                                            <% } %>
+                                        <% }%>
+                                    </div>
+                                </div>
+                            </div>
+                        <% } %>
+                        <% if (place?.historique && (place?.historique?.img || place?.historique?.description?.length > 0)) { %>
+                            <div class="container-item">
+                                <h4 class="container-item-title">Historique</h4>
+                                <div class="container-item-content">
+                                    <div class="container-item-content-description">
+                                        <p><strong>Synthèse historique</strong></p>
+                                        <% place?.historique?.description?.map((desc) => { %>
+                                            <p><%= desc %></p>
+                                        <% }); %>
+                                        <% if (place?.historique?.img) { %>
+                                            <img src="/images/<%= place?.historique.img %>" alt="img" />
+                                        <% }%>
+                                    </div>
+                                </div>
+                            </div>
+                        <% } %>
+                        <% if (place?.conservation && (place?.conservation?.justification || place?.conservation?.integrite || place?.conservation?.authenticite)) { %>
+                            <div class="container-item">
+                                <h4 class="container-item-title">Conservation</h4>
+                                <p>La gare de Sidi-Bel-Abbès est en bon état de conservation</p>
+                                <div class="container-item-content">
+                                    <% if (place?.conservation?.justification) { %>
+                                        <div class="container-item-content-description">
+                                            <p><strong>Justification de la valeur culturelle</strong></p>
+                                            <p><%= place?.conservation?.justification %></p>
+                                        </div>
+                                    <% }%>
+                                    <% if (place?.conservation?.integrite || place?.conservation?.authenticite) { %>
+                                        <div class="container-item-content-description">
+                                            <p><strong>Intégrité et authenticité</strong></p>
+                                            <p><strong>Intégrité :</strong> <%= place?.conservation?.integrite %></p>
+                                            <p><strong>Authenticité :</strong> <%= place?.conservation?.authenticite %></p>
+                                        </div>
+                                    <% }%>
+                                </div>
+                            </div>
+                        <% } %>
+                    <% } else { %>
+                        <div class="container-item">
+                            <p>no description is available</p>
+                        </div>
+                    <% } %>
                 </div>
             </div>
 
@@ -121,13 +195,101 @@
                 </div>
                 <div class="item-container" id="acteur-container">
                     <div class="container-item">
-                        <% if (place.data.acteurs.ancienneGare.compagnie != ''){ %>
-                            <h2>Ancienne Gare :</h2>
-                            <p>Compagnie : <%=place.data.acteurs.ancienneGare.compagnie %></p>
-                        <% } %>
-                        <% if (place.data.acteurs.nouvelleGare.compagnie != ''){ %>
-                            <h2>Nouvelle Gare :</h2>
-                            <p>Compagnie : <%=place.data.acteurs.nouvelleGare.compagnie %></p>
+                        <% if (place?.acteurs && ((place?.acteurs?.ancienne?.compagnie?.length > 0 || place?.acteurs?.ancienne?.entreprise?.length > 0 
+                            || place?.acteurs?.ancienne?.architecte?.length > 0 || place?.acteurs?.ancienne?.ingenieurs?.length > 0)
+                            || (place?.acteurs?.modification?.compagnie?.length > 0 || place?.acteurs?.modification?.entreprise?.length > 0 
+                            || place?.acteurs?.modification?.architecte?.length > 0 || place?.acteurs?.modification?.ingenieurs?.length > 0)
+                            || (place?.acteurs?.modernisation?.compagnie?.length > 0 || place?.acteurs?.modernisation?.entreprise?.length > 0 
+                            || place?.acteurs?.modernisation?.architecte?.length > 0 || place?.acteurs?.modernisation?.ingenieurs?.length > 0)
+                            )){ %>
+                            <% if (place?.acteurs?.ancienne?.compagnie?.length > 0 || place?.acteurs?.ancienne?.entreprise?.length > 0 
+                            || place?.acteurs?.ancienne?.architecte?.length > 0 || place?.acteurs?.ancienne?.ingenieurs?.length > 0){ %>
+                                <h2 class="acteur-title">Ancienne :</h2>
+                                <% if (place?.acteurs?.ancienne?.compagnie?.length > 0) { %>
+                                    <p class="acteur-subtitle">Compagnie :</p>
+                                    <% place?.acteurs?.ancienne?.compagnie?.map((comp) => { %>
+                                        <p class="acteur-paragraph"><%= comp %></p>
+                                    <% }); %>
+                                <% } %>
+                                <% if (place?.acteurs?.ancienne?.entreprise?.length > 0) { %>
+                                    <p class="acteur-subtitle">Entreprise :</p>
+                                    <% place?.acteurs?.ancienne?.entreprise?.map((comp) => { %>
+                                        <p class="acteur-paragraph"><%= comp %></p>
+                                    <% }); %>
+                                <% } %>
+                                <% if (place?.acteurs?.ancienne?.architecte?.length > 0) { %>
+                                    <p class="acteur-subtitle">Architecte :</p>
+                                    <% place?.acteurs?.ancienne?.architecte?.map((comp) => { %>
+                                        <p class="acteur-paragraph"><%= comp %></p>
+                                    <% }); %>
+                                <% } %>
+                                <% if (place?.acteurs?.ancienne?.ingenieurs?.length > 0) { %>
+                                    <p class="acteur-subtitle">Ingénieurs :</p>
+                                    <% place?.acteurs?.ancienne?.ingenieurs?.map((comp) => { %>
+                                        <p class="acteur-paragraph"><%= comp %></p>
+                                    <% }); %>
+                                <% } %>
+                            <% } %>
+    
+                            <% if (place?.acteurs?.modification?.compagnie?.length > 0 || place?.acteurs?.modification?.entreprise?.length > 0 
+                            || place?.acteurs?.modification?.architecte?.length > 0 || place?.acteurs?.modification?.ingenieurs?.length > 0){ %>
+                                <h2 class="acteur-title">Modification :</h2>
+                                <% if (place?.acteurs?.modification?.compagnie?.length > 0) { %>
+                                    <p class="acteur-subtitle">Compagnie :</p>
+                                    <% place?.acteurs?.modification?.compagnie?.map((comp) => { %>
+                                        <p class="acteur-paragraph"><%= comp %></p>
+                                    <% }); %>
+                                <% } %>
+                                <% if (place?.acteurs?.modification?.entreprise?.length > 0) { %>
+                                    <p class="acteur-subtitle">Entreprise :</p>
+                                    <% place?.acteurs?.modification?.entreprise?.map((comp) => { %>
+                                        <p class="acteur-paragraph"><%= comp %></p>
+                                    <% }); %>
+                                <% } %>
+                                <% if (place?.acteurs?.modification?.architecte?.length > 0) { %>
+                                    <p class="acteur-subtitle">Architecte :</p>
+                                    <% place?.acteurs?.modification?.architecte?.map((comp) => { %>
+                                        <p class="acteur-paragraph"><%= comp %></p>
+                                    <% }); %>
+                                <% } %>
+                                <% if (place?.acteurs?.modification?.ingenieurs?.length > 0) { %>
+                                    <p class="acteur-subtitle">Ingénieurs :</p>
+                                    <% place?.acteurs?.modification?.ingenieurs?.map((comp) => { %>
+                                        <p class="acteur-paragraph"><%= comp %></p>
+                                    <% }); %>
+                                <% } %>
+                            <% } %>
+    
+                            <% if (place?.acteurs?.modernisation?.compagnie?.length > 0 || place?.acteurs?.modernisation?.entreprise?.length > 0 
+                            || place?.acteurs?.modernisation?.architecte?.length > 0 || place?.acteurs?.modernisation?.ingenieurs?.length > 0){ %>
+                                <h2 class="acteur-title">Modernisation :</h2>
+                                <% if (place?.acteurs?.modernisation?.compagnie?.length > 0) { %>
+                                    <p class="acteur-subtitle">Compagnie :</p>
+                                    <% place?.acteurs?.modernisation?.compagnie?.map((comp) => { %>
+                                        <p class="acteur-paragraph"><%= comp %></p>
+                                    <% }); %>
+                                <% } %>
+                                <% if (place?.acteurs?.modernisation?.entreprise?.length > 0) { %>
+                                    <p class="acteur-subtitle">Entreprise :</p>
+                                    <% place?.acteurs?.modernisation?.entreprise?.map((comp) => { %>
+                                        <p class="acteur-paragraph"><%= comp %></p>
+                                    <% }); %>
+                                <% } %>
+                                <% if (place?.acteurs?.modernisation?.architecte?.length > 0) { %>
+                                    <p class="acteur-subtitle">Architecte :</p>
+                                    <% place?.acteurs?.modernisation?.architecte?.map((comp) => { %>
+                                        <p class="acteur-paragraph"><%= comp %></p>
+                                    <% }); %>
+                                <% } %>
+                                <% if (place?.acteurs?.modernisation?.ingenieurs?.length > 0) { %>
+                                    <p class="acteur-subtitle">Ingénieurs :</p>
+                                    <% place?.acteurs?.modernisation?.ingenieurs?.map((comp) => { %>
+                                        <p class="acteur-paragraph"><%= comp %></p>
+                                    <% }); %>
+                                <% } %>
+                            <% } %>
+                        <% } else { %>
+                            no acteur is available
                         <% } %>
                     </div>
                 </div>
@@ -140,23 +302,38 @@
                 </div>
                 <div class="item-container" id="galerie-container">
                     <div class="container-item">
-                        <% if (place.galerie.length > 0){ %>
-                            <div class="container">
-                                <div class="gallery">
-                                    <% for (let i = 0; i < place.galerie.length; i++){ %>
-                                        <div class="gallery-item">
-                                            <img src="/images/<%= place.galerie[i] %>" alt="<%= place.galerie[i] %>" />
-                                            <h3><%= place.galerie[i] %></h3>
-                                        </div>
-                                    <% } %>
+                        <% if (place?.galerie && (place?.galerie?.plan?.length > 0 || place?.galerie?.photographie?.length > 0)){ %>
+                            <% if (place?.galerie?.plan?.length > 0){ %>
+                                <h4 class="container-item-title">Plans</h4>
+                                <div class="container">
+                                    <div class="gallery">
+                                        <% place?.galerie?.plan?.map((img) => { %>
+                                            <div class="gallery-item">
+                                                <img src="/images/<%= img %>" alt="<%= img %>" />
+                                                <h3><%= img %></h3>
+                                            </div>
+                                        <% }); %>
+                                    </div>
                                 </div>
-                            </div>
+                            <% }
+                            if (place?.galerie?.photographie?.length > 0){ %>
+                                <h4 class="container-item-title">Photographies</h4>
+                                <div class="container">
+                                    <div class="gallery">
+                                        <% place?.galerie?.photographie?.map((img) => { %>
+                                            <div class="gallery-item">
+                                                <img src="/images/<%= img %>" alt="<%= img %>" />
+                                                <h3><%= img %></h3>
+                                            </div>
+                                        <% }); %>
+                                    </div>
+                                </div>
+                            <% } %>
                         <% } else { %>
                             no image is available
                         <% } %>
                     </div>
                 </div>
-            </div>
 
             <div class="gare-item" id="gare-items">
                 <div class="bare" id="documentationBare">
@@ -165,17 +342,25 @@
                 </div>
                 <div class="item-container" id="documentation-container">
                     <div class="container-item">
-                        <% if (place.documentations.length > 0){ %>
-                            <div class="container">
-                                <div class="gallery">
-                                    <% for (let i = 0; i < place.documentations.length; i++){ %>
-                                        <div class="gallery-item">
-                                            <img src="/images/<%= place.documentations[i] %>" alt="<%= place.documentations[i] %>" />
-                                            <h3><%= place.documentations[i] %></h3>
-                                        </div>
-                                    <% } %>
-                                </div>
-                            </div>
+                        <% if (place?.documentations && (place?.documentations?.centrearchive?.length > 0 || place?.documentations?.site?.length > 0 || place?.documentations?.livre?.length  > 0)){ %>
+                            <% if (place?.documentations?.centrearchive?.length > 0) { %>
+                                <p class="acteur-subtitle">Centre d’archive</p>
+                                <% place?.documentations?.centrearchive?.map((desc) => { %>
+                                    <p class="acteur-paragraph"><%= desc %></p>
+                                <% }); %>
+                            <% }%>
+                            <% if (place?.documentations?.site?.length > 0) { %>
+                                <p class="acteur-subtitle">Site internet</p>
+                                <% place?.documentations?.site?.map((desc) => { %>
+                                    <p class="acteur-paragraph"><%= desc %></p>
+                                <% }); %>
+                            <% }%>
+                            <% if (place?.documentations?.livre?.length > 0) { %>
+                                <p class="acteur-subtitle">Livre</p>
+                                <% place?.documentations?.livre?.map((desc) => { %>
+                                    <p class="acteur-paragraph"><%= desc %></p>
+                                <% }); %>
+                            <% }%>
                         <% } else { %>
                             no document is available
                         <% } %>

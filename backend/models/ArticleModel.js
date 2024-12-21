@@ -141,84 +141,226 @@ const placesSchema = new mongoose.Schema({
         require: false,
         nullable: true,
     },
-    data:{
-        edifice: {
+    galerie: {
+        plan: [
+            {
+                type: String,
+                require: false,
+                nullable: true,
+            }
+        ],
+        photographie: [
+            {
+                type: String,
+                require: false,
+                nullable: true,
+            }
+        ],
+    },
+    documentations: {
+        centrearchive: [
+            {
+                type: String,
+                require: false,
+                nullable: true,
+            }
+        ],
+        site: [
+            {
+                type: String,
+                require: false,
+                nullable: true,
+            }
+        ],
+        livre: [
+            {
+                type: String,
+                require: false,
+                nullable: true,
+            }
+        ],
+    },
+    designation: {
+        img: {
             type: String,
             require: false,
             nullable: true,
         },
-        acteurs: {
-            ancienneGare: {
-                compagnie: {
-                    type: String,
-                    require: false,
-                    nullable: true,
-                },
-                hall_et_modification_etage_BV:{
+        description: [
+            {
+                type: String,
+                require: false,
+                nullable: true,
+            }
+        ]
+    },
+    localisation: [
+        {
+            type: String,
+            require: false,
+            nullable: true,
+        }
+    ],
+    description: {
+        img: {
+            type: String,
+            require: false,
+            nullable: true,
+        },
+        description: [
+            {
+                type: String,
+                require: false,
+                nullable: true,
+            }
+        ],
+        materiaux: {
+            technique1: [
+                {
                     type: String,
                     require: false,
                     nullable: true,
                 }
-            },
-            nouvelleGare: {
-                compagnie: {
+            ],
+            technique2: [
+                {
                     type: String,
                     require: false,
                     nullable: true,
-                },
-            },
-            architecte: {
-                type: String,
-                require: false,
-                nullable: true,
-            },
-        },
-        mise_en_service_ancienne_gare: {
+                }
+            ],
+            structures: [
+                {
+                    type: String,
+                    require: false,
+                    nullable: true,
+                }
+            ],
+        }
+    },
+    conservation: {
+        justification: {
             type: String,
             require: false,
             nullable: true,
         },
-        demolition_ancien_BV: {
+        integrite: {
             type: String,
             require: false,
             nullable: true,
         },
-        mise_en_service_nouveau_BV: {
-            type: String,
-            require: false,
-            nullable: true,
-        },
-        proposition_ancien_BV: {
-            type: String,
-            require: false,
-            nullable: true,
-        },
-        projet_ancien_BV: {
-            type: String,
-            require: false,
-            nullable: true,
-        },
-        amelioration_installations_ancien_BV: {
-            type: String,
-            require: false,
-            nullable: true,
-        },
-        projet_modernisation_BV: {
+        authenticite: {
             type: String,
             require: false,
             nullable: true,
         },
     },
-    galerie: [{
-        type: String,
-        require: false,
-        nullable: true,
-    }],
-    documentations: [{
-        type: String,
-        require: false,
-        nullable: true,
-    }],
+    historique: {
+        img: {
+            type: String,
+            require: false,
+            nullable: true,
+        },
+        description: [
+            {
+                type: String,
+                require: false,
+                nullable: true,
+            }
+        ]
+    },
+    acteurs:{
+        ancienne:{
+            compagnie: [
+                {
+                    type: String,
+                    require: false,
+                    nullable: true,
+                }
+            ],
+            entreprise: [
+                {
+                    type: String,
+                    require: false,
+                    nullable: true,
+                }
+            ],
+            architecte: [
+                {
+                    type: String,
+                    require: false,
+                    nullable: true,
+                }
+            ],
+            ingenieurs: [
+                {
+                    type: String,
+                    require: false,
+                    nullable: true,
+                }
+            ],
+        },
+        modification: {
+            compagnie: [
+                {
+                    type: String,
+                    require: false,
+                    nullable: true,
+                }
+            ],
+            entreprise: [
+                {
+                    type: String,
+                    require: false,
+                    nullable: true,
+                }
+            ],
+            architecte: [
+                {
+                    type: String,
+                    require: false,
+                    nullable: true,
+                }
+            ],
+            ingenieurs: [
+                {
+                    type: String,
+                    require: false,
+                    nullable: true,
+                }
+            ],
+        },
+        modernisation: {
+            compagnie: [
+                {
+                    type: String,
+                    require: false,
+                    nullable: true,
+                }
+            ],
+            entreprise: [
+                {
+                    type: String,
+                    require: false,
+                    nullable: true,
+                }
+            ],
+            architecte: [
+                {
+                    type: String,
+                    require: false,
+                    nullable: true,
+                }
+            ],
+            ingenieurs: [
+                {
+                    type: String,
+                    require: false,
+                    nullable: true,
+                }
+            ],
+        },
+    }
 });
 
 const places = mongoose.model('places', placesSchema);

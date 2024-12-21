@@ -21,18 +21,29 @@ const GetAllPlaces = async (req, res) => {
     }
 };
 const UpdateByID = async (req, res) => {
-    const {id, images} = req.body;
+    const { id } = req.params;
+    const {galerie, documentations, designation, localisation, 
+        description, conservation, historique, acteurs } = req.body;
     try {
         //check if the req body contains the required fields
-        if (images.length == 0) {
-            return res.status(400).json({ message: "Images are required" });
+        if (!galerie || !documentations || !designation || !localisation || !description || !conservation || !historique || !acteurs) {
+            return res.status(400).json({ message: "All fields are required" });
         }
         //check if the Place has already existed
         const existing = await Place.findOne({ _id:id });
         if (!existing) {
             return res.status(404).json({ message: "Place not found" });
         }
-        const updatedPlace = await Place.updateOne({ _id: id }, { $set: { galerie: images } });
+        const updatedPlace = await Place.updateOne({ _id: id }, { 
+            $set: { 
+                galerie, documentations, designation, localisation, 
+                description, conservation, historique, acteurs
+            }
+        });
+        //check if the Place has been updated
+        if (!updatedPlace) {
+            return res.status(500).json({ message: "An error occurred while updating the Place" });
+        }
         res.status(200).json(updatedPlace);
     } catch (err) {
         console.log(err);

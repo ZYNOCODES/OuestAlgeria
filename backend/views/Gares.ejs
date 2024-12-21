@@ -99,16 +99,16 @@
                 <div class="left-footer">
                     <h2>Gares ferroviaire :</h2>
                     <div class="left-footer-container">
-                        <% if ((Gare && Gare.length > 0)) { %>
-                            <% Gare.forEach(function(Gare) { %>
-                                <a href='/<%= Gare._id %>' style="text-decoration: none;">
-                                    <h4>
-                                        <%= Gare.Nom %>
-                                    </h4>
+                        <% if (sortedGare && sortedGare.length > 0) { %>
+                            <% sortedGare.forEach(function(Gare, index) { %>
+                                <a href='/<%= Gare._id %>' style="text-decoration: none; color: black;">
+                                    <p style="<%= boldGares.includes(Gare.Nom) ? 'font-weight: bold;' : '' %> font-size: large;">
+                                        <%= (index + 1) + ". " + Gare.Nom %>
+                                    </p>
                                 </a>
                             <% }); %>
                         <% } else { %>
-                        <h4>No Ponts found.</h4>
+                            <h4>No Gares found.</h4>
                         <% } %>
                     </div>
                 </div>

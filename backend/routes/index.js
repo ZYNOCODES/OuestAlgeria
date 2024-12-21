@@ -51,7 +51,56 @@ router.get("/Gares", async (req, res) => {
         if (result) {
             const validTypes = ["Gare Terminus", "Station Intermediaire", "Halte"];
             const Gare = result.filter(place => validTypes.includes(place.Type));
-            return res.render('Gares', {Gare});
+
+            // Desired sorting order
+            const desiredOrder = [
+                "Gare d'Oran",                     // Matches "22. Gare d'Oran"
+                "Es Sénia",                        // Matches "6. Es Sénia"
+                "Valmy",                           // Matches "2. Valmy"
+                "Arbal",                           // Matches "18. Arbal"
+                "Oued Tlélat",                     // Matches "29. Oued Tlélat"
+                "Zahana",                          // Matches "23. Zahana"
+                "Lauriers Roses",                  // Matches "14. Lauriers Roses"
+                "Ain El Berd",                     // Matches "30. Ain El Berd"
+                "Sidi Hamadouche",                 // Matches "10. Sidi Hamadouche"
+                "Prudon",                          // **No match found**
+                "Gare de Sidi Bel Abbès",          // Matches "9. Gare de Sidi Bel Abbès"
+                "Sidi Lahcen",                     // Matches "15. Sidi Lahcen"
+                "Sidi Khaled",                     // Matches "7. Sidi Khaled"
+                "Bouchabka",                       // Matches "8. Bouchabka"
+                "Tabia",                           // Matches "31. Tabia"
+                "Tffamin Tassin",                  // Matches "5. Tffamin Tassin"
+                "Ben Badis",                       // Matches "1. Ben Badis"
+                "Ain Tellout",                     // Matches "11. Ain Tellout"
+                "Lamoriciere",                     // **No match found**
+                "Oued Chouly",                     // **No match found**
+                "Ain Fezza",                       // Matches "12. Ain Fezza"
+                "Gare_de_Tlemcen",                 // Matches "13. Gare_de_Tlemcen"
+                "Mansourah",                       // Matches "16. Mansourah"
+                "Ain Douz",                        // Matches "26. Ain Douz"
+                "Zelboune",                         // Matches "20. Zelboune"
+                "Sebra",                           // Matches "21. Sebra"
+                "Sidi-Medjahed",                   // Matches "27. Sidi-Medjahed"
+                "Teghalimet",                      // **Closest match: "Tralimet" (spelling difference)**
+                "Maghnia",                         // Matches "24. Maghnia"
+                "Akid Abbes"                       // Matches "28. Akid Abbes"
+            ];
+
+            // Sort the Gare list based on the desired order
+            const sortedGare = desiredOrder
+                .map(name => Gare.find(place => place.Nom === name))
+                .filter(Boolean); // Filter out any names not found in the Gare list
+
+            // List of Gares to make bold
+            const boldGares = [
+                "Gare d'Oran",
+                "Gare de Sidi Bel Abbès",
+                "Gare_de_Tlemcen",
+                "Maghnia"
+            ];
+
+            // Pass both sortedGare and boldGares to the frontend
+            return res.render('Gares', { sortedGare, boldGares });
         } else {
             return res.status(404).json({ error: 'Places not found' });
         }
