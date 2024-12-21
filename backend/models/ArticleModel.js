@@ -179,13 +179,20 @@ const placesSchema = new mongoose.Schema({
                 nullable: true,
             }
         ],
+        article: [
+            {
+                type: String,
+                require: false,
+                nullable: true,
+            }
+        ],
     },
     designation: {
-        img: {
+        img: [{
             type: String,
             require: false,
             nullable: true,
-        },
+        }],
         description: [
             {
                 type: String,
@@ -202,11 +209,11 @@ const placesSchema = new mongoose.Schema({
         }
     ],
     description: {
-        img: {
+        img: [{
             type: String,
             require: false,
             nullable: true,
-        },
+        }],
         description: [
             {
                 type: String,
@@ -256,11 +263,11 @@ const placesSchema = new mongoose.Schema({
         },
     },
     historique: {
-        img: {
+        img: [{
             type: String,
             require: false,
             nullable: true,
-        },
+        }],
         description: [
             {
                 type: String,

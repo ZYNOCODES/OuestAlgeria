@@ -79,8 +79,10 @@
                             <div class="container-item">
                                 <h4 class="container-item-title">Désignation et fonction</h4>
                                 <div class="container-item-content">
-                                    <% if (place?.designation?.img) { %>
-                                        <img src="/images/<%= place?.designation.img %>" alt="img" />
+                                    <% if (place?.designation?.img?.length > 0) { %>
+                                        <% place?.designation?.img?.map((img) => { %>
+                                            <img src="/images/<%= img %>" alt="img" />
+                                        <% }); %>
                                     <% }%>
                                     <% if (place?.designation?.description && place?.designation?.description?.length > 0) { %>
                                         <div class="container-item-content-description">
@@ -115,8 +117,10 @@
                                         <% place?.description?.description?.map((desc) => { %>
                                             <p><%= desc %></p>
                                         <% }); %>
-                                        <% if (place?.description?.img) { %>
-                                            <img src="/images/<%= place?.designation.img %>" alt="img" />
+                                        <% if (place?.description?.img?.length > 0) { %>
+                                            <% place?.description?.img?.map((img) => { %>
+                                                <img src="/images/<%= img %>" alt="img" />
+                                            <% }); %>
                                         <% }%>
                                         <% if (place?.description?.materiaux && (place?.description?.materiaux?.technique1?.length > 0 || place?.description?.materiaux?.technique2.length > 0 || place?.description?.materiaux?.structures.length > 0)) { %>
                                             <h1>Matériaux :</h1>
@@ -152,8 +156,10 @@
                                         <% place?.historique?.description?.map((desc) => { %>
                                             <p><%= desc %></p>
                                         <% }); %>
-                                        <% if (place?.historique?.img) { %>
-                                            <img src="/images/<%= place?.historique.img %>" alt="img" />
+                                        <% if (place?.historique?.img?.length > 0) { %>
+                                            <% place?.historique?.img?.map((img) => { %>
+                                                <img src="/images/<%= img %>" alt="img" />
+                                            <% }); %>
                                         <% }%>
                                     </div>
                                 </div>

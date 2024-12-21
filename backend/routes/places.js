@@ -11,6 +11,6 @@ router.post('/:id', PlaceById);
 //get place by id
 router.get('/All/all', GetAllPlaces);
 //update place by id
-router.patch('/update', UpdateByID);
+router.patch('/update/:id', UpdateByID);
 
 module.exports = router;
