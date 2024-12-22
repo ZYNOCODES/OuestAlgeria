@@ -21,6 +21,7 @@
     "express-ejs-layouts": "^2.5.1",
     "express-session": "^1.17.3",
     "jsonwebtoken": "^9.0.0",
+    "lightbox2": "^2.11.5",
     "mongodb": "^5.3.0",
     "mongoose": "^5.7.5",
     "nodemon": "^2.0.22",
