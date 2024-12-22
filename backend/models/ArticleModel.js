@@ -142,20 +142,30 @@ const placesSchema = new mongoose.Schema({
         nullable: true,
     },
     galerie: {
-        plan: [
-            {
+        plan: [{
+            img: {
+                type: String,
+                require: false,
+                nullable: true,
+            },
+            description: {
                 type: String,
                 require: false,
                 nullable: true,
             }
-        ],
-        photographie: [
-            {
+        }],
+        photographie: [{
+            img: {
+                type: String,
+                require: false,
+                nullable: true,
+            },
+            description: {
                 type: String,
                 require: false,
                 nullable: true,
             }
-        ],
+        }],
     },
     documentations: {
         centrearchive: [
@@ -189,9 +199,16 @@ const placesSchema = new mongoose.Schema({
     },
     designation: {
         img: [{
-            type: String,
-            require: false,
-            nullable: true,
+            img: {
+                type: String,
+                require: false,
+                nullable: true,
+            },
+            description: {
+                type: String,
+                require: false,
+                nullable: true,
+            }
         }],
         description: [
             {
@@ -210,9 +227,16 @@ const placesSchema = new mongoose.Schema({
     ],
     description: {
         img: [{
-            type: String,
-            require: false,
-            nullable: true,
+            img: {
+                type: String,
+                require: false,
+                nullable: true,
+            },
+            description: {
+                type: String,
+                require: false,
+                nullable: true,
+            }
         }],
         description: [
             {
@@ -264,9 +288,16 @@ const placesSchema = new mongoose.Schema({
     },
     historique: {
         img: [{
-            type: String,
-            require: false,
-            nullable: true,
+            img: {
+                type: String,
+                require: false,
+                nullable: true,
+            },
+            description: {
+                type: String,
+                require: false,
+                nullable: true,
+            }
         }],
         description: [
             {

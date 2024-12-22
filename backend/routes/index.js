@@ -69,7 +69,7 @@ router.get("/Gares", async (req, res) => {
                 "Sidi Khaled",                     // Matches "7. Sidi Khaled"
                 "Bouchabka",                       // Matches "8. Bouchabka"
                 "Tabia",                           // Matches "31. Tabia"
-                "Tffamin Tassin",                  // Matches "5. Tffamin Tassin"
+                "Taffamane",                       // Matches "5. Taffamane"
                 "Ben Badis",                       // Matches "1. Ben Badis"
                 "Ain Tellout",                     // Matches "11. Ain Tellout"
                 "Lamoriciere",                     // **No match found**
@@ -81,7 +81,7 @@ router.get("/Gares", async (req, res) => {
                 "Zelboune",                         // Matches "20. Zelboune"
                 "Sebra",                           // Matches "21. Sebra"
                 "Sidi-Medjahed",                   // Matches "27. Sidi-Medjahed"
-                "Teghalimet",                      // **Closest match: "Tralimet" (spelling difference)**
+                "Tralimet",                      // **Closest match: "Tralimet" (spelling difference)**
                 "Maghnia",                         // Matches "24. Maghnia"
                 "Akid Abbes"                       // Matches "28. Akid Abbes"
             ];

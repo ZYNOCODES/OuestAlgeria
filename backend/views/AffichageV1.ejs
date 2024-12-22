@@ -72,17 +72,22 @@
                     <i class="fa-solid fa-chevron-down"></i>
                 </div>
                 <div class="item-container" id="edifice-container">
-                    <% if ((place?.designation && (place?.designation.img || place?.designation?.description?.length > 0))
-                     || (place?.localisation && (place?.localisation?.length > 0)) || (place?.description && (place?.description.img || place?.description?.description?.length > 0))
-                      || (place?.historique && (place?.historique?.img || place?.historique?.description?.length > 0))
+                    <% if ((place?.designation && (place?.designation?.img?.length > 0 || place?.designation?.description?.length > 0))
+                     || (place?.localisation && (place?.localisation?.length > 0)) || (place?.description && (place?.description?.img?.length > 0 || place?.description?.description?.length > 0))
+                      || (place?.historique && (place?.historique?.img?.length > 0 || place?.historique?.description?.length > 0))
                        || (place?.conservation && (place?.conservation?.justification || place?.conservation?.integrite || place?.conservation?.authenticite))) { %>
-                        <% if (place?.designation && (place?.designation.img || place?.designation?.description?.length > 0)) { %>
+                        <% if (place?.designation && (place?.designation?.img?.length > 0 || place?.designation?.description?.length > 0)) { %>
                             <div class="container-item">
                                 <h4 class="container-item-title">Désignation et fonction</h4>
                                 <div class="container-item-content">
                                     <% if (place?.designation?.img?.length > 0) { %>
                                         <% place?.designation?.img?.map((img) => { %>
-                                            <img src="/images/<%= img %>" alt="img" />
+                                            <div class="gallery-item">
+                                                <a href="/images/<%= img?.img %>" data-lightbox="mygallery" data-title="<%= img?.description %>">
+                                                  <img src="/images/<%= img?.img  %>" alt="<%= img?.img  %>" />
+                                                </a>
+                                                <h3><%= img?.description %></h3>
+                                            </div>  
                                         <% }); %>
                                     <% }%>
                                     <% if (place?.designation?.description && place?.designation?.description?.length > 0) { %>
@@ -110,7 +115,7 @@
                                 </div>
                             </div>
                         <% } %>
-                        <% if (place?.description && (place?.description.img || place?.description?.description?.length > 0)) { %>
+                        <% if (place?.description && (place?.description?.img?.length > 0 || place?.description?.description?.length > 0)) { %>
                             <div class="container-item">
                                 <h4 class="container-item-title">Description</h4>
                                 <div class="container-item-content">
@@ -120,7 +125,12 @@
                                         <% }); %>
                                         <% if (place?.description?.img?.length > 0) { %>
                                             <% place?.description?.img?.map((img) => { %>
-                                                <img src="/images/<%= img %>" alt="img" />
+                                                <div class="gallery-item">
+                                                    <a href="/images/<%= img?.img %>" data-lightbox="mygallery" data-title="<%= img?.description %>">
+                                                      <img src="/images/<%= img?.img  %>" alt="<%= img?.img  %>" />
+                                                    </a>
+                                                    <h3><%= img?.description %></h3>
+                                                </div>  
                                             <% }); %>
                                         <% }%>
                                         <% if (place?.description?.materiaux && (place?.description?.materiaux?.technique1?.length > 0 || place?.description?.materiaux?.technique2.length > 0 || place?.description?.materiaux?.structures.length > 0)) { %>
@@ -148,7 +158,7 @@
                                 </div>
                             </div>
                         <% } %>
-                        <% if (place?.historique && (place?.historique?.img || place?.historique?.description?.length > 0)) { %>
+                        <% if (place?.historique && (place?.historique?.img?.length > 0 || place?.historique?.description?.length > 0)) { %>
                             <div class="container-item">
                                 <h4 class="container-item-title">Historique</h4>
                                 <div class="container-item-content">
@@ -159,8 +169,12 @@
                                         <% }); %>
                                         <% if (place?.historique?.img?.length > 0) { %>
                                             <% place?.historique?.img?.map((img) => { %>
-                                                <img src="/images/<%= img %>" alt="img" />
-                                            <% }); %>
+                                                <div class="gallery-item">
+                                                    <a href="/images/<%= img?.img %>" data-lightbox="mygallery" data-title="<%= img?.description %>">
+                                                      <img src="/images/<%= img?.img  %>" alt="<%= img?.img  %>" />
+                                                    </a>
+                                                    <h3><%= img?.description %></h3>
+                                                </div>                                            <% }); %>
                                         <% }%>
                                     </div>
                                 </div>
@@ -316,10 +330,10 @@
                                     <div class="gallery">
                                         <% place?.galerie?.plan?.map((img) => { %>
                                           <div class="gallery-item">
-                                            <a href="/images/<%= img %>" data-lightbox="mygallery" data-title="<%= img %>">
-                                              <img src="/images/<%= img %>" alt="<%= img %>" />
+                                            <a href="/images/<%= img?.img %>" data-lightbox="mygallery" data-title="<%= img?.description %>">
+                                              <img src="/images/<%= img?.img  %>" alt="<%= img?.img  %>" />
                                             </a>
-                                            <h3><%= img %></h3>
+                                            <h3><%= img?.description %></h3>
                                           </div>
                                         <% }); %>
                                       </div>
@@ -331,11 +345,11 @@
                                     <div class="gallery">
                                         <% place?.galerie?.photographie?.map((img) => { %>
                                             <div class="gallery-item">
-                                                <a href="/images/<%= img %>" data-lightbox="mygallery" data-title="<%= img %>">
-                                                  <img src="/images/<%= img %>" alt="<%= img %>" />
+                                                <a href="/images/<%= img?.img %>" data-lightbox="mygallery" data-title="<%= img?.description %>">
+                                                  <img src="/images/<%= img?.img  %>" alt="<%= img?.img  %>" />
                                                 </a>
-                                                <h3><%= img %></h3>
-                                            </div>
+                                                <h3><%= img?.description %></h3>
+                                              </div>
                                         <% }); %>
                                     </div>
                                 </div>

@@ -49,8 +49,41 @@ const UpdateByID = async (req, res) => {
         console.log(err);
     }
 };
+const UpdateByIDIMGs = async (req, res) => {
+    const { id } = req.params;
+    const {galerie, designation, 
+        description, historique } = req.body;
+    try {
+        //check if the req body contains the required fields
+        if (!galerie || !designation || !description || !historique) {
+            return res.status(400).json({ message: "All fields are required" });
+        }
+        //check if the Place has already existed
+        const existing = await Place.findOne({ _id:id });
+        if (!existing) {
+            return res.status(404).json({ message: "Place not found" });
+        }
+        //update the Place by (galerie=galerie, designation.img=designation.img, description.img=description.img, historique.img=historique.img)
+        const updatedPlace = await Place.updateOne({ _id: id }, { 
+            $set: { 
+            'galerie': galerie,
+            'designation.img': designation.img,
+            'description.img': description.img,
+            'historique.img': historique.img            
+            }
+        });
+        //check if the Place has been updated
+        if (!updatedPlace) {
+            return res.status(500).json({ message: "An error occurred while updating the Place" });
+        }
+        res.status(200).json(updatedPlace);
+    } catch (err) {
+        console.log(err);
+    }
+};
 module.exports = {
     GetAllPlaces,
     PlaceById,
-    UpdateByID
+    UpdateByID,
+    UpdateByIDIMGs
 };

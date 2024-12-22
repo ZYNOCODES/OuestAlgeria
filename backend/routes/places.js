@@ -2,7 +2,8 @@ const express = require('express');
 const {
     GetAllPlaces,
     PlaceById,
-    UpdateByID
+    UpdateByID,
+    UpdateByIDIMGs
 } = require('../controllers/PlacesController');
 const router = express.Router();
 
@@ -12,5 +13,7 @@ router.post('/:id', PlaceById);
 router.get('/All/all', GetAllPlaces);
 //update place by id
 router.patch('/update/:id', UpdateByID);
+//update place by id
+router.patch('/updateIMGs/:id', UpdateByIDIMGs);
 
 module.exports = router;
