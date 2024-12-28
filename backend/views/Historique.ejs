@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    />
+    <title>Ouest-Algerien</title>
+    <link rel="stylesheet" href="/styleHistorique.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link href="/lightbox.css" rel="stylesheet" />
+</head>
+<body>
+    <section class="GareFerroviaires">
+        <nav>
+            <div class="back-btn">
+                <a href="javascript:history.back();">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </a>
+            </div>
+            <h3>
+                Histoire Chemin de fer Algérien   
+            </h3>
+        </nav>
+        <div class="gare-container" id="container">
+            <div class="gare-item" id="gare-items">
+                <div class="bare" id="listeBare">
+                    <span>Naissance et développement</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="item-container" id="liste-container">
+                    <div class="container-item">
+                        <div class="container-item-content">
+                            <div class="container-item-content-description">
+                                <p>Dans un contexte mondial de révolution industrielle et de conquêtes coloniales, les connaisseurs de l'Algérie pensent que c’est le moment de fondation des grandes entreprises coloniales. Ces initiatives commencèrent précoce dans des années contiguës à la date de colonisation, seulement les plus pertinente ont eu objet d'examen de leur demande :</p>
+                                <p>Dés 1833, la première proposition de réalisation de chemin de fer en Algérie fut par le pionnier de chemin de fer de la métropole, Émile Pereire et son frère Isaac (des banquiers d'origine portugais), avec le soutien financier de la famille Rothschild, et technique des amis et collègues Saints Simoniens.</p>
+                                <p>Les frères Pereire, rédigent un projet de lois ou ils prévoient une organisation du territoire algérien en proposant sa subdivision en trois départements Alger, Oran, Constantine, appartenant au mouvement saint simoniens. Ils réclament la nécessité du développement du projet du chemin de fer et ils proposent "la construction d'un réseau ferré se composant d'une dorsale parallèle à la mer de Constantine à Oran via Alger, relié aux ports les plus intéressants pour l'armée (Bône, Philippeville, Bougie, Tènése, Arzew...)" </p>
+                                <p>La proposition telle que présentée, malgré sa non réalisation, est liée aux décisions politiques puisqu’elle va influencer par le premier programme lancé pour la réalisation de ce dernier.</p>
+                                <p>Le projet le plus ambitieux, le projet d’envergure et qui a eu des suites pour l’histoire du chemin de fer algérien, est celui du Tell. Le projet de chemin de fer par la ligne central du Tell avec rattache à la côte algérienne apparaît dès 1854 et constitue d’alors la seule et unique grande voie de communication de l'Algérie.  Par la suite, un décret du 8 avril 1857 décida la construction des premières voies terrées.</p>
+                                <p>Ce projet a été précédé par l'idée de conception d'ensemble le distinguant des autres projets ferroviaires de la métropole. Cela signifie son établissement par une seule ligne continue reliée par des embranchements distincts " Ce ne sont plus de petits chemins de fer morcelés, ayant chacun leurs règlements spéciaux, (...) c'est un vaste système parfaitement coordonné dans toutes ses parties, embrassant la totalité du territoire algérien”. Et comme le décrit HIPPOLYTE PEUT " Le chemin de fer central du Tell algérien constituerait la seule et unique grande voie de communication de l'Algérie"</p>
+                                <p>Le chemin de fer représente autant de témoins qui se font l'écho d'une culture ferroviaire appartenant à l'histoire coloniale française en Algérie, il traduit des expériences pluridisciplinaires et reflète l'identité des lieux, véhicule ainsi la mémoire de l'humanité marquée par la révolution industrielle et son corollaire l'époque moderne. Il est constitué de différentes structures et infrastructures ferroviaires</p>
+                                <p
+                                    style="padding-inline-start: 20px;"
+                                >1- Réseaux : lignes de chemin de fer</p>
+                                <p
+                                    style="padding-inline-start: 20px;"
+                                >2- Gares : Bâtiments voyageurs terminus (de tête) , Bâtiments voyageurs intermédiaire.</p>
+                                <p
+                                    style="padding-inline-start: 20px;"
+                                >3- Ouvrages d’art : ponts, viaducs et tunnels.</p>
+                                <p>Ces biens culturels par leurs valeurs architecturales, historiques, artistiques et techniques sont des témoins indéniables de l'épaisseur culturelle algérienne, se considérant comme patrimoine ferroviaire matériel immobilier de l'architecture et l’engineering de déplacement.</p>
+                                <p
+                                    style="font-size: x-large; font-weight: 700; padding-inline-start: 20px;"
+                                >- Exécution des projets </p>
+                                <p>On ne peut aborder l'histoire des chemins de fer indépendamment du tracé des lignes composant le chemin de fer, ni des compagnies qui l'ont exploité.</p>
+                                <p
+                                    style="padding-inline-start: 20px; font-weight: 700;"
+                                >Tracé des lignes :</p>
+                                <p>Après un long parcours chargé de réflexions et de propositions soumises à l'Etat pour doter la colonie d'Algérie du projet de développement du chemin de fer, le gouvernement charge le général De Chabaud-Latour (commandant supérieur du génie) pour analyser et faire le scepticisme des initiatives soumissionnées pour en pouvoir décider la fiabilité du projet. </p>
+                                <p>Ce n'est qu'à partir de 08 Avril 1857 que commencèrent l'histoire de réalisation de chemin de fer en Algérie en réponse à la demande de De Chabaud-Latour avec la promulgation gouvernementale du décret décisif d'autorisation de construction des premières voies ferrées au total de 1357 km comme suit : </p>
+                                <p
+                                    style="padding-inline-start: 10px;"
+                                >
+                                    1)	Une ligne principale parallèle à la côte de Constantine à Alger et Oran d'un linéaire de 881 km, se traduit par les lignes :
+                                </p>
+                                <p
+                                    style="padding-inline-start: 30px;"
+                                >
+                                    -	De Alger à Oran : desservant Blida, Orléansville, Saint Denis de Sig, Sainte-Barbe-du-Tlélat en arrivant à Oran à l’Ouest
+                                </p>
+                                <p
+                                    style="padding-inline-start: 30px;"
+                                >
+                                    -	De Alger à Constantine desservant : Aumale (Sour el Ghozlane), Sétif en arrivant à Constantine à l’Est.                                
+                                </p>
+                                <p
+                                    style="padding-inline-start: 10px;"
+                                >
+                                    2)	Des lignes partant des principaux ports et aboutissant à la ligne parallèle à la mer d'un linéaire de 470 km :
+                                </p>
+                                <p
+                                    style="padding-inline-start: 30px;"
+                                >
+                                    -	De Philippeville à Constantine, 87 km ;
+                                </p>
+                                <p
+                                    style="padding-inline-start: 30px;"
+                                >
+                                    -	De Bougie à Sétif, 110 km ; ( elle ne sera pas construite au cours du premier programme comme prévue)
+                                </p>
+
+                                <p
+                                    style="padding-inline-start: 30px;"
+                                >
+                                    -	De Bône à Constantine, 202 km ; (Retardé par la guerre de 1870, elle a connu une construction particulière)
+                                </p>
+                                <p
+                                    style="padding-inline-start: 30px;"
+                                >
+                                    -	 De Ténès à Orléansville, 58 km ; (elle ne sera pas construite au cours du premier programme comme prévu)
+                                </p>
+
+                                <p
+                                    style="padding-inline-start: 30px;"
+                                >
+                                    -	De Oran à Tlemcen par Sainte-Barbe-du-Tlélat et Sidi-Bel-Abbès, 120 km ; le reste de la ligne jusqu'au Tlemcen sera réalisé dans le cadre d'un autre programme
+                                </p>
+                                <p
+                                    style="padding-inline-start: 30px;"
+                                >
+                                    -	De Arzew et Mostaganem à Relizane 68 km. (elle ne sera pas construite au cours du premier programme comme prévue) 
+                                </p>
+                                <p>
+                                    Ce programme correspond au projet présenté dès 1833 par Émile PEREIRE et soutenu par ses amis saint-simoniens, et financièrement par la famille ROTHSCHILD qui est restée sans suite pour des raisons économiques et politiques.   
+                                </p>
+                                <p>
+                                    A cette décision l'empereur adjoint un avis définissant le cadre juridique de l'investissement de chemin de fer, il prend en considération les difficultés de réalisation d'un si grand projet dans la colonie nécessitant un travail colossal qui ne laisse pas espérer un investissement rentable, pour cela il annonce sa prise de responsabilité au cas de risques financier ce qui encourage les compagnies ferroviaires à investir dans la colonie.
+                                </p>
+                                <form 
+                                    action="/getHistoriquePDF" 
+                                    method="get"
+                                    class="container-item-content-description-pdf"
+                                    id="historiqueForm"
+                                >
+                                    <i 
+                                        class="fa-solid fa-file-pdf"
+                                    ></i>
+                                    <p>Rapport du Maréchal Vaillant 1857</p>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <div class="gare-item" id="gare-items">
+                <div class="bare" id="edificeBare">
+                    <span>Programmes Ferroviaires</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="item-container" id="edifice-container">
+                    <div class="container-item">
+                        <div class="container-item-content">
+                            <div class="container-item-content-description">
+                                <p
+                                    style="font-size: large; font-weight: 700;"
+                                >
+                                    Plan de développement de chemin de fer en Algérie :
+                                </p>
+                                <p
+                                    style="padding-inline-start: 10px;"
+                                >
+                                    Le plan de développement de chemin de fer en Algérie s'est fait en trois programmes :
+                                </p>
+                                <p
+                                    style="padding-inline-start: 30px;"
+                                >
+                                    1)	1857-1879 : Le premier programme de réalisation de chemin de fer suivant le plan Napoléon qui donne priorité, donne priorité à la construction des lignes reliant les trois grandes provinces dans un souci militaire et économique.
+                                </p>
+                                <p
+                                    style="padding-inline-start: 30px;"
+                                >
+                                    2)	1879/1906 : Le deuxième programmes de développement de chemin de fer fut lancé sous la troisième république, sous la présidence de Jules Grévy, par le décret du 18 juillet 1879.
+                                </p>
+                                <p
+                                    style="padding-inline-start: 30px;"
+                                >
+                                    3)	1907/1946 : le troisième programme est celui de la remise en ordre des deux premiers programmes.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gare-item" id="gare-items">
+                <div class="bare" id="acteurBare">
+                    <span>Compagnies Ferroviaires</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="item-container" id="acteur-container">
+                    <div class="container-item">
+                        <div class="container-item-content">
+                            <div class="container-item-content-description">
+                                <p
+                                    style="font-size: large; font-weight: 700;"
+                                >
+                                    Acteurs de chemins de fer Algérien ( Compagnies ferroviaires)
+                                </p>
+                                <p
+                                    style="padding-inline-start: 10px;"
+                                >
+                                    L'œuvre du chemin de fer en Algérie à été dirigée par les autorités coloniales qui assurait la fixation des tracés et l'attribution de concession aux soumissionnaires. 
+                                </p>
+                                <p
+                                    style="padding-inline-start: 10px;"
+                                >
+                                    L'architecture ferroviaire a été confiée ligne par ligne à des compagnies d'investissement qui sont les maîtres d'œuvre d'un consortium de disciplines ( architectes, ingénieurs, géographes,......). Sans oublier la contribution des pénitenciers algériens qui composaient la main-d'œuvre pour les travaux d'exécution. Traitée comme esclavagisme, sous des conditions pénibles, ces propos ne consistent pas à annoncer une réalité bien courante de la contribution algérienne à l'exécution du chemin de fer algérien, mais participe à une perspective d'appropriation de ce patrimoine ferroviaire. 
+                                </p>
+                                <p
+                                    style="padding-inline-start: 30px;"
+                                >
+                                    ➔	C.F.A
+                                </p>
+                                <p
+                                    style="padding-inline-start: 30px;"
+                                >
+                                    ➔	P.L.M
+                                </p>
+                                <p
+                                    style="padding-inline-start: 30px;"
+                                >
+                                    ➔	A l'EST d’Alger :
+                                </p>
+                                <p
+                                    style="padding-inline-start: 50px;"
+                                >
+                                    -	La Compagnie EST Algérien
+                                </p>
+                                <p
+                                    style="padding-inline-start: 50px;"
+                                >
+                                    -	La compagnie Bône-Guelma
+                                </p>
+                                <p
+                                    style="padding-inline-start: 30px;"
+                                >
+                                    ➔	À l'OUEST d’Alger :
+                                </p>
+                                <p
+                                    style="padding-inline-start: 50px;"
+                                >
+                                    -	La compagnie Franco-Algérienne
+                                </p>
+                                <p
+                                    style="padding-inline-start: 50px;"
+                                >
+                                    -	La compagnie de l'OUEST Algérien
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gare-item" id="gare-items">
+                <div class="bare" id="documentationBare">
+                    <span>Cartes</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="item-container" id="documentation-container">
+                    <div class="container-item">
+                        <div class="container">
+                            <div class="gallery">
+                                <div class="gallery-item">
+                                    <a href="/images/Historique_G1.png" data-lightbox="mygallery" data-title="Figure 1 : Carte du réseau ferroviaire algérien entre 1871 et 1942 
+                                    [Source : https://encyclopedie-afn.org/ALGERIE_Chemins_de_fer]">
+                                        <img src="/images/Historique_G1.png" alt="Historique_G1.png" />
+                                    </a>
+                                    <h3>
+                                        Figure 1 : Carte du réseau ferroviaire algérien entre 1871 et 1942 
+                                        [Source : https://encyclopedie-afn.org/ALGERIE_Chemins_de_fer]
+                                    </h3>
+                                </div>
+                                <div class="gallery-item">
+                                    <a href="/images/Historique_G2.jpg" data-lightbox="mygallery" data-title="Figure 3 : Carte du réseau ferroviaire algérien 1930 Source: Archive SNTF">
+                                        <img src="/images/Historique_G2.jpg" alt="Historique_G2.jpg" />
+                                    </a>
+                                    <h3>
+                                        Figure 3 : Carte du réseau ferroviaire algérien 1930 Source: Archive SNTF
+                                    </h3>
+                                </div>
+                                <div class="gallery-item">
+                                    <a href="/images/Historique_G3.jpg" data-lightbox="mygallery" data-title="Figure 3 : Carte du réseau ferroviaire algérienpar departement Source: Archive SNTF">
+                                        <img src="/images/Historique_G3.jpg" alt="Historique_G3.jpg" />
+                                    </a>
+                                    <h3>
+                                        Figure 3 : Carte du réseau ferroviaire algérienpar departement Source: Archive SNTF
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    
+    </section>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/wicg-inert@latest/dist/inert.min.js"></script>
+    <script src="/Adminmain.js"></script>
+    <script src="/styleHistorique.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/lightbox.js"></script>
+    <script>
+        lightbox.option({
+          resizeDuration: 200,
+          wrapAround: false,
+          alwaysShowNavOnTouchDevices: false,
+          disableScrolling: true,
+        });
+        // Add a click event listener to the form
+        document.getElementById('historiqueForm').addEventListener('click', function() {
+            this.submit();
+        });
+    </script>
+</body>
+</html>

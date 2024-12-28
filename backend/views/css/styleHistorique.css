@@ -1,0 +1,314 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+:root {
+    --whitecolor: #fff;
+    --titlecolor: #393d48;
+    --bgItemcolor: #eef3f4;
+    --darkcolor: #000;
+    --bgbutton: #33a4e7;
+    --redcolor: #ff0000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.GareFerroviaires {
+    width: 100%;
+    height: fit-content;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20vh;
+}
+
+nav {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    margin-top: 4rem;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+nav h3 {
+    font-size: 30px;
+}
+
+.back-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    position: absolute;
+    left: 5rem;
+    cursor: pointer;
+}
+
+.back-btn i {
+    color: white;
+}
+
+.gare-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5%;
+    margin-top: 10vh;
+    gap: 40px;
+}
+
+.gare-item{
+    width: 100%;
+    height: fit-content;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bare{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 50px;
+    border-radius: 50px;
+    padding: 0 50px;
+    cursor: pointer;
+    background-color: var(--bgItemcolor);
+}
+
+.bare span{
+    font-size: 18px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.item-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    gap: 20px;
+    margin-top: 30px;
+    display: none;
+}
+
+.container-item{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: start;
+    height: fit-content;
+    min-height: auto;
+    background-color: var(--bgItemcolor);
+    border-radius: 20px;
+    padding: 30px;
+}
+
+
+.listeContainer-toggle,
+.edificeContainer-toggle,
+.acteurContainer-toggle,
+.galerieContainer-toggle,
+.documentationContainer-toggle {
+    display: flex;
+}
+.list-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+}
+.map-container{
+    display: flex;
+    width: 100%;
+    height: 525px;
+    border-radius: 20px;
+    background-color: var(--bgItemcolor);
+    justify-self: center;
+    align-items: start;
+    flex: 1;
+}
+
+.info-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 525px;
+    background-color: var(--bgItemcolor);
+    border-radius: 20px;
+    padding: 25px;
+    justify-self: end;
+    align-items: start;
+}
+
+.line2-col2-line1 {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.line2-col2-line1 img {
+    width: 35px;
+    margin-inline-end: 10px;
+}
+
+.info-container span {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--darkcolor);
+}
+
+.info-container p {
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--darkcolor);
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    height: fit-content;
+    padding: 10px;
+}
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 20px;
+    width: 100%;
+    padding: 20px; 
+    box-sizing: border-box; 
+}
+
+.gallery-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    flex: 1;
+}
+.gallery-item a{
+    text-decoration: none;
+    color: var(--darkcolor);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.02);
+}
+
+.gallery-item h3 {
+    font-size: 1rem;
+    color: var(--textColor, #333); 
+    text-align: center;
+    margin: 0;
+    word-wrap: break-word; 
+}
+.acteur-title{
+    font-size: x-large;
+    font-weight: 600;
+    color: var(--redcolor);
+}
+.acteur-subtitle{
+    font-size: large;
+    font-weight: 700;
+    color: var(--darkcolor);
+}
+.acteur-paragraph{
+    font-size: large;
+    font-weight: 400;
+    color: var(--darkcolor);
+    padding-inline-start: 10px;
+}
+.container-item-title{
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--redcolor);
+}
+.container-item-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 10px;
+    width: 100%;
+}
+
+.container-item-content-description{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px;
+    width: 50%;
+    flex: 1;
+}
+.container-item-content-description p{
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--darkcolor);
+}
+.container-item-content-description-pdf{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+.fa-file-pdf{
+    color: red;
+    font-size: xx-large;
+}
+.container-item-content-description-pdf p{
+    font-size: 20px;
+    font-weight: 600;
+    color: red;
+}

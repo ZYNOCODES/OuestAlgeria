@@ -172,6 +172,9 @@ router.get("/Galerie", async (req, res) => {
 router.get("/Valorisation", async (req, res) => {
     return res.render('Valorisation');
 });
+router.get("/Historique", async (req, res) => {
+    return res.render('Historique');
+});
 router.get("/:id", async (req, res) => {
     const { id } = req.params;
     try {
