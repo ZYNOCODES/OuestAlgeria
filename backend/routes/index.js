@@ -89,7 +89,10 @@ router.get("/Gares", async (req, res) => {
             // Sort the Gare list based on the desired order
             const sortedGare = desiredOrder
                 .map(name => Gare.find(place => place.Nom === name))
-                .filter(Boolean); // Filter out any names not found in the Gare list
+                .filter(Boolean);
+            // Add unmatched Gares at the bottom
+            const unmatchedGares = Gare.filter(place => !desiredOrder.includes(place.Nom));
+            const finalSortedGare = [...sortedGare, ...unmatchedGares];
 
             // List of Gares to make bold
             const boldGares = [
@@ -100,7 +103,7 @@ router.get("/Gares", async (req, res) => {
             ];
 
             // Pass both sortedGare and boldGares to the frontend
-            return res.render('Gares', { sortedGare, boldGares });
+            return res.render('Gares', { sortedGare: finalSortedGare, boldGares });
         } else {
             return res.status(404).json({ error: 'Places not found' });
         }
