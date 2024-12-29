@@ -1,12 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta http-equiv="cache-control" content="no-cache">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="-1">
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
@@ -19,139 +17,400 @@
     href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
     />
     <title>Ouest-Algerien</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="/styleAffichageV2.css">
+    <link rel="stylesheet" href="/styleAffichageV1.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link href="/lightbox.css" rel="stylesheet" />
 </head>
 <body>
-    <div class="container">
-        <div class="top-bar">
-            <i class="fa-solid fa-chevron-left"></i>
-            <span><%=place.Type %></span>
-        </div>
-        <div class="line1">
-            <h4><%=place.Nom %></h4>
-            <div class="Bar"></div>
-        </div>
-        <div class="line2">
-            <div class="line2-col1">
-                <span>Description</span>
-                <p>
-                    Cet étrange paysage lunaire de grand intérêt géologique abrite l’un des plus importants ensembles d’art rupestre préhistorique du monde. Plus de 15 000 dessins et gravures permettent d’y suivre, depuis 6000 av. J.-C. jusqu’aux premiers siècles de notre ère, les changements du climat, les migrations de la faune et l’évolution de la vie humaine aux confins du Sahara. Le panorama de formations géologiques présente un intérêt exceptionnel avec ses « forêts de rochers » de grès érodé.
-                </p>
+    <section class="GareFerroviaires">
+        <nav>
+            <div class="back-btn">
+                <a href="javascript:history.back();">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </a>
             </div>
-            <div class="line2-col2">
-                <div class="line2-col2-line1">
-                    <img src="https://lesplusbeauxdrapeauxdumonde.files.wordpress.com/2016/11/algeria-1219746_1280.jpg?w=692&amp;h=390">
-                    <span>Algerie</span>
+            <h3>
+                <%=place.Nom%>
+            </h3>
+        </nav>
+        <div class="gare-container" id="container">
+            <div class="gare-item" id="gare-items">
+                <div class="bare" id="listeBare">
+                    <span>Liste</span>
+                    <i class="fa-solid fa-chevron-down"></i>
                 </div>
-                <span>Ancien_Nom: <p><%=place.Ancien_Nom %></p></span>
-                <span>CodeWilay : <p><%=place.CodeWilay %></p></span>
-                <span>CodeCommu : <p><%=place.CodeCommu %></p></span>
-                <span>PositionKm: <p><%=place.PositionKm %></p></span>
-                <span>LigneFerro: <p><%=place.LigneFerro %></p></span>
-                <span>StyleArchi: <p><%=place.StyleArchi %></p></span>
-            </div>
-        </div>
-        <div class="line3">
-            <div class="line3-line1">
-                <div class="Bar"></div>
-                <div class="image-container"></div>
-                <div class="Bar"></div>
-                <div class="line3-line1-description-container">
-                    <span>Valeur universelle exceptionnelle</span>
-                    <p>
-                        Le Tassili n'Ajjer est un immense plateau situé au Sud-est de l'Algérie aux confins de la Libye, du Niger et du Mali, couvrant une superficie de 72 000 km². La densité exceptionnelle des peintures et des gravures, et l'existence de nombreux vestiges préhistoriques sont des témoignages exceptionnels de la Préhistoire. Depuis 10 000 ans avant notre ère jusqu'aux premiers siècles, les populations qui se sont succédées ont laissé de nombreuses traces archéologiques, habitats, tumuli et enclos, qui ont livré un abondant matériel lithique et céramique. Toutefois c'est l'art rupestre (gravures et peintures) qui a fait la renommée mondiale du Tassili à partir de 1933, date de sa découverte. 15 000 gravures ont été répertoriées jusqu'à nos jours.
-                        Le bien est également d'un grand intérêt géologique et esthétique : le panorama des formations géologiques avec ses « forêts de rochers » de grès érodé offre l'image d'un étrange paysage lunaire.
-                        Critère (i) : L'ensemble remarquable de peintures et de gravures rupestres de diverses périodes confère une renommée mondiale au bien. Les représentations de la période des têtes rondes renvoient à d'éventuelles pratiques magico-religieuse vieilles de quelques 10 000 ans, alors que les représentations de la période des bovidés, marquant la vie quotidienne et sociale, présentent un réalisme esthétique naturaliste comptant parmi les plus célèbres de l'art pariétal préhistorique. Les dernières images montrent des représentations de la domestication des chevaux et des chameaux.
-                        Critère (iii) : Les images de l'art rupestre couvrent une période d'environ 10 000 ans et le patrimoine culturel du Tassili témoigne de traditions culturelles vivantes et disparues qui informent sur la succession et l'évolution des civilisations et des cultures préhistoriques très anciennes. Avec les restes archéologiques, ils témoignent de manière particulièrement vivante des changements climatiques, des changements de la faune et de la flore et plus particulièrement des possibilités offertes à l'élevage et à la vie pastorale liés à des sites défensifs inexpugnables à certaines périodes de la préhistoire.
-                        Critère (vii) : Avec des grés érodés qui constituent des « forêts de rochers », le bien est d'un intérêt esthétique remarquable. Les grès ont gardé intactes les traces et les empreintes des grands évènements géologiques et climatiques. L'eau d'abord et le vent ensuite, par les effets de la corrosion, ont contribué à la mise en place d'une morphologie particulière, celle d'un plateau découpé par les eaux et adouci par le vent.
-                        Critère (viii) : La conformation géologique du Tassili n'Ajjer présente des unités cristallines précambriennes et des successions sédimentaires gréseuses de grand intérêt paléogéographique et paléo écologique.
-                        Les hommes ont vécu dans cet espace en développant des comportements physiologiques et culturels adaptés à la rigueur du climat ; leurs témoignages remontent à plusieurs centaines de milliers d'années. L'art rupestre, justement tassilien, est l'expression la plus éloquente de relations entre l'homme et son environnement, où plus de 15 000 dessins et gravures témoignant des changements du climat, des migrations de la faune et de l'évolution de la vie humaine aux confins du Sahara. Cet art montre des espèces dépendantes de l'eau, telles l'hippopotame et des espèces éteintes dans la région depuis plusieurs milliers d'années. Cette combinaison d'éléments géologiques, écologiques et culturels constitue un exemple éminemment représentatif du témoignage de la vie.
-                        Intégrité
-                        Le bien contient l'ensemble des sites d'art rupestre et des paysages clés représentant sa beauté naturelle et tous les sites de la diversité biologique et écologique qui constituent les attributs de la valeur universelle exceptionnelle. Les limites et la taille (72 000 km²) du bien sont suffisantes pour maintenir le processus géologique et garantir l'intégrité de l'héritage culturel du site.
-                    </p>
-                </div>
-            </div>
-            <div class="line3-line2">
-                <div id="StationMap" class="leaflet-map"></div>
-                <div class="line3-line2-div">
-                    <h6>Documents :</h6>
-                    <span>01- document 1</span>
-                    <span>02- document 2</span>
-                    <span>03- document 3</span>
-                </div>
-                <div class="line3-line2-div">
-                    <h6>Lien :</h6>
-                    <span>01- lien 1</span>
-                    <span>02- lien 2</span>
-                    <span>03- lien 3</span>
-                </div>
-            </div>
-            
-        </div>
-        
-    </div>
-    <footer>
-        <div class="footer-items">
-            <div class="footer-items footer-container">
-                <div class="footer-item LOGO">
-                    <h2>LOGO</h2>
-                    <p>
-                        Mobot is an online education platform that delivers video courses,
-                        programs and resources.
-                    </p>
-                    <div class="footer-social-media">
-                        <div class="social-media-item facebook">
-                            <a href="#">
-                            <i class="fa-brands fa-facebook-f"></i>
-                            </a>
-                        </div>
-                        <div class="social-media-item twitter">
-                            <a href="#">
-                            <i class="fa-brands fa-twitter"></i>
-                            </a>
-                        </div>
-                        <div class="social-media-item youtube">
-                            <a href="#">
-                            <i class="fa-brands fa-youtube"></i>
-                            </a>
-                        </div>
-                        <div class="social-media-item dribbble">
-                            <a href="#">
-                            <i class="fa-brands fa-dribbble"></i>
-                            </a>
+                <div class="item-container" id="liste-container">
+                    <div class="list-container">
+                        <div id="map" class="map-container"></div>
+                        <div class="info-container">
+                            <div class="line2-col2-line1">
+                                <img src="https://lesplusbeauxdrapeauxdumonde.files.wordpress.com/2016/11/algeria-1219746_1280.jpg?w=692&amp;h=390">
+                                <span>Algerie</span>
+                            </div>
+                            <span>Ancien_Nom: <p>oran</p></span>
+                            <span>CodeWilay : <p>31</p></span>
+                            <span>CodeCommu : <p>31</p></span>
+                            <span>PositionKm: <p>245353653km</p></span>
+                            <span>LigneFerro: <p>5378633</p></span>
+                            <span>StyleArchi: <p>37883783</p></span>
+                            <span>Ancien_Nom: <p>oran</p></span>
+                            <span>CodeWilay : <p>31</p></span>
+                            <span>CodeCommu : <p>31</p></span>
+                            <span>PositionKm: <p>245353653km</p></span>
+                            <span>LigneFerro: <p>5378633</p></span>
+                            <span>StyleArchi: <p>37883783</p></span>
                         </div>
                     </div>
                 </div>
-                <div class="footer-item quicklinks">
-                    <h3>quicklinks</h3>
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Documents</a></li>
-                        <li><a href="#">Gallery</a></li>
-                        <li><a href="#">About us</a></li>
-                        <li><a href="#">Contact us</a></li>
-                    </ul>
+            </div> 
+            <div class="gare-item" id="gare-items">
+                <div class="bare" id="edificeBare">
+                    <span>Edifice</span>
+                    <i class="fa-solid fa-chevron-down"></i>
                 </div>
-                <div class="footer-item contact">
-                    <h3>Contact Us</h3>
-                    <p>
-                    (+55) 254. 254. 254 <br>Info@lsemajafrica.com Helios Tower 75 Tam
-                    Trinh Algeria,Algeries
-                    </p>
+                <div class="item-container" id="edifice-container">
+                    <% if ((place?.designation && (place?.designation?.img?.length > 0 || place?.designation?.description?.length > 0))
+                     || (place?.localisation && (place?.localisation?.length > 0)) || (place?.description && (place?.description?.img?.length > 0 || place?.description?.description?.length > 0))
+                      || (place?.historique && (place?.historique?.img?.length > 0 || place?.historique?.description?.length > 0))
+                       || (place?.conservation && (place?.conservation?.justification || place?.conservation?.integrite || place?.conservation?.authenticite))) { %>
+                        <% if (place?.designation && (place?.designation?.img?.length > 0 || place?.designation?.description?.length > 0)) { %>
+                            <div class="container-item">
+                                <h4 class="container-item-title">Désignation et fonction</h4>
+                                <div class="container-item-content">
+                                    <% if (place?.designation?.img?.length > 0) { %>
+                                        <% place?.designation?.img?.map((img) => { %>
+                                            <div class="gallery-item">
+                                                <a href="/images/<%= img?.img %>" data-lightbox="mygallery" data-title="<%= img?.description %>">
+                                                  <img src="/images/<%= img?.img  %>" alt="<%= img?.img  %>" />
+                                                </a>
+                                                <h3><%= img?.description %></h3>
+                                            </div>  
+                                        <% }); %>
+                                    <% }%>
+                                    <% if (place?.designation?.description && place?.designation?.description?.length > 0) { %>
+                                        <div class="container-item-content-description">
+                                            <% place?.designation?.description?.map((desc) => { %>
+                                                <p><%= desc %></p>
+                                            <% }); %>
+                                        </div>
+                                    <% } %>
+                                </div>
+                            </div>
+                        <% } %>
+                        <% if (place?.localisation && (place?.localisation?.length > 0)) { %>
+                            <div class="container-item">
+                                <h4 class="container-item-title">Localisation</h4>
+                                <div class="container-item-content">
+                                    <div class="container-item-content-description">
+                                        <% place?.localisation?.map((desc) => { %>
+                                            <p><%= desc %></p>
+                                        <% }); %>
+                                        <h3>Coordonnées géographiques :</h3>
+                                        <p>Latitude : <%= place?.LattitudeY %></p>
+                                        <p>Longitude : <%= place?.LongitudeX %></p>
+                                    </div>
+                                </div>
+                            </div>
+                        <% } %>
+                        <% if (place?.description && (place?.description?.img?.length > 0 || place?.description?.description?.length > 0)) { %>
+                            <div class="container-item">
+                                <h4 class="container-item-title">Description</h4>
+                                <div class="container-item-content">
+                                    <div class="container-item-content-description">
+                                        <% place?.description?.description?.map((desc) => { %>
+                                            <p><%= desc %></p>
+                                        <% }); %>
+                                        <% if (place?.description?.img?.length > 0) { %>
+                                            <% place?.description?.img?.map((img) => { %>
+                                                <div class="gallery-item">
+                                                    <a href="/images/<%= img?.img %>" data-lightbox="mygallery" data-title="<%= img?.description %>">
+                                                      <img src="/images/<%= img?.img  %>" alt="<%= img?.img  %>" />
+                                                    </a>
+                                                    <h3><%= img?.description %></h3>
+                                                </div>  
+                                            <% }); %>
+                                        <% }%>
+                                        <% if (place?.description?.materiaux && (place?.description?.materiaux?.technique1?.length > 0 || place?.description?.materiaux?.technique2.length > 0 || place?.description?.materiaux?.structures.length > 0)) { %>
+                                            <h1>Matériaux :</h1>
+                                            <% if (place?.description?.materiaux?.technique1?.length > 0) { %>
+                                                <p><strong>Matériaux et techniques du gros-œuvre :</strong></p>
+                                                <% place?.description?.materiaux?.technique1?.map((desc) => { %>
+                                                    <p><%= desc %></p>
+                                                <% }); %>
+                                            <% } %>
+                                            <% if (place?.description?.materiaux?.technique2?.length > 0) { %>
+                                                <p><strong>Matériaux et techniques du gros-œuvre :</strong></p>
+                                                <% place?.description?.materiaux?.technique2?.map((desc) => { %>
+                                                    <p><%= desc %></p>
+                                                <% }); %>
+                                            <% } %>
+                                            <% if (place?.description?.materiaux?.structures?.length > 0) { %>
+                                                <p><strong>Type de structures principales :</strong></p>
+                                                <% place?.description?.materiaux?.structures?.map((desc) => { %>
+                                                    <p><%= desc %></p>
+                                                <% }); %>
+                                            <% } %>
+                                        <% }%>
+                                    </div>
+                                </div>
+                            </div>
+                        <% } %>
+                        <% if (place?.historique && (place?.historique?.img?.length > 0 || place?.historique?.description?.length > 0)) { %>
+                            <div class="container-item">
+                                <h4 class="container-item-title">Historique</h4>
+                                <div class="container-item-content">
+                                    <div class="container-item-content-description">
+                                        <p><strong>Synthèse historique</strong></p>
+                                        <% place?.historique?.description?.map((desc) => { %>
+                                            <p><%= desc %></p>
+                                        <% }); %>
+                                        <% if (place?.historique?.img?.length > 0) { %>
+                                            <% place?.historique?.img?.map((img) => { %>
+                                                <div class="gallery-item">
+                                                    <a href="/images/<%= img?.img %>" data-lightbox="mygallery" data-title="<%= img?.description %>">
+                                                      <img src="/images/<%= img?.img  %>" alt="<%= img?.img  %>" />
+                                                    </a>
+                                                    <h3><%= img?.description %></h3>
+                                                </div>                                            <% }); %>
+                                        <% }%>
+                                    </div>
+                                </div>
+                            </div>
+                        <% } %>
+                        <% if (place?.conservation && (place?.conservation?.justification || place?.conservation?.integrite || place?.conservation?.authenticite)) { %>
+                            <div class="container-item">
+                                <h4 class="container-item-title">Conservation</h4>
+                                <% if (place?.conservation?.justification) { %>
+                                    <p><%= place?.conservation?.justification %></p>
+                                <% }%>
+                                <div class="container-item-content">
+                                    <% if (place?.conservation?.integrite || place?.conservation?.authenticite) { %>
+                                        <div class="container-item-content-description">
+                                            <p><strong>Intégrité :</strong> <%= place?.conservation?.integrite %></p>
+                                            <p><strong>Authenticité :</strong> <%= place?.conservation?.authenticite %></p>
+                                        </div>
+                                    <% }%>
+                                </div>
+                            </div>
+                        <% } %>
+                    <% } else { %>
+                        <div class="container-item">
+                            <p>no description is available</p>
+                        </div>
+                    <% } %>
+                </div>
+            </div>
+
+            <div class="gare-item" id="gare-items">
+                <div class="bare" id="acteurBare">
+                    <span>Acteur</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="item-container" id="acteur-container">
+                    <div class="container-item">
+                        <% if (place?.acteurs && ((place?.acteurs?.ancienne?.compagnie?.length > 0 || place?.acteurs?.ancienne?.entreprise?.length > 0 
+                            || place?.acteurs?.ancienne?.architecte?.length > 0 || place?.acteurs?.ancienne?.ingenieurs?.length > 0)
+                            || (place?.acteurs?.modification?.compagnie?.length > 0 || place?.acteurs?.modification?.entreprise?.length > 0 
+                            || place?.acteurs?.modification?.architecte?.length > 0 || place?.acteurs?.modification?.ingenieurs?.length > 0)
+                            || (place?.acteurs?.modernisation?.compagnie?.length > 0 || place?.acteurs?.modernisation?.entreprise?.length > 0 
+                            || place?.acteurs?.modernisation?.architecte?.length > 0 || place?.acteurs?.modernisation?.ingenieurs?.length > 0)
+                            )){ %>
+                            <% if (place?.acteurs?.ancienne?.compagnie?.length > 0 || place?.acteurs?.ancienne?.entreprise?.length > 0 
+                            || place?.acteurs?.ancienne?.architecte?.length > 0 || place?.acteurs?.ancienne?.ingenieurs?.length > 0){ %>
+                                <h2 class="acteur-title">Ancienne :</h2>
+                                <% if (place?.acteurs?.ancienne?.compagnie?.length > 0) { %>
+                                    <p class="acteur-subtitle">Compagnie :</p>
+                                    <% place?.acteurs?.ancienne?.compagnie?.map((comp) => { %>
+                                        <p class="acteur-paragraph"><%= comp %></p>
+                                    <% }); %>
+                                <% } %>
+                                <% if (place?.acteurs?.ancienne?.entreprise?.length > 0) { %>
+                                    <p class="acteur-subtitle">Entreprise :</p>
+                                    <% place?.acteurs?.ancienne?.entreprise?.map((comp) => { %>
+                                        <p class="acteur-paragraph"><%= comp %></p>
+                                    <% }); %>
+                                <% } %>
+                                <% if (place?.acteurs?.ancienne?.architecte?.length > 0) { %>
+                                    <p class="acteur-subtitle">Architecte :</p>
+                                    <% place?.acteurs?.ancienne?.architecte?.map((comp) => { %>
+                                        <p class="acteur-paragraph"><%= comp %></p>
+                                    <% }); %>
+                                <% } %>
+                                <% if (place?.acteurs?.ancienne?.ingenieurs?.length > 0) { %>
+                                    <p class="acteur-subtitle">Ingénieurs :</p>
+                                    <% place?.acteurs?.ancienne?.ingenieurs?.map((comp) => { %>
+                                        <p class="acteur-paragraph"><%= comp %></p>
+                                    <% }); %>
+                                <% } %>
+                            <% } %>
+    
+                            <% if (place?.acteurs?.modification?.compagnie?.length > 0 || place?.acteurs?.modification?.entreprise?.length > 0 
+                            || place?.acteurs?.modification?.architecte?.length > 0 || place?.acteurs?.modification?.ingenieurs?.length > 0){ %>
+                                <h2 class="acteur-title">Modification :</h2>
+                                <% if (place?.acteurs?.modification?.compagnie?.length > 0) { %>
+                                    <p class="acteur-subtitle">Compagnie :</p>
+                                    <% place?.acteurs?.modification?.compagnie?.map((comp) => { %>
+                                        <p class="acteur-paragraph"><%= comp %></p>
+                                    <% }); %>
+                                <% } %>
+                                <% if (place?.acteurs?.modification?.entreprise?.length > 0) { %>
+                                    <p class="acteur-subtitle">Entreprise :</p>
+                                    <% place?.acteurs?.modification?.entreprise?.map((comp) => { %>
+                                        <p class="acteur-paragraph"><%= comp %></p>
+                                    <% }); %>
+                                <% } %>
+                                <% if (place?.acteurs?.modification?.architecte?.length > 0) { %>
+                                    <p class="acteur-subtitle">Architecte :</p>
+                                    <% place?.acteurs?.modification?.architecte?.map((comp) => { %>
+                                        <p class="acteur-paragraph"><%= comp %></p>
+                                    <% }); %>
+                                <% } %>
+                                <% if (place?.acteurs?.modification?.ingenieurs?.length > 0) { %>
+                                    <p class="acteur-subtitle">Ingénieurs :</p>
+                                    <% place?.acteurs?.modification?.ingenieurs?.map((comp) => { %>
+                                        <p class="acteur-paragraph"><%= comp %></p>
+                                    <% }); %>
+                                <% } %>
+                            <% } %>
+    
+                            <% if (place?.acteurs?.modernisation?.compagnie?.length > 0 || place?.acteurs?.modernisation?.entreprise?.length > 0 
+                            || place?.acteurs?.modernisation?.architecte?.length > 0 || place?.acteurs?.modernisation?.ingenieurs?.length > 0){ %>
+                                <% if (
+                                    (place?.acteurs?.ancienne?.compagnie?.length > 0 || place?.acteurs?.ancienne?.entreprise?.length > 0 
+                                        || place?.acteurs?.ancienne?.architecte?.length > 0 || place?.acteurs?.ancienne?.ingenieurs?.length > 0) || 
+                                    (place?.acteurs?.modification?.compagnie?.length > 0 || place?.acteurs?.modification?.entreprise?.length > 0 
+                                        || place?.acteurs?.modification?.architecte?.length > 0 || place?.acteurs?.modification?.ingenieurs?.length > 0)
+                                ){ %>
+                                    <h2 class="acteur-title">Modernisation :</h2>
+                                <% } %>
+                                <% if (place?.acteurs?.modernisation?.compagnie?.length > 0) { %>
+                                    <p class="acteur-subtitle">Compagnie :</p>
+                                    <% place?.acteurs?.modernisation?.compagnie?.map((comp) => { %>
+                                        <p class="acteur-paragraph"><%= comp %></p>
+                                    <% }); %>
+                                <% } %>
+                                <% if (place?.acteurs?.modernisation?.entreprise?.length > 0) { %>
+                                    <p class="acteur-subtitle">Entreprise :</p>
+                                    <% place?.acteurs?.modernisation?.entreprise?.map((comp) => { %>
+                                        <p class="acteur-paragraph"><%= comp %></p>
+                                    <% }); %>
+                                <% } %>
+                                <% if (place?.acteurs?.modernisation?.architecte?.length > 0) { %>
+                                    <p class="acteur-subtitle">Architecte :</p>
+                                    <% place?.acteurs?.modernisation?.architecte?.map((comp) => { %>
+                                        <p class="acteur-paragraph"><%= comp %></p>
+                                    <% }); %>
+                                <% } %>
+                                <% if (place?.acteurs?.modernisation?.ingenieurs?.length > 0) { %>
+                                    <p class="acteur-subtitle">Ingénieurs :</p>
+                                    <% place?.acteurs?.modernisation?.ingenieurs?.map((comp) => { %>
+                                        <p class="acteur-paragraph"><%= comp %></p>
+                                    <% }); %>
+                                <% } %>
+                            <% } %>
+                        <% } else { %>
+                            no acteur is available
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gare-item" id="gare-items">
+                <div class="bare" id="galerieBare">
+                    <span>Galerie</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="item-container" id="galerie-container">
+                    <div class="container-item">
+                        <% if (place?.galerie && (place?.galerie?.plan?.length > 0 || place?.galerie?.photographie?.length > 0)){ %>
+                            <% if (place?.galerie?.plan?.length > 0){ %>
+                                <h4 class="container-item-title">Plans</h4>
+                                <div class="container">
+                                    <div class="gallery">
+                                        <% place?.galerie?.plan?.map((img) => { %>
+                                          <div class="gallery-item">
+                                            <a href="/images/<%= img?.img %>" data-lightbox="mygallery" data-title="<%= img?.description %>">
+                                              <img src="/images/<%= img?.img  %>" alt="<%= img?.img  %>" />
+                                            </a>
+                                            <h3><%= img?.description %></h3>
+                                          </div>
+                                        <% }); %>
+                                      </div>
+                                </div>
+                            <% }
+                            if (place?.galerie?.photographie?.length > 0){ %>
+                                <h4 class="container-item-title">Photographies</h4>
+                                <div class="container">
+                                    <div class="gallery">
+                                        <% place?.galerie?.photographie?.map((img) => { %>
+                                            <div class="gallery-item">
+                                                <a href="/images/<%= img?.img %>" data-lightbox="mygallery" data-title="<%= img?.description %>">
+                                                  <img src="/images/<%= img?.img  %>" alt="<%= img?.img  %>" />
+                                                </a>
+                                                <h3><%= img?.description %></h3>
+                                              </div>
+                                        <% }); %>
+                                    </div>
+                                </div>
+                            <% } %>
+                        <% } else { %>
+                            no image is available
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="gare-item" id="gare-items">
+                <div class="bare" id="documentationBare">
+                    <span>Documentation</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="item-container" id="documentation-container">
+                    <div class="container-item">
+                        <% if (place?.documentations && (place?.documentations?.centrearchive?.length > 0 || place?.documentations?.site?.length > 0 || place?.documentations?.livre?.length  > 0)){ %>
+                            <% if (place?.documentations?.centrearchive?.length > 0) { %>
+                                <p class="acteur-subtitle">Centre d’archive</p>
+                                <% place?.documentations?.centrearchive?.map((desc) => { %>
+                                    <p class="acteur-paragraph"><%= desc %></p>
+                                <% }); %>
+                            <% }%>
+                            <% if (place?.documentations?.site?.length > 0) { %>
+                                <p class="acteur-subtitle">Site internet</p>
+                                <% place?.documentations?.site?.map((desc) => { %>
+                                    <p class="acteur-paragraph"><%= desc %></p>
+                                <% }); %>
+                            <% }%>
+                            <% if (place?.documentations?.livre?.length > 0) { %>
+                                <p class="acteur-subtitle">Livre</p>
+                                <% place?.documentations?.livre?.map((desc) => { %>
+                                    <p class="acteur-paragraph"><%= desc %></p>
+                                <% }); %>
+                            <% }%>
+                        <% } else { %>
+                            no document is available
+                        <% } %>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="footer-mobot">
-        <h3>All Right Reserved | MOBOT</h3>
-        </div>
-    </footer>
+    
+    </section>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="https://unpkg.com/wicg-inert@latest/dist/inert.min.js"></script>
     <script src="/Adminmain.js"></script>
-    <script src="/mainHome.js"></script>
-    <script src="/GareMain.js"></script>
-    <script src="/StationMain.js"></script>
-    <script src="/PontMain.js"></script>
-    <script src="/HalteMain.js"></script>
+    <script src="/styleAffichageV1.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/lightbox.js"></script>
+    <script>
+        lightbox.option({
+          resizeDuration: 200,
+          wrapAround: false,
+          alwaysShowNavOnTouchDevices: false,
+          disableScrolling: true,
+        });
+    </script>
 </body>
+</html>

@@ -85,7 +85,7 @@
                     <div class="left-footer-container">
                         <% if (Ouvrage && Ouvrage.length > 0) { %>
                             <% Ouvrage.forEach(function(Ouvrage, index) { %>
-                                <a href='/<%= Ouvrage._id %>' style="text-decoration: none; color: black;">
+                                <a href='/ouvrage/<%= Ouvrage._id %>' style="text-decoration: none; color: black;">
                                     <p style="font-size: large;">
                                         <%= (index + 1) + ". " + Ouvrage.Nom %>
                                     </p>

@@ -63,7 +63,7 @@ router.get("/Gares", async (req, res) => {
                 "Lauriers Roses",                  // Matches "14. Lauriers Roses"
                 "Ain El Berd",                     // Matches "30. Ain El Berd"
                 "Sidi Hamadouche",                 // Matches "10. Sidi Hamadouche"
-                "Prudon",                          // **No match found**
+                "Prudon",                          // 
                 "Gare de Sidi Bel Abbès",          // Matches "9. Gare de Sidi Bel Abbès"
                 "Sidi Lahcen",                     // Matches "15. Sidi Lahcen"
                 "Sidi Khaled",                     // Matches "7. Sidi Khaled"
@@ -72,8 +72,8 @@ router.get("/Gares", async (req, res) => {
                 "Taffamane",                       // Matches "5. Taffamane"
                 "Ben Badis",                       // Matches "1. Ben Badis"
                 "Ain Tellout",                     // Matches "11. Ain Tellout"
-                "Lamoriciere",                     // **No match found**
-                "Oued Chouly",                     // **No match found**
+                "Ouled Mimoun",                     // 
+                "Oued Lakhdar",                     // 
                 "Ain Fezza",                       // Matches "12. Ain Fezza"
                 "Gare_de_Tlemcen",                 // Matches "13. Gare_de_Tlemcen"
                 "Mansourah",                       // Matches "16. Mansourah"
@@ -81,7 +81,7 @@ router.get("/Gares", async (req, res) => {
                 "Zelboune",                         // Matches "20. Zelboune"
                 "Sebra",                           // Matches "21. Sebra"
                 "Sidi-Medjahed",                   // Matches "27. Sidi-Medjahed"
-                "Tralimet",                      // **Closest match: "Tralimet" (spelling difference)**
+                "Tralimet",                         // **Closest match: "Tralimet" (spelling difference)**
                 "Maghnia",                         // Matches "24. Maghnia"
                 "Akid Abbes"                       // Matches "28. Akid Abbes"
             ];
@@ -184,6 +184,19 @@ router.get("/:id", async (req, res) => {
         const result = await Place.findOne({ _id: id });
         if (result) {
             return res.render('AffichageV1', { place: result });
+        } else {
+            return res.status(404).json({ error: 'Place not found' });
+        }
+    } catch (err) {
+        return res.status(500).json({ error: err.message });
+    }
+});
+router.get("/ouvrage/:id", async (req, res) => {
+    const { id } = req.params;
+    try {
+        const result = await Place.findOne({ _id: id });
+        if (result) {
+            return res.render('AffichageV2', { place: result });
         } else {
             return res.status(404).json({ error: 'Place not found' });
         }

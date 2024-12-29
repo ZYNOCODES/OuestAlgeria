@@ -283,7 +283,14 @@
     
                             <% if (place?.acteurs?.modernisation?.compagnie?.length > 0 || place?.acteurs?.modernisation?.entreprise?.length > 0 
                             || place?.acteurs?.modernisation?.architecte?.length > 0 || place?.acteurs?.modernisation?.ingenieurs?.length > 0){ %>
-                                <h2 class="acteur-title">Modernisation :</h2>
+                                <% if (
+                                    (place?.acteurs?.ancienne?.compagnie?.length > 0 || place?.acteurs?.ancienne?.entreprise?.length > 0 
+                                        || place?.acteurs?.ancienne?.architecte?.length > 0 || place?.acteurs?.ancienne?.ingenieurs?.length > 0) || 
+                                    (place?.acteurs?.modification?.compagnie?.length > 0 || place?.acteurs?.modification?.entreprise?.length > 0 
+                                        || place?.acteurs?.modification?.architecte?.length > 0 || place?.acteurs?.modification?.ingenieurs?.length > 0)
+                                ){ %>
+                                    <h2 class="acteur-title">Modernisation :</h2>
+                                <% } %>
                                 <% if (place?.acteurs?.modernisation?.compagnie?.length > 0) { %>
                                     <p class="acteur-subtitle">Compagnie :</p>
                                     <% place?.acteurs?.modernisation?.compagnie?.map((comp) => { %>
