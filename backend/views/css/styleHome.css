@@ -601,8 +601,8 @@ footer {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  gap: 60px;
-  top: 85%;
+  gap: 45px;
+  top: 80%;
   cursor: pointer;
 }
 
