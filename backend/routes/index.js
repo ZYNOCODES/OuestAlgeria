@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const Place = require('../models/ArticleModel');
-
+const fs = require('fs');
+const path = require('path');
 const { ensureAuthenticated, forwardAuthenticated } = require('../middleware/auth');
 
 router.get("/", async (req, res) => {
@@ -170,7 +171,42 @@ router.get("/Pont", async (req, res) => {
     }
 });
 router.get("/Galerie", async (req, res) => {
-    return res.render('Galerie');
+    try {
+        const places = await Place.find({});
+        const images = [];
+        places.forEach(place => {
+            if (place.galerie) {
+                if (place.galerie.plan) {
+                    images.push(...place.galerie.plan.map(plan => ({ img: plan.img, description: plan.description })));
+                }
+                if (place.galerie.photographie) {
+                    images.push(...place.galerie.photographie.map(photo => ({ img: photo.img, description: photo.description })));
+                }
+            }
+            if (place.designation && place.designation.img) {
+                images.push(...place.designation.img.map(imgObj => ({ img: imgObj.img, description: imgObj.description })));
+            }
+
+            if (place.description && place.description.img) {
+                images.push(...place.description.img.map(imgObj => ({ img: imgObj.img, description: imgObj.description })));
+            }
+
+            if (place.historique && place.historique.img) {
+                images.push(...place.historique.img.map(imgObj => ({ img: imgObj.img, description: imgObj.description })));
+            }
+        });
+        //delete doublicated images
+        const uniqueImages = images.filter((image, index, self) =>
+            index === self.findIndex((t) => (
+                t.img === image.img
+            ))
+        );
+
+        return res.render('Galerie', { images: uniqueImages });
+    } catch (err) {
+        console.error(err);
+        res.status(500).send("An error occurred while fetching images.");
+    }
 });
 router.get("/Valorisation", async (req, res) => {
     return res.render('Valorisation');
@@ -212,6 +248,7 @@ router.post("/:type", async (req, res) => {
         res.json({ message: err });
     }
 });
+
 
 
 module.exports = router;

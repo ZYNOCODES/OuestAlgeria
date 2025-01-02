@@ -4,17 +4,11 @@ var acteurContainer = document.getElementById("acteur-container");
 var galerieContainer = document.getElementById("galerie-container");
 var documentationContainer = document.getElementById("documentation-container");
 
-var listeBare = document.getElementById("listeBare");
 var edificeBare = document.getElementById("edificeBare");
 var acteurBare = document.getElementById("acteurBare");
 var galerieBare = document.getElementById("galerieBare");
 var documentationBare = document.getElementById("documentationBare");
 
-
-listeBare.addEventListener("click", () => {
-  listeContainer.classList.toggle("listeContainer-toggle");
-  console.log("liste bare clicked");
-});
 
 edificeBare.addEventListener("click", () => {
   edificeContainer.classList.toggle("edificeContainer-toggle");

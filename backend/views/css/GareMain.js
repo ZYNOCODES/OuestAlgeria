@@ -788,16 +788,18 @@ document.addEventListener("DOMContentLoaded", function () {
             // Add popup message
             const id = JSONData._id.$oid;
             const template = `
-                <div style="text-align:center">
-                    <form class="map-LocationDisplayer" method="POST" action="/places/${id}">
-                        <h1>${JSONData.Nom}</h1>
-                        <div class="Location">
-                          <h2>Location:</h2>
-                          <h3>${lat + ', ' + lon}</h3>
-                        </div>
-                        <input class="voir-map-btn" type="submit" value="voir"/>
-                    </form>
+              <div style="text-align:center">
+                <div class="map-LocationDisplayer">
+                    <h1>${JSONData.Nom}</h1>
+                    <div class="Location">
+                    <h2>Location:</h2>
+                    <h3>${lat + ', ' + lon}</h3>
+                    </div>
+                    <a class="voir-map-btn" href="/${id}">
+                      <p>Voir plus</p>
+                    </a>
                 </div>
+              </div>
             `;
             Place.bindPopup(template);
         });

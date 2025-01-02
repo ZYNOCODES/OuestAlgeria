@@ -415,21 +415,23 @@ opacity:1;
   gap: 20px;
   background-color: #fff;
   border-radius: 20px;
-
+  text-decoration: none;
 }
 .Location h3{
   font-size: clamp(8px, 12px, 14px);
   color: rgb(131, 131, 131);
 }
 .voir-map-btn{
-  align-items: center;
-  justify-content: center;
+  text-decoration: none;
   width: 100%;
   height: auto;
   background-color: var(--bgbutton);
   color: white;
-  padding: 10px 30px;
   font-size: clamp(8px, 12px, 14px);
-  font-weight: 400;
   border-radius: 10px;
+}
+.voir-map-btn p{
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
 }

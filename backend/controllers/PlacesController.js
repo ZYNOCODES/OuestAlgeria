@@ -1,7 +1,5 @@
 const Place = require('../models/ArticleModel');
 
-//get all places
-
 //get place by id
 const PlaceById = async (req, res) => {
     const {id} = req.params;
@@ -81,9 +79,10 @@ const UpdateByIDIMGs = async (req, res) => {
         console.log(err);
     }
 };
+
 module.exports = {
     GetAllPlaces,
     PlaceById,
     UpdateByID,
-    UpdateByIDIMGs
+    UpdateByIDIMGs,
 };

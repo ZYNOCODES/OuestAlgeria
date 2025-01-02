@@ -925,14 +925,16 @@ document.addEventListener("DOMContentLoaded", function () {
           const id = JSONData._id.$oid;
           const template = `
           <div style="text-align:center">
-            <form class="map-LocationDisplayer" method="POST" action="/places/${id}">
+            <div class="map-LocationDisplayer">
                 <h1>${JSONData.Nom}</h1>
                 <div class="Location">
-                  <h2>Location:</h2>
-                  <h3>${lat + ', ' + lon}</h3>
+                <h2>Location:</h2>
+                <h3>${lat + ', ' + lon}</h3>
                 </div>
-                <input class="voir-map-btn" type="submit" value="voir"/>
-            </form>
+                <a class="voir-map-btn" href="/${id}">
+                  <p>Voir plus</p>
+                </a>
+            </div>
           </div>
           `;
           Place.bindPopup(template);

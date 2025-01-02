@@ -22,7 +22,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-  </head>
+    <link href="/lightbox.css" rel="stylesheet" />  
+</head>
   <body>
     <header>
         <main class="navba">
@@ -37,120 +38,28 @@
         </main>
     </header>
     <div class="container">
-        <div class="gallery">
-            <div class="gallery-item">
-                <img src="/images/1.Oran.jpg" alt="1.Oran" />
-                <h3>1.Oran</h3>
+        <% if (images?.length > 0){ %>
+            <div class="gallery">
+                <% images?.map((img) => { %>
+                    <div class="gallery-item">
+                        <a href="/images/<%= img?.img %>" data-lightbox="mygallery" data-title="<%= img?.description %>">
+                            <img src="/images/<%= img?.img  %>" alt="<%= img?.img  %>" />
+                        </a>
+                        <h3><%= img?.description %></h3>
+                    </div>
+                <% }); %>
             </div>
-            <div class="gallery-item">
-                <img src="/images/5STEBA_1.JPG" alt="5STEBA_1" />
-                <h3>5STEBA_1</h3>
+        <% } else { %>
+            <div class="display: flex; justify-content: center; align-items: center;">
+                <h3
+                    style="color: #000; font-size: 1.5rem; font-weight: 500;"
+                >
+                    No images found
+                </h3>
             </div>
-            <div class="gallery-item">
-                <img src="/images/6SAINT_1.JPG" alt="6SAINT_1" />
-                <h3>6SAINT_1</h3>
-            </div>
-            <div class="gallery-item">
-                <img src="/images/12SIDI_1.JPG" alt="12SIDI_1" /> 
-                <h3>12SIDI_1</h3>
-            </div>
-            <div class="gallery-item">
-                <img src="/images/14BOUK_1.JPG" alt="14BOUK_1" /> 
-                <h3>14BOUK_1</h3>
-            </div>
-            <div class="gallery-item">
-                <img src="/images/19LAMO_1.JPG" alt="19LAMO_1" /> 
-                <h3>19LAMO_1</h3>
-            </div>
-            <div class="gallery-item">
-                <img src="/images/22.Tlemcen.jpg" alt="22.Tlemcen" /> 
-                <h3>22.Tlemcen</h3>
-            </div>
-            <div class="gallery-item">
-                <img src="/images/26.Turenne.jpg" alt="26.Turenne" /> 
-                <h3>26.Turenne</h3>
-            </div>
-            <div class="gallery-item">
-                <img src="/images/27SIDI_1.JPG" alt="27SIDI_1" /> 
-                <h3>27SIDI_1</h3>
-            </div>
-            <div class="gallery-item">
-                <img src="/images/29.Maghnia.jpg" alt="29.Maghnia" /> 
-                <h3>29.Maghnia</h3>
-            </div>
-            <div class="gallery-item">
-                <img src="/images/31.Oujda.jpg" alt="31.Oujda" /> 
-                <h3>31.Oujda</h3>
-            </div>
-            <div class="gallery-item">
-                <img src="/images/gare-ferroviaire-oran-1.jpg" alt="gare-ferroviaire-oran-1" /> 
-                <h3>gare ferroviaire oran 1</h3>
-            </div>
-            <div class="gallery-item">
-                <img src="/images/Pont Afaur a Turenne 1905.jpg" alt="Pont Afaur à Turenne 1905" /> 
-                <h3>Pont Afaur a Turenne 1905</h3>
-            </div>
-            <div class="gallery-item">
-                <img src="/images/pont_medjahedsur l oued ouaam.jpg" alt="pont_medjaheds sur l'oued ouaam" /> 
-                <h3>pont medjahedsur l oued ouaam</h3>
-            </div>
-            <div class="gallery-item">
-                <img src="/images/sidibelabbes.jpg" alt="sidibelabbes" /> 
-                <h3>sidi bel abbes</h3>
-            </div>
-            <div class="gallery-item">
-                <img src="/images/sidi-bel-abbes-la-gare-plm.jpg" alt="sidi-bel-abbes-la-gare-plm" /> 
-                <h3>sidi-bel-abbes-la-gare-plm</h3>
-            </div>
-            <div class="gallery-item">
-                <img src="/images/Tlemcennn.jpg" alt="Tlemcennn" /> 
-                <h3>Tlemcen</h3>
-            </div>
-            <div class="gallery-item">
-                <img src="/images/TlemcenVue sur le hall.jpg" alt="TlemcenVue sur le hall" /> 
-                <h3>TlemcenVue sur le hall</h3>
-            </div>
-            <div class="gallery-item">
-                <img src="/images/Viaduc afaire 19.02.2021 Gantra hamra.jpg" alt="Viaduc afaire 19.02.2021 Gantra hamra" /> 
-                <h3>Viaduc afaire 19.02.2021 Gantra hamra</h3>
-            </div>
-            <div class="gallery-item">
-                <img src="/images/viaduc Tafna.jpg" alt="viaduc Tafna" /> 
-                <h3>viaduc Tafna</h3>
-            </div>
-            <div class="gallery-item">
-                <img src="/images/viaduc Tafna1.jpg" alt="viaduc Tafna1" /> 
-                <h3>viaduc Tafna1</h3>
-            </div>
-            <div class="gallery-item">
-                <img src="/images/vu du trainEl Bordj Turenne Sabra Tlemcen 09.04.2014.jpg" alt="vu du trainEl Bordj Turenne Sabra Tlemcen 09.04.2014" /> 
-                <h3>vu du trainEl Bordj Turenne Sabra Tlemcen 09.04.2014</h3>
-            </div>
-            <div class="gallery-item">
-                <img src="/images/Massif de Tlemcen.jpg" alt="Massif de Tlemcen" /> 
-                <h3>Massif de Tlemcen</h3>
-            </div>
-            <div class="gallery-item">
-                <img src="/images/Ruine de Mansurah.jpg" alt="Ruine de Mansurah" /> 
-                <h3>Ruine de Mansurah</h3>
-            </div>
-            <div class="gallery-item">
-                <img src="/images/377498455_795771455882781_7983160662177626898_n.jpg" alt="Vue du train" /> 
-                <h3></h3>
-            </div>
-            <div class="gallery-item">
-                <img src="/images/decembre 2022 au moment du passage d train coucher du soleil.jpg" alt="decembre 2022 au moment du passage d train coucher du soleil.jpg" /> 
-                <h3>decembre 2022 au moment du passage de train</h3>
-            </div>
-            <div class="gallery-item">
-                <img src="/images/ligne ferroviaire Oued Zitoun Sabra10.2023.jpg" alt="ligne ferroviaire Oued Zitoun Sabra10.2023.jpg" /> 
-                <h3>ligne ferroviaire Oued Zitoun Sabra10</h3>
-            </div>
-            <div class="gallery-item">
-                <img src="/images/Ruine de Mansurah 2 .jpg" alt="Ruine de Mansurah 2 .jpg" /> 
-                <h3>Ruine de Mansurah 2</h3>
-            </div>
-        </div>
+        <% } %>
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/lightbox.js"></script>
   </body>
 </html>
