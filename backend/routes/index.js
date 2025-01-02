@@ -9,19 +9,16 @@ router.get("/", async (req, res) => {
     try {
         const result = await Place.find({});
         if (result) {
-            const Gare = result.filter(place => place.Type === "Gare Terminus");
-            const Station = result.filter(place => place.Type === "Station Intermediaire");
-            const Halte = result.filter(place => place.Type === "Halte");
-            const Pont = result.filter(place => place.Type === "Pont");
-            const PontMetallique = result.filter(place => place.Type === "Pont Metallique" || place.Type === "Pont metallique");
-            const Viaducenmaconnerie = result.filter(place => place.Type === "Viaduc en maconnerie");
-            const Viaducmetallique = result.filter(place => place.Type === "Viaduc metallique");
-            const maconnerie = result.filter(place => place.Type === "maconnerie");
-            const PontMetalliqueenArc = result.filter(place => place.Type === "Pont Metallique en Arc");
-
-            return res.render('Home', { Gare, Station, Halte, Pont, 
-                PontMetallique, Viaducenmaconnerie, Viaducmetallique, 
-                maconnerie, PontMetalliqueenArc, places: result });
+            // const Gare = result.filter(place => place.Type === "Gare Terminus");
+            // const Station = result.filter(place => place.Type === "Station Intermediaire");
+            // const Halte = result.filter(place => place.Type === "Halte");
+            // const Pont = result.filter(place => place.Type === "Pont");
+            // const PontMetallique = result.filter(place => place.Type === "Pont Metallique" || place.Type === "Pont metallique");
+            // const Viaducenmaconnerie = result.filter(place => place.Type === "Viaduc en maconnerie");
+            // const Viaducmetallique = result.filter(place => place.Type === "Viaduc metallique");
+            // const maconnerie = result.filter(place => place.Type === "maconnerie");
+            // const PontMetalliqueenArc = result.filter(place => place.Type === "Pont Metallique en Arc");
+            return res.render('Home', { Places: result });
         } else {
             return res.status(404).json({ error: 'Places not found' });
         }

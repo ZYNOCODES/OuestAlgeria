@@ -28,19 +28,36 @@
       <div class="image-background">
         <img src="/images/background.jpg" alt=""/>
       </div>
-      <!-- <nav>
-        <a class="logo" href="#">LOGO</a>
-        <ul>
-          <li class="home-list"><a href="/">home</a></li>
-          <li><a href="/About" id="liste">about us</a></li>
-          <li><a href="/Contact" id="liste">contact us</a></li>
-        </ul>
-      </nav> -->
+      <div class="header-container-research-bar">
+        <div class="header-container-research-bar-content">
+          <div class="editable-select-container">
+            <input
+              type="text"
+              id="editable-select-input"
+              placeholder="Rechercher ou entrer un lieu"
+              oninput="filterEditableOptions()"
+              onfocus="showOptions()"
+              onblur="hideOptions()"
+              autocomplete="off"
+            />
+            <ul id="editable-select-options" class="dropdown-options">
+              <% if (Places && Places.length > 0) { %>
+                <% Places.forEach(function (item) { %>
+                  <li data-id="<%= item?._id %>" data-type="<%= item?.Type %>" onclick="selectOption(this)"><%= item?.Nom %></li>
+                <% }); %>
+              <% } else { %>
+                <li>No places found.</li>
+              <% } %>
+            </ul>
+          </div>
+          <a id="searchButton" class="search-btn" href="#"><i class="fas fa-search"></i></a>
+        </div>
+      </div>
       <div class="header-container">
         <h4>Architecture IX XX Siécle</h4>
         <h3>Architecture</h3>
         <h3>ferroviaire en Algérie</h3>
-        <h4>"Valorisation Touristique Du Patrimoine Ferroviaire"</h4>
+        <h4>"Valorisation touristique du patrimoine ferroviaire"</h4>
         <form method="POST" action="/Valorisation">
           <button type="submit" class="valorisation-btn">Explore Now</button>
         </form>
@@ -139,5 +156,54 @@
     <script src="/StationMain.js"></script>
     <script src="/PontMain.js"></script>
     <script src="/HalteMain.js"></script>
+    <script>
+      function selectOption(element) {
+        const input = document.getElementById("editable-select-input");
+        const searchButton = document.getElementById("searchButton");
+
+        // Set the input value to the selected option's text
+        input.value = element.textContent;
+
+        // Update the anchor's href with the selected item's `_id`
+        const selectedId = element.getAttribute("data-id");
+        const selectedType = element.getAttribute("data-type");
+        if ((selectedType === "Pont")||
+            (selectedType === "Pont Metallique")||(selectedType === "Pont metallique")||
+            (selectedType === "Viaduc en maconnerie")||
+            (selectedType === "Viaduc metallique")|| (selectedType === "maconnerie")||
+            (selectedType === "Pont Metallique en Arc")) {
+          searchButton.href = `/ouvrage/${selectedId}`;
+        } else {
+          searchButton.href = `/${selectedId}`;
+        }
+
+        // Delay the dropdown hiding for better user interaction
+        setTimeout(() => {
+          hideOptions();
+        }, 100);
+      }
+
+      function filterEditableOptions() {
+        const input = document.getElementById("editable-select-input").value.toLowerCase();
+        const options = document.querySelectorAll("#editable-select-options li");
+
+        options.forEach((option) => {
+          const optionText = option.textContent.toLowerCase();
+          option.style.display = optionText.includes(input) ? "block" : "none";
+        });
+      }
+
+      function showOptions() {
+        const options = document.getElementById("editable-select-options");
+        options.style.display = "block";
+      }
+
+      function hideOptions() {
+        setTimeout(() => {
+          const options = document.getElementById("editable-select-options");
+          options.style.display = "none";
+        }, 200);
+      }
+    </script>
   </body>
 </html>

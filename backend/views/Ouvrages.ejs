@@ -82,9 +82,32 @@
                 </div>
                 <div class="left-footer">
                     <h2>Ouvrages d'art ferroviaires :</h2>
+                    <h3>Viaduc :</h3>
                     <div class="left-footer-container">
-                        <% if (Ouvrage && Ouvrage.length > 0) { %>
-                            <% Ouvrage.forEach(function(Ouvrage, index) { %>
+                        <% 
+                            const viaducOuvrages = Ouvrage.filter(ouvrage => ouvrage.Type === 'Viaduc en maconnerie' || ouvrage.Type === 'Viaduc metallique'); 
+                        %>
+                        <% if (viaducOuvrages && viaducOuvrages.length > 0) { %>
+                            <% viaducOuvrages.forEach(function(ouvrage, index) { %>
+                                <a href='/ouvrage/<%= ouvrage._id %>' style="text-decoration: none; color: black;">
+                                    <p style="font-size: large;">
+                                        <%= (index + 1) + ". " + ouvrage.Nom %>
+                                    </p>
+                                </a>
+                            <% }); %>
+                        <% } else { %>
+                            <h4>No Ouvrages found.</h4>
+                        <% } %>
+
+                    </div>
+                    <br/>
+                    <h3>Liste :</h3>
+                    <div class="left-footer-container">
+                        <% 
+                            const noViaducOuvrages = Ouvrage.filter(ouvrage => ouvrage.Type !== 'Viaduc en maconnerie' && ouvrage.Type !== 'Viaduc metallique'); 
+                        %>
+                        <% if (noViaducOuvrages && noViaducOuvrages.length > 0) { %>
+                            <% noViaducOuvrages.forEach(function(Ouvrage, index) { %>
                                 <a href='/ouvrage/<%= Ouvrage._id %>' style="text-decoration: none; color: black;">
                                     <p style="font-size: large;">
                                         <%= (index + 1) + ". " + Ouvrage.Nom %>

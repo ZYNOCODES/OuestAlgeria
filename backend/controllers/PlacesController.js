@@ -1,6 +1,5 @@
 const Place = require('../models/ArticleModel');
 
-//get place by id
 const PlaceById = async (req, res) => {
     const {id} = req.params;
     try {

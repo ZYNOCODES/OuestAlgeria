@@ -113,7 +113,7 @@ header div{
 .right-liste-du-patrimoine {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   gap: 10px;
 }
 
@@ -127,6 +127,7 @@ header div{
 }
 
 .right-header {
+  width: 100%;
   height: auto;
   background-color: var(--bgItemcolor);
   border-radius: 20px;
@@ -218,6 +219,7 @@ header div{
   gap: 20px;
 }
 .types-first{
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -227,7 +229,6 @@ header div{
   margin-bottom: 10px;
 }
 .types-first h4{
-  width: min-content;
   font-size: medium;
   font-weight: 500;
 }
@@ -278,7 +279,6 @@ header div{
   font-weight: 700;
   font-size: 22px;
   color: rgba(50, 50, 50, 1);
-  text-transform: capitalize;
   margin-bottom: 10px;
 }
 
