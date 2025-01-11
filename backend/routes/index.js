@@ -73,7 +73,7 @@ router.get("/Gares", async (req, res) => {
                 "Ouled Mimoun",                     // 
                 "Oued Lakhdar",                     // 
                 "Ain Fezza",                       // Matches "12. Ain Fezza"
-                "Gare_de_Tlemcen",                 // Matches "13. Gare_de_Tlemcen"
+                "Gare de Tlemcen",                 // Matches "13. Gare_de_Tlemcen"
                 "Mansourah",                       // Matches "16. Mansourah"
                 "Ain Douz",                        // Matches "26. Ain Douz"
                 "Zelboune",                         // Matches "20. Zelboune"
