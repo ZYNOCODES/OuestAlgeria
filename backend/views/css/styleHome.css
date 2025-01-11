@@ -259,9 +259,18 @@ nav ul li a {
   line-height: 90px;
   color: var(--titlecolor);
 }
-
+.liste-du-patrimoine {
+  width: 100%;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
 .liste-du-patrimoine-container {
-  /* width: calc(869px + 338px + 20px); */
   width: 100%;
   padding-left: 106px;
   padding-right: 106px;
@@ -638,9 +647,10 @@ footer {
 .cards{
   width: 100%;
   height: fit-content;
-  display: grid;
-  place-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   gap: 20px;
   margin: 5rem 0;
 }
@@ -764,7 +774,7 @@ footer {
 }
 
 .histoire-container{
-  width: 95%;
+  width: 80%;
   height: 100%;
   position: relative;
   border-radius: 10px;
@@ -847,47 +857,46 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: auto;
-  height: auto;
   background-color: var(--bgbutton);
-  color: white;
-  padding: 10px;
+  color: #fff;
+  padding: 20px;
   font-size: clamp(10px, 5vw, 20px);
-  font-weight: 600;
+  font-weight: 500;
   border-radius: 10px;
   cursor: pointer;
+  border: none;
 }
 .histoire-btn{
   display: flex;
   align-items: center;
   justify-content: center;
-  width: auto;
-  height: auto;
-  color: rgb(0, 0, 0);
-  padding: 10px;
+  background-color: #fff;
+  color: #000;
+  padding: 20px;
   font-size: clamp(10px, 5vw, 20px);
-  font-weight: 400;
+  font-weight: 500;
   border-radius: 10px;
   cursor: pointer;
+  border: none;
 }
 .comments{
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  align-self: center;
+  gap: 20px;
 }
 
 .l-card {
+  flex: 1;
 	width: 100%;
 	height: auto;
-	background: #f5f5f5;
+	background: #fff;
 	color: #272727;
 	padding: 50px;
-	box-shadow: 0px 7px 24px rgba(164, 164, 164, 0.4);
-  align-self: center;
-  justify-self: center;
+	box-shadow: 7px 7px 24px rgba(93, 93, 93, 0.4);
+  border-radius: 20px;
 }
 .l-card__text p {
   font-size: clamp(15px, 24px, 30px);
@@ -970,7 +979,6 @@ footer {
     font-size: 20px;
     font-weight: 300;
   }
-
 }
 
 @media screen and (max-width: 1024px) {
@@ -1014,6 +1022,9 @@ footer {
     font-size: 0.8rem;
     line-height: 1;
   }
+  .cards{
+    flex-direction: column;
+  }
 }
 @media screen and (max-width: 375px) {
   .bare-navigation {
@@ -1050,10 +1061,6 @@ footer {
     margin-top: 1rem;
     padding: 0.75rem 1.5rem;
     font-size: 0.45rem;
-  }
-  .comments{
-    flex-direction: row;
-    justify-content: space-around;
   }
   .l-card {
     width: 8rem;

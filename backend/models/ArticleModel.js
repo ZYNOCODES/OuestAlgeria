@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const placesSchema = new mongoose.Schema({
     wkt_geom: {
         type: String,
-        required: false,
+        require: false,
         nullable: true,
     },
     id: {

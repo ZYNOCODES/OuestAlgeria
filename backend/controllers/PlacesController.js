@@ -78,10 +78,37 @@ const UpdateByIDIMGs = async (req, res) => {
         console.log(err);
     }
 };
+const createNewPlace = async (req, res) => {
+    console.log("createNewPlace");
+    const {name, long, latit} = req.body;
+    console.log(req.body);
+    try {
+        //check if the req body contains the required fields
+        if (!name || !long || !latit) {
+            return res.status(400).json({ message: "All fields are required" });
+        }
+        //create a new Place
+        const savedPlace = await Place.create({
+            Nom: name, 
+            LongitudeX: long, 
+            LattitudeY: latit,
+            Type: "paysages",
+        });
+        //check if the Place has been saved
+        if (!savedPlace) {
+            return res.status(500).json({ message: "An error occurred while saving the Place" });
+        }
+        res.status(201).json(savedPlace);
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({ message: "Server error", error: err.message });
+    }
+};
 
 module.exports = {
     GetAllPlaces,
     PlaceById,
     UpdateByID,
     UpdateByIDIMGs,
+    createNewPlace
 };

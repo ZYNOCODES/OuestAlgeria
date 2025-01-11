@@ -4,7 +4,7 @@ const {
     PlaceById,
     UpdateByID,
     UpdateByIDIMGs,
-    UpdateAllPlacesActeurAndDocumentation
+    createNewPlace
 } = require('../controllers/PlacesController');
 const router = express.Router();
 
@@ -16,7 +16,7 @@ router.get('/All/all', GetAllPlaces);
 router.patch('/update/:id', UpdateByID);
 //update place by id
 router.patch('/updateIMGs/:id', UpdateByIDIMGs);
-//update place
-// router.patch('/updateActeurAndDocumentation', UpdateAllPlacesActeurAndDocumentation);
+//create new place
+router.post('/create/new', createNewPlace);
 
 module.exports = router;

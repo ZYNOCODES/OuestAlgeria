@@ -234,6 +234,11 @@ header {
   height: 15px;
   border-radius: 50%;
 }
+.circle-categorie-paysage {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
 
 .categorie:first-child .circle-categorie {
   background-color: red;
@@ -252,6 +257,9 @@ header {
 }
 .categorie:last-child .circle-categorie-ovrage {
   background-color: rgb(0, 180, 203);
+}
+.categorie:last-child .circle-categorie-paysage {
+  background-color: rgb(104, 104, 104);
 }
 
 .types{

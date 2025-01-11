@@ -127,6 +127,11 @@ iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master
 iconSize: [15, 25],
     iconAnchor:   [7, 24],
 });
+var PaysageIcon = L.icon({
+iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-grey.png',
+iconSize: [15, 25],
+    iconAnchor:   [7, 24],
+});
 // Places Data
 const PontsData = [
     {
@@ -1580,6 +1585,136 @@ const haltesData = [
         "Nom": "Sidi-Medjahed"
       }
 ]
+const paysageData = [{
+  "_id": {
+    "$oid": "67827703009ad42710ed95b1"
+  },
+  "Nom": "Cascade d'El Ourit",
+  "LongitudeX": "-1.26697",
+  "LattitudeY": "34.8622",
+  "Type": "paysages",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6782774d009ad42710ed95b3"
+  },
+  "Nom": "Plateau LALLA SETTI",
+  "LongitudeX": "-1.3139",
+  "LattitudeY": "34.8656",
+  "Type": "paysages",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67827763009ad42710ed95b5"
+  },
+  "Nom": "Les vetiges de la Mansourah",
+  "LongitudeX": "-1.33779",
+  "LattitudeY": "34.87058",
+  "Type": "paysages",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6782777a009ad42710ed95b7"
+  },
+  "Nom": "Centre des Etudes Andalouses",
+  "LongitudeX": "-1.33350",
+  "LattitudeY": "34.87953",
+  "Type": "paysages",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67827791009ad42710ed95b9"
+  },
+  "Nom": "Grotte Beni ADD Ain Fezza",
+  "LongitudeX": "-1.2079",
+  "LattitudeY": "34.8540",
+  "Type": "paysages",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "678277a7009ad42710ed95bb"
+  },
+  "Nom": "WADDA AIN Sabra",
+  "LongitudeX": "-1.5190",
+  "LattitudeY": "34.8173",
+  "Type": "paysages",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "678277ce009ad42710ed95bd"
+  },
+  "Nom": "Massif du Tlemcen",
+  "LongitudeX": "-1.6343",
+  "LattitudeY": "34.7446",
+  "Type": "paysages",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "678277e3009ad42710ed95bf"
+  },
+  "Nom": "Massif du Tlemcen",
+  "LongitudeX": "-1.4656",
+  "LattitudeY": "34.8271",
+  "Type": "paysages",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67827802009ad42710ed95c1"
+  },
+  "Nom": "Massif du Tlemcen",
+  "LongitudeX": "-1.2818",
+  "LattitudeY": "34.8685",
+  "Type": "paysages",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6782781a009ad42710ed95c3"
+  },
+  "Nom": "Lisière Nord du massif de Tlemcen",
+  "LongitudeX": "-1.1930",
+  "LattitudeY": "34.8907",
+  "Type": "paysages",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67827830009ad42710ed95c5"
+  },
+  "Nom": "Barrage El Mafrouche",
+  "LongitudeX": "-1.2915",
+  "LattitudeY": "34.8393",
+  "Type": "paysages",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67827843009ad42710ed95c7"
+  },
+  "Nom": "Oued Isser",
+  "LongitudeX": "-1.0310",
+  "LattitudeY": "34.9020",
+  "Type": "paysages",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67827855009ad42710ed95c9"
+  },
+  "Nom": "Oued Tafna",
+  "LongitudeX": "-1.6350",
+  "LattitudeY": "34.7791",
+  "Type": "paysages",
+  "__v": 0
+}]
 const ViaducsData = PontsData.filter(data => data.Categorie === "Viaduc");
 const UpdatedPontsData = PontsData.filter(data => data.Categorie !== "Viaduc");
 // function to add markers to the map
@@ -1599,6 +1734,11 @@ function addMarkersToMap(data, Icon) {
 
         // Add popup message
         const id = JSONData._id.$oid;
+        const href = (
+          JSONData.Type == 'Gare Terminus' ||
+          JSONData.Type == 'Station Intermediaire' ||
+          JSONData.Type == 'Halte'
+        ) ? `/${id}` : `/ouvrage/${id}`;
         const template = `
           <div style="text-align:center">
             <div class="map-LocationDisplayer">
@@ -1607,9 +1747,13 @@ function addMarkersToMap(data, Icon) {
                 <h2>Location:</h2>
                 <h3>${lat + ', ' + lon}</h3>
                 </div>
-                <a class="voir-map-btn" href="/${id}">
-                  <p>Voir plus</p>
-                </a>
+                ${
+                  JSONData?.Type !== 'paysages'
+                    ? `<a class="voir-map-btn" href="${href}">
+                         <p>Voir plus</p>
+                       </a>`
+                    : ''
+                }
             </div>
           </div>
         `;
@@ -1622,6 +1766,7 @@ function Markers(){
     addMarkersToMap(GarsData, GarsIcon)
     addMarkersToMap(StationsData, StationIcon)
     addMarkersToMap(haltesData, HalteIcon)
+    addMarkersToMap(paysageData, PaysageIcon)
 }
 Markers();
 
