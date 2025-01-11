@@ -96,7 +96,7 @@ router.get("/Gares", async (req, res) => {
             const boldGares = [
                 "Gare d'Oran",
                 "Gare de Sidi Bel Abbès",
-                "Gare_de_Tlemcen",
+                "Gare de Tlemcen",
                 "Maghnia"
             ];
 
