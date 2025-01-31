@@ -726,6 +726,7 @@ footer {
   position: relative;
   color: white;
   width: fit-content;
+  text-align: center;
 }
 
 .card-description h2::before{
