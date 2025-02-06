@@ -262,8 +262,8 @@ nav ul li a {
 }
 .liste-du-patrimoine {
   width: 100%;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 60px;
+  padding-right: 60px;
   padding-bottom: 30px;
   display: flex;
   flex-direction: column;
@@ -655,7 +655,6 @@ footer {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  gap: 20px;
   margin: 5rem 0;
 }
 
