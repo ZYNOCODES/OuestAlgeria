@@ -128,7 +128,7 @@ iconSize: [15, 25],
     iconAnchor:   [7, 24],
 });
 var PaysageIcon = L.icon({
-iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-grey.png',
+iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-orange.png',
 iconSize: [15, 25],
     iconAnchor:   [7, 24],
 });
