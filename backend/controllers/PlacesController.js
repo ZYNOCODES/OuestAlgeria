@@ -1,4 +1,6 @@
 const Place = require('../models/ArticleModel');
+const path = require('path');
+const fs = require('fs');
 
 const PlaceById = async (req, res) => {
     const {id} = req.params;
@@ -104,11 +106,28 @@ const createNewPlace = async (req, res) => {
         res.status(500).json({ message: "Server error", error: err.message });
     }
 };
+const downloadPdf = async (req, res) => {
+    const filePath = path.join(__dirname, '../views/css/images', 'RapportduMarechalVaillant1857.pdf');
+
+    // Check if the file exists
+    if (fs.existsSync(filePath)) {
+        // Set the appropriate headers for the response
+        res.setHeader('Content-Type', 'application/pdf');
+        res.setHeader('Content-Disposition', 'attachment; filename=Rapport du Maréchal Vaillant 1857.pdf');
+
+        // Create a read stream from the file and pipe it to the response
+        const fileStream = fs.createReadStream(filePath);
+        fileStream.pipe(res);
+    } else {
+        res.status(404).send('File not found');
+    }
+}
 
 module.exports = {
     GetAllPlaces,
     PlaceById,
     UpdateByID,
     UpdateByIDIMGs,
-    createNewPlace
+    createNewPlace,
+    downloadPdf
 };

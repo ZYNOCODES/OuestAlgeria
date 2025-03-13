@@ -4,7 +4,8 @@ const {
     PlaceById,
     UpdateByID,
     UpdateByIDIMGs,
-    createNewPlace
+    createNewPlace,
+    downloadPdf
 } = require('../controllers/PlacesController');
 const router = express.Router();
 
@@ -18,5 +19,7 @@ router.patch('/update/:id', UpdateByID);
 router.patch('/updateIMGs/:id', UpdateByIDIMGs);
 //create new place
 router.post('/create/new', createNewPlace);
+//download pdf
+router.get('/getHistoriquePDF', downloadPdf);
 
 module.exports = router;
